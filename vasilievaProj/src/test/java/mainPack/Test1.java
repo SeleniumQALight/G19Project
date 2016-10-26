@@ -6,6 +6,8 @@ public class Test1 {
     @Test
     public void test1(){
         System.out.println("test delete123");
+        System.out.println("test void test123");
+
     }
     public void test2(){
         System.out.println("test void test2");
