@@ -7,4 +7,7 @@ public class Test1 {
     public void test1(){
         System.out.println("test delete123");
     }
+    public void test2(){
+        System.out.println("test void test2");
+    }
 }
