@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="541eb0d9-7321-41b0-b4e8-453b35d8390e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/G19.project.ipr" afterPath="$PROJECT_DIR$/G19.project.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/G19.project.iws" afterPath="$PROJECT_DIR$/G19.project.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overAllProj/overAllProj.iml" afterPath="$PROJECT_DIR$/overAllProj/overAllProj.iml" />
     </list>
     <ignored path="G19.project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -212,8 +210,8 @@
       <file leaf-file-name="InValidLogOnWithOutPageObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/goloborodkoProj/src/test/java/mainPack/InValidLogOnWithOutPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40782124">
-              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.7150838">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1095,7 +1093,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477589187029</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[QA] was added123">
+      <created>1477589206153</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1477589206153</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1639,8 +1643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/goloborodkoProj/src/test/java/mainPack/InValidLogOnWithOutPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40782124">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.7150838">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
