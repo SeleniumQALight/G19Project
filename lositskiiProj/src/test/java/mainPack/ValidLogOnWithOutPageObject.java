@@ -13,12 +13,12 @@ import java.util.concurrent.TimeUnit;
 
 public class ValidLogOnWithOutPageObject {
 
-    WebDriver driver = new ChromeDriver();
-    //WebDriver driver = new FirefoxDriver();
+    //WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
     Logger logger = Logger.getLogger(getClass());
 
     @Test
-    public  void  validLogOnWithOutPageObject(){
+    public void validLogOnWithOutPageObject() {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("http://v3.test.itpmgroup.com/login");
@@ -35,10 +35,11 @@ public class ValidLogOnWithOutPageObject {
         driver.findElement(By.xpath(".//button")).click();
         logger.info("Button was clicked");
 
-        Assert.assertTrue("Not home page", driver.findElement(By.xpath(".//img[@alt='Student']")).isDisplayed());
+        Assert.assertTrue("Not home page", driver.findElement(By.xpath(".//img[@alt='student']")).isDisplayed());
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
 
 
