@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="541eb0d9-7321-41b0-b4e8-453b35d8390e" name="Default" comment="[QA] LoginPage was created">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/G19.project.ipr" afterPath="$PROJECT_DIR$/G19.project.ipr" />
+    <list default="true" id="541eb0d9-7321-41b0-b4e8-453b35d8390e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/G19.project.iws" afterPath="$PROJECT_DIR$/G19.project.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/belousovProj.iml" afterPath="$PROJECT_DIR$/belousovProj/belousovProj.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overAllProj/overAllProj.iml" afterPath="$PROJECT_DIR$/overAllProj/overAllProj.iml" />
     </list>
     <ignored path="G19.project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1135,7 +1132,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477724167416</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[QA] LoginPage was created">
+      <created>1477724197012</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1477724197012</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
