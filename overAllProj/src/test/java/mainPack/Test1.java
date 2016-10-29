@@ -4,11 +4,12 @@ import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public class Test1 {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
 
     @Test
     public void test1() {
