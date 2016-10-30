@@ -91,6 +91,7 @@ public class LoginPage {
         } catch (Exception e) {
             logger.error(errorButton + " Vhod");
             Assert.fail(errorButton + " Vhod");
+
         }
     }
 

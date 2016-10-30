@@ -26,7 +26,7 @@ public class LoginPage {
         try {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.get("http://v3.qalight.com.ua/login");
+            driver.get("http://v3.test.itpmgroup.com/login");
             logger.info("Page Login was opened");
 
         } catch (Exception e) {
@@ -90,12 +90,15 @@ public class LoginPage {
 
     /**
      * Method how to check is login and password valid
+     *
      * @return boolean
      */
     public boolean isFormLoginPresent() {
         try {
-            return driver.findElement(By.className("login-box-body")).isDisplayed();
+            logger.info("Invalid login or password");
+            return driver.findElement(By.className("_username")).isDisplayed();
         } catch (Exception e) {
+            logger.info("Login or password are correct");
             return false;
         }
     }
