@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,14 +31,19 @@ public class MainPage {
 
     /**
      * Check the page is Main
+     *
      * @return
      */
-    public boolean checkMainPage(){
-        try {
-            return driver.findElement(By.xpath("//title[text()='Учет запчастей'")).isDisplayed();
-            //return driver.findElement(By.xpath(".//li[text()='Главная']")).isDisplayed();
+    public boolean checkMainPage() {
 
-        }catch (Exception e) {
+        try {
+            Thread.sleep(1000);
+            logger.info("If you dont see next message - Can't check the Main Page, that's meens All Ok");
+            //return driver.findElement(By.xpath(".//title[text()='Учет запчастей']")).isDisplayed();
+            return driver.findElement(By.xpath(".//*[text()='Главная']")).isDisplayed();
+
+        } catch (Exception e) {
+            logger.fatal("Can't check the Main Page");
             return false;
         }
     }
@@ -46,34 +54,28 @@ public class MainPage {
     public void clouseMainPageAndBrowser() {
         driver.quit();
         logger.info("Main Page and browser were cloused");
-
     }
 
     /**
      * Openning Slovary menu
      */
-    public void openSlovariOnMainPage (){
+    public void openSlovariOnMainPage() {
         try {
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(".//*[@id='dictionary']")).click();
+            driver.findElement(By.xpath(".//li[@id='dictionary']//a//*[text()='Словари']")).click();
             logger.info("Slovary" + wasClicked);
-
-
         } catch (Exception e) {
             logger.error(canNotFind + "Slovary");
             Assert.fail(canNotFind + "Slovary");
         }
-
-
     }
 
     /**
      * Openning Sotrudniki page
      */
-    public void openSotrudnikiOnMainPage(){
+    public void openSotrudnikiOnMainPage() {
         try {
-            driver.wait();
-            driver.findElement(By.xpath(".//li[@id='workers']/a")).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath(".//li[@id='workers']")).click();
             logger.info("Sotrudniki" + wasClicked);
         } catch (Exception e) {
             logger.error(canNotFind + "Sotrudniki");

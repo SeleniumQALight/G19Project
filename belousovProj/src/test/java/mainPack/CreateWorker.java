@@ -11,6 +11,8 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.WorkersPage;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by dariia on 10/30/16.
  */
@@ -20,6 +22,8 @@ public class CreateWorker {
     MainPage mainPage = new MainPage(driver);
     WorkersPage workersPage = new WorkersPage(driver);
     EditWorkerPage editWorkerPage = new EditWorkerPage(driver);
+    String loginNameForLoginPage = "Student";
+    String passwordForLoginPage = "909090";
     String workerSurname = "Тестовый";
     String workerName = "Тест";
     String workerMidleName = "Тестович";
@@ -29,17 +33,15 @@ public class CreateWorker {
     public void setUp(){
 
         loginPage.openBrowserAndLoginPage();
-        loginPage.enterUserName("Student");
-        loginPage.enterUserPassword("909090");
+        loginPage.enterUserName(loginNameForLoginPage);
+        loginPage.enterUserPassword(passwordForLoginPage);
         loginPage.clickButtonVhod();
-        Assert.assertFalse(mainPage.checkMainPage());
+        Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSlovariOnMainPage();
         mainPage.openSotrudnikiOnMainPage();
-        Assert.assertTrue(workersPage.checkWorkersPage());
-        workersPage.checkWorkersPage();
         workersPage.buttonAdd();
         Assert.assertTrue(editWorkerPage.checkWorkerEditPage());
-        editWorkerPage.checkWorkerEditPage();
+        //editWorkerPage.checkWorkerEditPage();
         editWorkerPage.enterWorkerSurname(workerSurname);
         editWorkerPage.enterWorkerName(workerName);
         editWorkerPage.enterWorkerMidleName(workerMidleName);
@@ -47,6 +49,7 @@ public class CreateWorker {
         editWorkerPage.createButton();
         Assert.assertTrue(workersPage.checkWorkersPage());
         Assert.assertTrue(workersPage.checkWorkerIsPresent());
+
 
     }
     //@After
