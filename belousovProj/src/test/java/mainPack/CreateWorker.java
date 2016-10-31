@@ -30,7 +30,7 @@ public class CreateWorker {
     String workerPhoneNumber = "+380505050505";
 
     @Test
-    public void setUp(){
+    public void CreateWorker(){
 
         loginPage.openBrowserAndLoginPage();
         loginPage.enterUserName(loginNameForLoginPage);
@@ -41,7 +41,6 @@ public class CreateWorker {
         mainPage.openSotrudnikiOnMainPage();
         workersPage.buttonAdd();
         Assert.assertTrue(editWorkerPage.checkWorkerEditPage());
-        //editWorkerPage.checkWorkerEditPage();
         editWorkerPage.enterWorkerSurname(workerSurname);
         editWorkerPage.enterWorkerName(workerName);
         editWorkerPage.enterWorkerMidleName(workerMidleName);
@@ -52,6 +51,6 @@ public class CreateWorker {
 
 
     }
-    //@After
-    //public void tearDown() {workersPage.clouseWorkerPageAndBrowser();}
+    @After
+    public void tearDown() {workersPage.clouseWorkerPageAndBrowser();}
 }
