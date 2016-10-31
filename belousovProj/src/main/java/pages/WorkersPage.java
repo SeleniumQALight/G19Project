@@ -47,7 +47,7 @@ public class WorkersPage {
         try {
             logger.info("If you dont see next message - Sotrudnik ne sozdan, that's meens All Ok");
             return driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).isDisplayed();
-            //logger.info("test user was created");
+
         }catch (Exception e){
             logger.error("Sotrudnik ne sozdan");
             return false;
@@ -74,6 +74,17 @@ public class WorkersPage {
             Assert.fail(canNotFind + "Plus");
         }
     }
+    /**
+     * Find test worker an click
+     */
+    public void findWorker(){
+        try {driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).click();
+            logger.info("Test user" + wasClicked);
 
+        }catch (Exception e) {
+        logger.error(canNotFind + "Worker");
+            Assert.fail(canNotFind + "Worker");
+        }
 
+    }
 }

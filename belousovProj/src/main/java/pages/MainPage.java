@@ -10,9 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by dariia on 10/30/16.
- */
+
 public class MainPage {
     WebDriver driver;
     Logger logger;
@@ -39,7 +37,6 @@ public class MainPage {
         try {
             Thread.sleep(1000);
             logger.info("If you dont see next message - Can't check the Main Page, that's meens All Ok");
-            //return driver.findElement(By.xpath(".//title[text()='Учет запчастей']")).isDisplayed();
             return driver.findElement(By.xpath(".//*[text()='Главная']")).isDisplayed();
 
         } catch (Exception e) {
@@ -82,5 +79,16 @@ public class MainPage {
             Assert.fail(canNotFind + "Sotrudniki");
         }
     }
-
+    /**
+     * Openning Sdelki page
+     */
+    public void openSdelkiOnMainPage (){
+        try {
+            driver.findElement(By.xpath(".//li[@id='deal']")).click();
+            logger.info("Sdelki" + wasClicked);
+        }catch (Exception e){
+            logger.error(canNotFind + "Sdelki");
+            Assert.fail(canNotFind + "Sdelki");
+        }
+    }
 }
