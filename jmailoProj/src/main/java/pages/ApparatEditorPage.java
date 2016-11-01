@@ -21,7 +21,7 @@ public class ApparatEditorPage {
     /**
      * Method checks Apparat edit page presence
      */
-    public void isApparatEditirPagePresent(){
+    public void isApparatEditorPagePresent(){
         try{
             driver.findElement(By.xpath(".//h3[text()='Редактирование ']")).isDisplayed();
             logger.info("Apparat editor page was opened");

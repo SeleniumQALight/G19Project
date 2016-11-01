@@ -28,7 +28,7 @@ public class TestAddApparat {
         mainPage.clickOnLeftSideMenuItem("apparat");
         apparatPage.isApparatPagePresent();
         apparatPage.clickOnPlusButton();
-        apparatEditorPage.isApparatEditirPagePresent();
+        apparatEditorPage.isApparatEditorPagePresent();
         apparatEditorPage.enterApparatNumber("887");
         apparatEditorPage.enterApparatComment("Apparat description3");
         apparatEditorPage.clickOnButtonAdd();

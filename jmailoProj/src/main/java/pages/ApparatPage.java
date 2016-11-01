@@ -46,16 +46,16 @@ public class ApparatPage {
 
     /**
      * Method checks newly added record
-     * @param record - number and comment
+     * @param apparatRecord - number and comment
      */
-    public  void checkRecord(String record){
+    public  void checkRecord(String apparatRecord){
         try {
             driver.findElement(By.xpath(".//td[text()='887']"));
             //driver.findElement(By.partialLinkText(record));
-            logger.info(okInput + record);
+            logger.info(okInput + apparatRecord);
         }catch (Exception e){
-            logger.error("Can't find record " + record);
-            Assert.fail("Can't find record " + record);
+            logger.error("Can't find record " + apparatRecord);
+            Assert.fail("Can't find record " + apparatRecord);
         }
     }
 }
