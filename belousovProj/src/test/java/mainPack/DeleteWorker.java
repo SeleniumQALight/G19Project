@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.EditWorkerPage;
 import pages.LoginPage;
@@ -15,7 +16,7 @@ import pages.WorkersPage;
  */
 
     public class DeleteWorker {
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new ChromeDriver();
         LoginPage loginPage = new LoginPage(driver);
         MainPage mainPage = new MainPage(driver);
         WorkersPage workersPage = new WorkersPage(driver);
@@ -30,10 +31,11 @@ import pages.WorkersPage;
 
         @Test
         public void CreateWorker(){
-            loginPage.openBrowserAndLoginPage();
-            loginPage.enterUserName(loginNameForLoginPage);
-            loginPage.enterUserPassword(passwordForLoginPage);
-            loginPage.clickButtonVhod();
+            loginPage.logOn(loginNameForLoginPage,passwordForLoginPage);
+//            loginPage.openBrowserAndLoginPage();
+//            loginPage.enterUserName(loginNameForLoginPage);
+//            loginPage.enterUserPassword(passwordForLoginPage);
+//            loginPage.clickButtonVhod();
             Assert.assertTrue(mainPage.checkMainPage());
             mainPage.openSlovariOnMainPage();
             mainPage.openSotrudnikiOnMainPage();

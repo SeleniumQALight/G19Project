@@ -24,13 +24,12 @@ public class DealsPageEdit {
 /**
  * Check the page is DealsEditPage
  */
-    public boolean checkDealsPageEdit()
-    {
-        try {
-
-        }catch (Exception e) {
-            logger.error("Can't check DealsEditPage");
-            return false;
-        }
-    }
+//    public boolean checkDealsPageEdit() {
+//        try {
+//
+//        } catch (Exception e) {
+//            logger.error("Can't check DealsEditPage");
+//            return false;
+//        }
+//    }
 }
