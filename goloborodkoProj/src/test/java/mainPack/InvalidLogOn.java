@@ -29,7 +29,7 @@ public class InvalidLogOn {
         mainPage.clickButton("Apparatuses", "//*[@id='apparat']", ".//*[@href='http://v3.test.itpmgroup.com/dictionary/apparat/edit']");
         apparatusPage.initApparatusPage();
         apparatusPage.clickBtnAdd();
-        apparatusAddPage.initApparatusAddPage();
+        //apparatusAddPage.initApparatusAddPage();
         apparatusAddPage.setInputData("Apparat number", ".//*[@id='apparat_apparatNumber']", "8328");
         //apparatusAddPage.setInputData("Apparat comment", ".//*[@id='apparat_apparatComment']", "XPEHb");
         apparatusAddPage.clickBtnAdd();
