@@ -14,6 +14,7 @@ public class LoginPage {
     Logger logger;
     final String errorInput = "Can not work with input UserName ";
     final String errorButton = "Can not work with button ";
+    final String errorLink= "Can not work with link";
 
     public LoginPage(WebDriver exterDriver) {
         this.driver = exterDriver;
@@ -87,6 +88,23 @@ public class LoginPage {
             Assert.fail(errorButton + " Vhod");
         }
     }
+
+    public void clickRegisterLink() {
+        try{
+            driver.findElement(By.xpath(".//*[@href='/']")).click();
+            logger.info("Link was clicked");
+
+        }catch (Exception e){
+            logger.error(errorLink+ " RegisterLink");
+            Assert.fail(errorLink+ " RegisterLink");
+        }
+    }
+
+
+    /**
+     * Method check if login form present
+     * @return
+     */
     public boolean isFormLoginPresent(){
         try{
            return driver.findElement(By.className("login-box-body")).isDisplayed();
