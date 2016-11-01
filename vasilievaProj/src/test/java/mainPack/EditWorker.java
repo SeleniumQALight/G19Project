@@ -17,23 +17,40 @@ public class EditWorker {
 
     @Test
     public void editWorker(){
+        String surname_old="Петров",
+                name_old="Петр",
+                middleName_old="Петрович";
+        String surname_new="new1",
+                name_new="new2",
+                middleName_new="new3";
+
         loginPage.openBrowserLoginPage();
         loginPage.enterUserName("Student");
         loginPage.enterPassWord("909090");
         loginPage.clickButtonVhod();
         dictWorkers.openDictWorkersPage();
-        dictWorkers.chooseWorkerForEdit("Петров");
-        //editWorkerPage.openEditWorkerPage(2);
-        editWorkerPage.enterWorkerSurname("Петров", "new1");
-        editWorkerPage.enterWorkerName("Петр","new2");
-        editWorkerPage.enterWorkerMiddleName("Петрович","new123");
+        dictWorkers.chooseWorkerForEdit(surname_old+" "+name_old +" "+ middleName_old);
+        editWorkerPage.enterWorkerSurname(surname_old, surname_new);
+        editWorkerPage.enterWorkerName(name_old,name_new);
+        editWorkerPage.enterWorkerMiddleName(middleName_old,middleName_new);
         editWorkerPage.enterWorkerPhone("+380123456");
         editWorkerPage.editWorkerSaveClick();
-        editWorkerPage.closeEditWorkerPage();
     }
 
     @After
     public void tearDown(){
+        String surname_old="Петров",
+                name_old="Петр",
+                middleName_old="Петрович";
+        String surname_new="new1",
+                name_new="new2",
+                middleName_new="new3";
+        String fioToChangeBack = surname_old +"_"+ surname_new+" "+name_old+"_"+name_new+" "+middleName_old+"_"+middleName_new;
+        dictWorkers.openDictWorkersPage();
+        dictWorkers.chooseWorkerForEdit(fioToChangeBack);
+        editWorkerPage.enterWorkerFioForEditBack(surname_old, name_old, middleName_old);
+        editWorkerPage.enterWorkerPhone("+3809060902");
+        editWorkerPage.editWorkerSaveClick();
         editWorkerPage.closeEditWorkerPage();
     }
 
