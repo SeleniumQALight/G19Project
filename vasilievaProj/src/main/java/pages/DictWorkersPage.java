@@ -60,13 +60,13 @@ public class DictWorkersPage {
             listPageRef = driver.findElement(By.xpath(".//td[contains(text(),'"+editWorkerFIO+"')]//..//*")).getText();
             logger.info("Worker was found for edit");
             logger.info(listPageRef + " page for edit");
-            driver.findElement(By.xpath(".//td[contains(text(),'"+editWorkerFIO+"')]//..//*")).click();
+            driver.findElement(By.xpath(".//td[contains(text(),'"+editWorkerFIO+"')]")).click();
+            logger.info("Worker was clicked for editing");
         }catch (Exception e){
             logger.error("Can't find this worker");
             Assert.fail();
         }
     }
-
 
 
     /**
