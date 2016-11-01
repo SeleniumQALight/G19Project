@@ -5,13 +5,14 @@ import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.LoginPage;
 
 /**
  * Created by SBeast on 10/27/2016.
  */
 public class InvalidLogOn {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
     LoginPage loginPage = new LoginPage(driver);
 
 

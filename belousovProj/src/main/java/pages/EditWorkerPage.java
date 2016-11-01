@@ -30,8 +30,11 @@ public class EditWorkerPage {
      */
     public boolean checkWorkerEditPage(){
         try {
+            //Thread.sleep(1000);
+            logger.info("If you dont see next message - Cant check WorkerEditPage, that's meens All Ok");
             return driver.findElement(By.xpath(".//input[@id='workers_workerSurname']")).isDisplayed();
         }catch (Exception e){
+            logger.error("Cant check WorkerEditPage");
             return false;
         }
     }
@@ -69,8 +72,8 @@ public class EditWorkerPage {
      */
     public void enterWorkerMidleName(String workerMidleName){
         try {
-            driver.findElement(By.xpath(".//input[@id='workers_workerMiddleName'")).clear();
-            driver.findElement(By.xpath(".//input[@id='workers_workerMiddleName'")).sendKeys(workerMidleName);
+            driver.findElement(By.xpath(".//input[@id='workers_workerMiddleName']")).clear();
+            driver.findElement(By.xpath(".//input[@id='workers_workerMiddleName']")).sendKeys(workerMidleName);
             logger.info(workerMidleName + wasEntered);
         }catch (Exception e){
             logger.error(canNotWork + "Worker Midle Name Input Field");
@@ -102,6 +105,19 @@ public class EditWorkerPage {
         }catch (Exception e){
             logger.error(canNotWork + "Button Add");
             Assert.fail(canNotWork + "Button Add");
+        }
+    }
+    /**
+     * click Delete button
+     */
+    public void deleteButton(){
+        try {
+            //Thread.sleep(1000);
+            driver.findElement(By.xpath(".//button[@name='delete']")).click();
+            logger.info("Button Delete" + wasClicked);
+        }catch (Exception e){
+            logger.error(canNotFind + "button delete");
+            Assert.fail(canNotWork + "button delete");
         }
     }
 }

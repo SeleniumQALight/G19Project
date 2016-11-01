@@ -72,7 +72,7 @@ public class LoginPage {
         try {
             driver.findElement(By.name("_password")).clear();
             driver.findElement(By.name("_password")).sendKeys(pass);
-            logger.info(pass + "was entered");
+            logger.info(pass + " was entered");
 
         } catch (Exception e) {
             logger.error(errorInput + "Password");

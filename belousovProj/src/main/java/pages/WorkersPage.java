@@ -30,9 +30,11 @@ public class WorkersPage {
  */
     public boolean checkWorkersPage(){
         try {
-            return driver.findElement(By.xpath(".//a[@href='http://v2.qalight.com.ua/dictionary/workers/edit']")).isDisplayed();
+            logger.info("If you dont see next message - Cant check WorkersPage, that's meens All Ok");
+            return driver.findElement(By.xpath(".//*[@class='box-body table-responsive no-padding']")).isDisplayed();
 
         }catch (Exception e){
+            logger.error("Cant check WorkersPage");
             return false;
         }
     }
@@ -43,9 +45,11 @@ public class WorkersPage {
      */
     public boolean checkWorkerIsPresent() {
         try {
+            logger.info("If you dont see next message - Sotrudnik ne sozdan, that's meens All Ok");
             return driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).isDisplayed();
-           // logger.info("test user was created");
+
         }catch (Exception e){
+            logger.error("Sotrudnik ne sozdan");
             return false;
         }
     }
@@ -63,13 +67,24 @@ public class WorkersPage {
      */
     public void buttonAdd(){
         try {
-            driver.findElement(By.xpath(".//a[@href='http://v2.qalight.com.ua/dictionary/workers/edit']")).click();
+            driver.findElement(By.xpath(".//*[@class='fa fa-plus']")).click();
             logger.info("Plus" + wasClicked);
         }catch (Exception e){
             logger.error(canNotFind + "Plus");
             Assert.fail(canNotFind + "Plus");
         }
     }
+    /**
+     * Find test worker an click
+     */
+    public void findWorker(){
+        try {driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).click();
+            logger.info("Test user" + wasClicked);
 
+        }catch (Exception e) {
+        logger.error(canNotFind + "Worker");
+            Assert.fail(canNotFind + "Worker");
+        }
 
+    }
 }
