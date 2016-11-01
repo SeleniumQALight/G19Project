@@ -1,62 +1,58 @@
 package pages;
 
-import junit.framework.Assert;
+
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by SBeast on 10/27/2016.
- */
 public class LoginPage {
+
     WebDriver driver;
     Logger logger;
-    final String errorInput = "Can not work with input ";
-    final String errorButton = "Can not work with Button ";
+    final String errorInput = "Can not work with input UserName ";
+    final String errorButton = "Can not work with button ";
 
     public LoginPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
-
     }
 
     /**
-     * Method open  browser  and login page
+     * Method open browser and Login Page
      */
     public void openBrowserAndLoginPage() {
         try {
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             driver.get("http://v3.test.itpmgroup.com/login");
-            logger.info("Page login was opened");
-
+            logger.info("Page Login was opened");
         } catch (Exception e) {
-            logger.error(errorInput + "browser");
-            Assert.fail(errorInput + "browser");
+            logger.error("Can not work with browser");
+            Assert.fail("Can not work with browser");
         }
     }
 
     /**
-     * Method closes login page & browser
+     * Method closes Login page and Browser
      */
-    public void clouseLoginPageAndBrowser() {
+    public void closeLoginPageAndBrowser() {
         driver.quit();
-        logger.info("Page Login and browser were cloused");
+        logger.info("Page Login and Browser were closed");
     }
 
     /**
-     * Method enters UserName
+     * Method enters User Name
      *
      * @param userName
      */
     public void enterUserName(String userName) {
         try {
-            driver.findElement(By.xpath(".//input[@name='_username']")).clear();
-            driver.findElement(By.xpath(".//input[@name='_username']")).sendKeys(userName);
+            driver.findElement(By.name("_username")).clear();
+            driver.findElement(By.name("_username")).sendKeys(userName);
             logger.info(userName + " was entered");
-
         } catch (Exception e) {
             logger.error(errorInput + "UserName");
             Assert.fail(errorInput + "UserName");
@@ -64,43 +60,38 @@ public class LoginPage {
     }
 
     /**
-     * Method enter Password
+     * Method enter password
      *
      * @param pass
      */
-    public void enterUserPassword(String pass) {
+    public void enterPassWord(String pass) {
         try {
             driver.findElement(By.name("_password")).clear();
             driver.findElement(By.name("_password")).sendKeys(pass);
             logger.info(pass + " was entered");
-
         } catch (Exception e) {
-            logger.error(errorInput + "Password");
-            Assert.fail(errorInput + "Password");
+            logger.error(errorInput + "PassWord");
+            Assert.fail(errorInput + "PassWord");
         }
     }
 
     /**
-     * Methjd click on button
+     * Method click on button
      */
     public void clickButtonVhod() {
         try {
             driver.findElement(By.tagName("button")).click();
-            logger.info("Button Vhod was clicked");
-
+            logger.info("Button was clicked");
         } catch (Exception e) {
             logger.error(errorButton + " Vhod");
             Assert.fail(errorButton + " Vhod");
-
         }
     }
-
-    public boolean isFormLoginPresent() {
-        try {
-            return driver.findElement(By.className("login-box-body")).isDisplayed();
-        } catch (Exception e) {
+    public boolean isFormLoginPresent(){
+        try{
+           return driver.findElement(By.className("login-box-body")).isDisplayed();
+        }catch (Exception e){
             return false;
         }
     }
 }
-
