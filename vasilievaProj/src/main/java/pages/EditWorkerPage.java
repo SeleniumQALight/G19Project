@@ -89,6 +89,28 @@ public class EditWorkerPage {
         }
     }
 
+    /**
+     * Method edit back worker's changes
+     * @param surname
+     * @param name
+     * @param middleName
+     */
+    public void enterWorkerFioForEditBack(String surname,String name,String middleName){
+        try{
+            driver.findElement(By.name("workers[workerSurname]")).clear();
+            driver.findElement(By.name("workers[workerSurname]")).sendKeys(surname);
+            logger.info("change back worker surname");
+            driver.findElement(By.name("workers[workerName]")).clear();
+            driver.findElement(By.name("workers[workerName]")).sendKeys(name);
+            logger.info("change back worker name");
+            driver.findElement(By.name("workers[workerMiddleName]")).clear();
+            driver.findElement(By.name("workers[workerMiddleName]")).sendKeys(middleName);
+            logger.info("change back worker middle name");
+        }catch (Exception e){
+            logger.error(errormessage + "can't edit back changes the worker");
+            Assert.fail();
+        }
+    }
 
     /**
      * Method clicks on 'Save' button
