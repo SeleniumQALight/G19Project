@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * Created by dariia on 10/30/16.
  */
 public class CreateWorker {
-    WebDriver driver = new FirefoxDriver();
+    WebDriver driver = new ChromeDriver();
     LoginPage loginPage = new LoginPage(driver);
     MainPage mainPage = new MainPage(driver);
     WorkersPage workersPage = new WorkersPage(driver);
@@ -32,10 +32,11 @@ public class CreateWorker {
     @Test
     public void CreateWorker(){
 
-        loginPage.openBrowserAndLoginPage();
-        loginPage.enterUserName(loginNameForLoginPage);
-        loginPage.enterUserPassword(passwordForLoginPage);
-        loginPage.clickButtonVhod();
+        loginPage.logOn(loginNameForLoginPage,passwordForLoginPage);
+//        loginPage.openBrowserAndLoginPage();
+//        loginPage.enterUserName(loginNameForLoginPage);
+//        loginPage.enterUserPassword(passwordForLoginPage);
+//        loginPage.clickButtonVhod();
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSlovariOnMainPage();
         mainPage.openSotrudnikiOnMainPage();

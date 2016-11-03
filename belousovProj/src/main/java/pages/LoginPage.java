@@ -4,6 +4,9 @@ import junit.framework.Assert;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,10 +19,19 @@ public class LoginPage {
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
 
+    @FindBy(xpath = ".//input[@name='_username']")
+    WebElement inputUserName;
+    @FindBy(xpath = ".//input[@id='password']")
+    WebElement inputPassword;
+    @FindBy(tagName = "button")
+    WebElement buttonVhod;
+    @FindBy(className = "login-box-body")
+    WebElement loginForm;
+
     public LoginPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
-
+        PageFactory.initElements(driver, this);
     }
 
     /**
@@ -53,8 +65,8 @@ public class LoginPage {
      */
     public void enterUserName(String userName) {
         try {
-            driver.findElement(By.xpath(".//input[@name='_username']")).clear();
-            driver.findElement(By.xpath(".//input[@name='_username']")).sendKeys(userName);
+            inputUserName.clear();
+            inputUserName.sendKeys(userName);
             logger.info(userName + " was entered");
 
         } catch (Exception e) {
@@ -70,8 +82,8 @@ public class LoginPage {
      */
     public void enterUserPassword(String pass) {
         try {
-            driver.findElement(By.name("_password")).clear();
-            driver.findElement(By.name("_password")).sendKeys(pass);
+            inputPassword.clear();
+            inputPassword.sendKeys(pass);
             logger.info(pass + " was entered");
 
         } catch (Exception e) {
@@ -85,7 +97,7 @@ public class LoginPage {
      */
     public void clickButtonVhod() {
         try {
-            driver.findElement(By.tagName("button")).click();
+            buttonVhod.click();
             logger.info("Button Vhod was clicked");
 
         } catch (Exception e) {
@@ -97,10 +109,23 @@ public class LoginPage {
 
     public boolean isFormLoginPresent() {
         try {
-            return driver.findElement(By.className("login-box-body")).isDisplayed();
+            return loginForm.isDisplayed();
         } catch (Exception e) {
             return false;
         }
+    }
+
+    /**
+     * method open login page enter logi enter password
+     *
+     * @param loginNameForLoginPage
+     * @param passwordForLoginPage
+     */
+    public void logOn(String loginNameForLoginPage, String passwordForLoginPage) {
+        openBrowserAndLoginPage();
+        enterUserName(loginNameForLoginPage);
+        enterUserPassword(passwordForLoginPage);
+        clickButtonVhod();
     }
 }
 
