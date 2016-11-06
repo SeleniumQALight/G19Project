@@ -31,11 +31,8 @@ import pages.WorkersPage;
 
         @Test
         public void CreateWorker(){
+
             loginPage.logOn(loginNameForLoginPage,passwordForLoginPage);
-//            loginPage.openBrowserAndLoginPage();
-//            loginPage.enterUserName(loginNameForLoginPage);
-//            loginPage.enterUserPassword(passwordForLoginPage);
-//            loginPage.clickButtonVhod();
             Assert.assertTrue(mainPage.checkMainPage());
             mainPage.openSlovariOnMainPage();
             mainPage.openSotrudnikiOnMainPage();

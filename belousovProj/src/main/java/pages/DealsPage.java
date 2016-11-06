@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
  * Created by user on 31-Oct-16.
  */
 public class DealsPage {
+
     WebDriver driver;
     Logger logger;
     final String errorInput = "Can not work with input ";

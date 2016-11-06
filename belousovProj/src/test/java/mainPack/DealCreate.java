@@ -26,6 +26,7 @@ public class DealCreate {
 
     @Test
     public void CreateDeal(){
+
         loginPage.openBrowserAndLoginPage();
         loginPage.enterUserName(loginNameForLoginPage);
         loginPage.enterUserPassword(passwordForLoginPage);
