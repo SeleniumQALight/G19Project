@@ -30,24 +30,29 @@ public class SparesEditorPage {
         logger=Logger.getLogger(getClass());
     }
 
-    public void selectValueOnDdTypeOfSpares(String testInDD){
+    /**
+     * Method works with dropdown
+     * @param textInDD text in dropdown
+     */
+    public void selectValueOnDdTypeOfSpares(String textInDD){
         try {
             Select select = new Select(ddTypeOfSpares);
-            select.selectByVisibleText(testInDD);
-            logger.info(testInDD + " was selected in DD");
+            select.selectByVisibleText(textInDD);
+            logger.info(textInDD + " was selected in DD");
         }catch (Exception e){
-            logger.error(errorInput+testInDD);
-            Assert.fail(errorInput+testInDD);
+            logger.error(errorInput+textInDD);
+            Assert.fail(errorInput+textInDD);
         }
     }
 
     /**
      * Method works more fast
-     * @param valueInDD
+     * @param valueInDD - value
      */
     public void selectValueOnDdTypeOfSparesByValue(String valueInDD){
         try {
-            Select select = new Select(ddTypeOfSpares);
+            //Select select = new Select(ddTypeOfSpares);
+            Select select = new Select(driver.findElement(By.id("spares_spareType")));
             select.selectByValue(valueInDD);
             logger.info(valueInDD + " was selected in DD");
 
