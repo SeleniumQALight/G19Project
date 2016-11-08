@@ -78,13 +78,13 @@ public class LoginPage {
     /**
      * Method how to click button
      */
-    public void clickButtonVhod() {
+    public void clickButtonEnter() {
         try {
             driver.findElement(By.tagName("button")).click();
-            logger.info("Button Vhod was clicked");
+            logger.info("Button Enter was clicked");
         } catch (Exception e) {
-            logger.error(errorButton + "Vhod");
-            Assert.fail(errorButton + "Vhod");
+            logger.error(errorButton + "Enter");
+            Assert.fail(errorButton + "Enter");
         }
     }
 
@@ -95,10 +95,14 @@ public class LoginPage {
      */
     public boolean isFormLoginPresent() {
         try {
-            logger.info("Invalid login or password");
+            if (driver.findElement(By.className("_username")).isDisplayed()) {
+                logger.info("Invalid login or password");
+            } else {
+                logger.info("Login and password are valid");
+            }
             return driver.findElement(By.className("_username")).isDisplayed();
         } catch (Exception e) {
-            logger.info("Login or password are correct");
+            logger.info("Login and password are valid");
             return false;
         }
     }

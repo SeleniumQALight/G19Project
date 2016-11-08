@@ -23,8 +23,10 @@ public class DealCreate {
     String workerMidleName = "Тестович";
     String workerPhoneNumber = "+380505050505";
 
+
     @Test
     public void CreateDeal(){
+
         loginPage.openBrowserAndLoginPage();
         loginPage.enterUserName(loginNameForLoginPage);
         loginPage.enterUserPassword(passwordForLoginPage);

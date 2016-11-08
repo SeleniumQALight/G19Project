@@ -36,9 +36,9 @@ public class MainPage {
      */
     public void slideBarOnOff() {
         try {
-            boolean state = driver.findElement(By.xpath(".//*[@id='dictionary']")).isDisplayed();
+            int state = driver.findElement(By.xpath(".//*[@id='dictionary']")).getLocation().x;
             driver.findElement(By.xpath(".//*[@class='sidebar-toggle']")).click();
-            if (state == driver.findElement(By.xpath(".//*[@id='dictionary']")).isDisplayed()) {
+            if (state == driver.findElement(By.xpath(".//*[@id='dictionary']")).getLocation().x) {
                 logger.info("Slide bar was not toggled");
             } else {
                 logger.warn("Slide bar was toggled");
@@ -58,9 +58,9 @@ public class MainPage {
      */
     public void clickSlideButton(String btnName, String btnXPath, String btnCheckXPath) {
         try {
-            boolean state = driver.findElement(By.xpath(btnCheckXPath)).isDisplayed();
+            int state = driver.findElement(By.xpath(btnCheckXPath)).getLocation().y;
             driver.findElement(By.xpath(btnXPath)).click();
-            if (state == driver.findElement(By.xpath(btnCheckXPath)).isDisplayed()) {
+            if (state == driver.findElement(By.xpath(btnCheckXPath)).getLocation().y) {
                 logger.info("Button " + btnName + " was clicked");
             } else {
                 logger.warn("Button " + btnName + " was not clicked");

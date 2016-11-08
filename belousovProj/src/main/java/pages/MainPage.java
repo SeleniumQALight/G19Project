@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,6 +21,9 @@ public class MainPage {
     final String canNotFind = "Can not find element ";
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
+
+    @FindBy (xpath = ".//li[@id='spares']/a")
+    WebElement zapchasty;
 
     public MainPage(WebDriver exterDriver) {
         this.driver = exterDriver;
@@ -79,16 +83,37 @@ public class MainPage {
             Assert.fail(canNotFind + "Sotrudniki");
         }
     }
+    public void openSpareOnMainPge(){
+        try {
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//li[@id='spares']/a"));
+            logger.info("Zapchasti" + wasClicked);
+
+        }catch (Exception e){
+            logger.error(canNotWork + "Zapchasti");
+            Assert.fail(canNotWork + "Zapchasti");
+        }
+
+
+    }
     /**
      * Openning Sdelki page
      */
     public void openSdelkiOnMainPage (){
         try {
-            driver.findElement(By.xpath(".//li[@id='deal']")).click();
+            zapchasty.click();
             logger.info("Sdelki" + wasClicked);
         }catch (Exception e){
             logger.error(canNotFind + "Sdelki");
             Assert.fail(canNotFind + "Sdelki");
+        }
+    }
+    private  void waitSomeSec(int sec) {
+        try {
+            Thread.sleep(sec *1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+
         }
     }
 }
