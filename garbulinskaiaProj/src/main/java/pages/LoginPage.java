@@ -106,9 +106,12 @@ public class LoginPage {
         }
     }
 
+    /**
+     * Method clicks Register Link
+     */
     public void clickRegisterLink() {
         try{
-            driver.findElement(By.xpath(".//*[@href='/']")).getAttribute("onclick");
+            driver.findElement(By.xpath(".//*[@href='register.html']")).click();
             logger.info("Link was clicked");
 
         }catch (Exception e){

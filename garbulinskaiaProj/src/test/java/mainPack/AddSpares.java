@@ -18,7 +18,7 @@ public class AddSpares {
     public void setUp() {
         loginPage.LogOn("Student", "909090");
         homePage.checkAvatar();
-        homePage.clickMenyDictionary();
+        homePage.clickMenuDictionary();
         homePage.clickSubMenuSpares();
     }
 

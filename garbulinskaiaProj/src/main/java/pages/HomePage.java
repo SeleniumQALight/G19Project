@@ -45,7 +45,7 @@ public class HomePage {
         }
     }
 
-    public void clickMenyDictionary() {
+    public void clickMenuDictionary() {
         try{
            menuDictionary.click();
             logger.info("Menu Dictionary was clicked");
