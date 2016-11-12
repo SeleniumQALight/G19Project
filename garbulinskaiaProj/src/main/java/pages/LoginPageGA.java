@@ -19,6 +19,7 @@ public class LoginPageGA {
     final String errorButton = "Can not work with button ";
     final String errorForgotPass = "Can not work with Forgot password";
     final String errorLogo = "Can not work with Logo";
+    final String errorRequestADemo= "Can not work with Request a demo";
 
     @FindBy(id = "emailLogin")
     WebElement inputEmailLogin;
@@ -37,6 +38,10 @@ public class LoginPageGA {
 
     @FindBy(xpath = ".//*[@href=\"http://greatagentusa.com/\"]")
     WebElement logo;
+
+    @FindBy(xpath = ".//*[@href=\"../ready-for-a-personal-demo/\"]")
+    WebElement requestADemo;
+
 
     public LoginPageGA(WebDriver exterDriver) {
         this.driver = exterDriver;
@@ -169,7 +174,7 @@ public class LoginPageGA {
      */
     public void clickForgotPass() {
         try {
-            driver.findElement(By.xpath(".//*[contains(text(),'Forgot your password')]")).click();
+            forgotPassEmail.click();
             logger.info("Forgot password was clicked");
 
         } catch (Exception e) {
@@ -177,4 +182,19 @@ public class LoginPageGA {
             Assert.fail(errorForgotPass + " ForgotPass");
         }
     }
+
+    /**
+     * Method clicks Request a demo
+     */
+    public void  clickRequestADemo(){
+        try {
+            requestADemo.click();
+            logger.info("Request a demo was clicked");
+
+        } catch (Exception e) {
+            logger.error(errorRequestADemo + " Request a demo");
+            Assert.fail(errorRequestADemo + " Request a demo");
+    }
+}
+
 }
