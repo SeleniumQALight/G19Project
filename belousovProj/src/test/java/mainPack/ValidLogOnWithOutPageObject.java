@@ -21,6 +21,7 @@ public class ValidLogOnWithOutPageObject {
     WebDriver driver = new ChromeDriver();
     Logger logger = Logger.getLogger(getClass());
 
+
     @Test
     public void validLogOnWithOutPageObject() {
         driver.manage().window().maximize();

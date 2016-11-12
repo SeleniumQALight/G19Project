@@ -76,17 +76,5 @@ public class SparesPage {
         driver.quit();
         logger.info("Spare page and browser was cloused");
     }
-    /**
-     * Find test worker an click
-     */
-//    public void findWorker(){
-//        try {driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).click();
-//            logger.info("Test user" + wasClicked);
-//
-//        }catch (Exception e) {
-//        logger.error(canNotFind + "Worker");
-//            Assert.fail(canNotFind + "Worker");
-//        }
-//
-//    }
+
 }
