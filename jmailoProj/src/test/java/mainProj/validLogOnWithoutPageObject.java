@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class ValidLogOnWithoutPageObject {
+public class ValidLogOnWithoutPageObjectOld {
     WebDriver driver = new FirefoxDriver();
     Logger logger = Logger.getLogger(getClass());
 

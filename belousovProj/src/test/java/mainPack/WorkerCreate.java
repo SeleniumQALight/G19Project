@@ -16,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by dariia on 10/30/16.
  */
-public class CreateWorker {
-    WebDriver driver = new ChromeDriver();
+public class WorkerCreate {
+    WebDriver driver = new FirefoxDriver();
     LoginPage loginPage = new LoginPage(driver);
     MainPage mainPage = new MainPage(driver);
     WorkersPage workersPage = new WorkersPage(driver);
@@ -27,16 +27,13 @@ public class CreateWorker {
     String workerSurname = "Тестовый";
     String workerName = "Тест";
     String workerMidleName = "Тестович";
+    String workerFullName = workerSurname + " " + workerName + " " + workerMidleName;
     String workerPhoneNumber = "+380505050505";
 
     @Test
     public void CreateWorker(){
 
         loginPage.logOn(loginNameForLoginPage,passwordForLoginPage);
-//        loginPage.openBrowserAndLoginPage();
-//        loginPage.enterUserName(loginNameForLoginPage);
-//        loginPage.enterUserPassword(passwordForLoginPage);
-//        loginPage.clickButtonVhod();
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSlovariOnMainPage();
         mainPage.openSotrudnikiOnMainPage();
@@ -48,7 +45,7 @@ public class CreateWorker {
         editWorkerPage.enterWorkerPhoneNumber(workerPhoneNumber);
         editWorkerPage.createButton();
         Assert.assertTrue(workersPage.checkWorkersPage());
-        Assert.assertTrue(workersPage.checkWorkerIsPresent());
+        Assert.assertTrue(workersPage.checkWorkerIsPresent(workerFullName));
 
 
     }

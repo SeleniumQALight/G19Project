@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by user on 31-Oct-16.
  */
-public class DealsPage {
+public class ProviderPage {
     WebDriver driver;
     Logger logger;
     final String errorInput = "Can not work with input ";
@@ -21,47 +21,28 @@ public class DealsPage {
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
 
-    @FindBy (xpath = ".//h3[contains(text(),'Список сделок')]")
-    WebElement checkDealsPageElement;
+    @FindBy (xpath = ".//h1[contains(text(),'Стороны сделок')]")
+    WebElement checkProviderPageElement;
     @FindBy (xpath = ".//*[@class='fa fa-plus']")
     WebElement buttonAddPlus;
 
-    public DealsPage (WebDriver exterDraiver) {
+    public ProviderPage(WebDriver exterDraiver) {
         this.driver = exterDraiver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
 
     }
 
-    public boolean checkDealsPage() {
+    public boolean checProviderPage() {
         try {
-            logger.info("If you dont see next message - Can't check the DealsPage, that's meens All Ok");
-            return checkDealsPageElement.isDisplayed();
+            logger.info("If you dont see next message - Can't check the ProviderPage, that's meens All Ok");
+            return checkProviderPageElement.isDisplayed();
          }catch (Exception e){
-            logger.fatal("Can't check DealsPage");
+            logger.fatal("Can't check ProviderPage");
             return false;
      }
     }
-    public boolean checkDealIsPresent(String dealFulldate){
-        try {
-            logger.info("If you dont see next message - " + "Deal with date " + dealFulldate + " not present" + ", that's meens All Ok");
-            return driver.findElement(By.xpath(".//td[text()='" + dealFulldate + "']")).isDisplayed();
 
-        }catch (Exception e){
-            logger.error("Deal with date " + dealFulldate + " not present");
-            return false;
-        }
-
-    }
-    public void clickDeal(String dealFuldate){
-        try {
-            driver.findElement(By.xpath(".//td[text()='" + dealFuldate + "']")).click();
-        }catch (Exception e){
-            logger.error(canNotFind + " Deal wit date " + dealFuldate);
-            Assert.fail(canNotFind + " Deal wit date " + dealFuldate);
-        }
-
-    }
     public void buttonAdd() {
         try {
             buttonAddPlus.click();
@@ -74,7 +55,7 @@ public class DealsPage {
     /**
      * Clousing page and browser
      */
-    public void clouseDealsPageAndBrowser(){
+    public void clouseProviderPageAndBrowser(){
         driver.quit();
         logger.info("DealsPage and browser was cloused");
     }

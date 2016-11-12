@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by SBeast on 10/26/2016.
  */
-public class ValidLogOnWithOutPageObject {
+public class ValidLogOnWithoutPageObjectOld {
     //WebDriver driver = new FirefoxDriver();
     WebDriver driver = new ChromeDriver();
     Logger logger = Logger.getLogger(getClass());

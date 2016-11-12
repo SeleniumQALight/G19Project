@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,12 +23,24 @@ public class MainPage {
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
 
-    @FindBy (xpath = ".//li[@id='spares']/a")
-    WebElement zapchasty;
+
+    @FindBy (xpath = ".//li[@id='dictionary']//a//*[text()='Словари']")
+    WebElement slovary;
+    @FindBy (xpath = ".//li[@id='workers']")
+    WebElement workers;
+    @FindBy (xpath = ".//li[@id='spares']")
+    WebElement spares;
+    @FindBy (xpath = ".//li[text()='Главная']")
+    WebElement mainPage;
+    @FindBy (xpath = ".//*[@id='deal']")
+    WebElement sdelki;
+    @FindBy (xpath = ".//*[@id='prov_cus']")
+    WebElement sideofDeals;
 
     public MainPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        PageFactory.initElements(driver, this);
 
     }
 
@@ -41,7 +54,7 @@ public class MainPage {
         try {
             Thread.sleep(1000);
             logger.info("If you dont see next message - Can't check the Main Page, that's meens All Ok");
-            return driver.findElement(By.xpath(".//*[text()='Главная']")).isDisplayed();
+            return mainPage.isDisplayed();
 
         } catch (Exception e) {
             logger.fatal("Can't check the Main Page");
@@ -58,11 +71,12 @@ public class MainPage {
     }
 
     /**
-     * Openning Slovary menu
+     * Openning Slovary page
      */
     public void openSlovariOnMainPage() {
         try {
-            driver.findElement(By.xpath(".//li[@id='dictionary']//a//*[text()='Словари']")).click();
+            waitSomeSec(1);
+            slovary.click();
             logger.info("Slovary" + wasClicked);
         } catch (Exception e) {
             logger.error(canNotFind + "Slovary");
@@ -75,18 +89,22 @@ public class MainPage {
      */
     public void openSotrudnikiOnMainPage() {
         try {
-            Thread.sleep(500);
-            driver.findElement(By.xpath(".//li[@id='workers']")).click();
+            waitSomeSec(1);
+            workers.click();
             logger.info("Sotrudniki" + wasClicked);
         } catch (Exception e) {
             logger.error(canNotFind + "Sotrudniki");
             Assert.fail(canNotFind + "Sotrudniki");
         }
     }
+
+    /**
+     * Open Spare page
+     */
     public void openSpareOnMainPge(){
         try {
-            Thread.sleep(500);
-            driver.findElement(By.xpath("//li[@id='spares']/a"));
+            waitSomeSec(1);
+            spares.click();
             logger.info("Zapchasti" + wasClicked);
 
         }catch (Exception e){
@@ -101,13 +119,32 @@ public class MainPage {
      */
     public void openSdelkiOnMainPage (){
         try {
-            zapchasty.click();
+            sdelki.click();
             logger.info("Sdelki" + wasClicked);
         }catch (Exception e){
             logger.error(canNotFind + "Sdelki");
             Assert.fail(canNotFind + "Sdelki");
         }
     }
+
+    /**
+     * Openning SideofDeals page
+     */
+    public void openSideofDealsOnMainPage () {
+        try {
+            openSlovariOnMainPage();
+            waitSomeSec(1);
+            sideofDeals.click();
+            logger.info("SideofDeals" + wasClicked);
+        }catch (Exception e) {
+            logger.error(canNotFind + "SideofDeals");
+            Assert.fail(canNotFind + "SideofDeals");
+        }
+    }
+
+
+
+
     private  void waitSomeSec(int sec) {
         try {
             Thread.sleep(sec *1000);
