@@ -50,12 +50,12 @@ public class ApparatPage {
      */
     public  void checkRecord(String apparatRecord){
         try {
-            driver.findElement(By.xpath(".//td[text()='887']"));
+            driver.findElement(By.xpath(".//td[text()="+apparatRecord+"]"));
             //driver.findElement(By.partialLinkText(record));
             logger.info(okInput + apparatRecord);
         }catch (Exception e){
-            logger.error("Can't find record " + apparatRecord);
-            Assert.fail("Can't find record " + apparatRecord);
+            logger.error("Can't find record: " + apparatRecord);
+            Assert.fail("Can't find record: " + apparatRecord);
         }
     }
 }
