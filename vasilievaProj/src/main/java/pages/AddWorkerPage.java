@@ -5,12 +5,32 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
 public class AddWorkerPage {
     WebDriver driver;
     Logger logger;
+
+    @FindBy(name = "workers[workerSurname]")
+    WebElement workerSurname;
+
+    @FindBy(name = "workers[workerName]")
+    WebElement workerName;
+
+    @FindBy(name = "workers[workerMiddleName]")
+    WebElement workerMiddleName;
+
+    @FindBy(name = "workers[workerPhone]")
+    WebElement workerPhone;
+
+    @FindBy(name = "add")
+    WebElement btnAdd;
+
+    final String urlToConnectEditPage = "http://v3.test.itpmgroup.com/dictionary/workers/edit";
     final String enterMessage = "  was entered";
     final String errorMessage = " can't work with ";
     final String errorFindinput = " can't find input";
@@ -18,6 +38,7 @@ public class AddWorkerPage {
     public AddWorkerPage(WebDriver exterDriver){
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        PageFactory.initElements(driver, this);
     }
 
     /**
@@ -26,7 +47,7 @@ public class AddWorkerPage {
     public void openAddWorkerPage(){
         try{
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            driver.get("http://v3.test.itpmgroup.com/dictionary/workers/edit");
+            driver.get(urlToConnectEditPage);
             logger.info("Add worker page was opened");
         } catch (Exception e){
             logger.error(errorMessage + "page");
@@ -40,8 +61,8 @@ public class AddWorkerPage {
      */
     public void enterWorkerSurname(String surName){
         try{
-            driver.findElement(By.name("workers[workerSurname]")).clear();
-            driver.findElement(By.name("workers[workerSurname]")).sendKeys(surName);
+            workerSurname.clear();
+            workerSurname.sendKeys(surName);
             logger.info(surName + enterMessage);
         } catch (Exception e){
             logger.error(errorFindinput + " surname");
@@ -55,8 +76,8 @@ public class AddWorkerPage {
      */
     public void enterWorkerName(String name){
         try{
-            driver.findElement(By.name("workers[workerName]")).clear();
-            driver.findElement(By.name("workers[workerName]")).sendKeys(name);
+            workerName.clear();
+            workerName.sendKeys(name);
             logger.info(name + " Name" + enterMessage);
         } catch (Exception e){
             logger.error(errorFindinput + " name");
@@ -70,8 +91,8 @@ public class AddWorkerPage {
      */
     public void enterWorkerMiddleName(String middleName){
         try{
-            driver.findElement(By.name("workers[workerMiddleName]")).clear();
-            driver.findElement(By.name("workers[workerMiddleName]")).sendKeys(middleName);
+            workerMiddleName.clear();
+            workerMiddleName.sendKeys(middleName);
             logger.info(middleName + " MiddleName" + enterMessage);
         } catch (Exception e){
             logger.error(errorFindinput + " middleName");
@@ -85,8 +106,8 @@ public class AddWorkerPage {
      */
     public void enterWorkerPhone(String phone){
         try{
-            driver.findElement(By.name("workers[workerPhone]")).clear();
-            driver.findElement(By.name("workers[workerPhone]")).sendKeys(phone);
+            workerPhone.clear();
+            workerPhone.sendKeys(phone);
             logger.info(phone + " Phone was entered ");
         } catch (Exception e){
             logger.error(errorFindinput + " Phone ");
@@ -99,7 +120,7 @@ public class AddWorkerPage {
      */
     public void addWorkerClick(){
         try{
-            driver.findElement(By.name("add")).click();
+            btnAdd.click();
             logger.info(" button 'Sozdat' was clicked");
         } catch (Exception e){
             logger.error("can't click");
