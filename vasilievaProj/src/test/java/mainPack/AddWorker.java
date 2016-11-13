@@ -18,9 +18,7 @@ public class AddWorker {
     @Test
     public void openWorkers(){
         loginPage.openBrowserLoginPage();
-        loginPage.enterUserName("Student");
-        loginPage.enterPassWord("909090");
-        loginPage.clickButtonVhod();
+        loginPage.logOn("Student", "909090");
         dictWorkers.openDictWorkersPage();
         dictWorkers.addWorkersButtonClick();
         addWorker.openAddWorkerPage();
@@ -31,7 +29,6 @@ public class AddWorker {
         addWorker.addWorkerClick();
         dictWorkers.openDictWorkersPage();
         dictWorkers.isWorkerAdded("test1","test1","test1","phone");
-        dictWorkers.closeDictWorkersPage();
     }
 
     @After
