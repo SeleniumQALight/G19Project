@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -105,8 +106,9 @@ public class LoginPage {
         return  driver.findElement(By.className("box-title")).isDisplayed();
     }
 
-    /*
+
     @After
-    public void tearDown(){}
-    */
+    public void tearDown(){
+        driver.quit();
     }
+}
