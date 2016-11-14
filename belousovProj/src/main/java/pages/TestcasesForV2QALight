@@ -1,0 +1,119 @@
+1. Login
+	*Steps*
+	1. ввести в поле login (.//input[@name='_username']) логин - Student
+	2. ввести в поле password (.//input[@id='password']) пароль - 909090
+	3. нажать кнопку Вход (.//button[@type='submit'])
+
+	*Expeced result*
+	откроется страница - Учет запчастей - 	(.//title[text()='Учет запчастей'])
+						present elements	(.//li[text()='Главная'])
+
+
+2. Создать сотрудника словари -> сотрудники
+	*Steps*
+	1. ввести в поле login (.//input[@name='_username']) логин - Student
+	2. ввести в поле password (.//input[@id='password']) пароль - 909090
+	3. нажать кнопку Вход (.//button[@type='submit'])
+        4. нажать кнопку Словари (.//li[@id='dictionary'])
+	5. нажать кнопку Сотрудники (.//li[@id='workers']/a)
+	6. нажать кнопку + ADD (.//a[@href='http://v2.qalight.com.ua/dictionary/workers/edit'])
+	7. ввести в поле Worker surname (.//input[@id='workers_workerSurname']) 		Тестовый
+	8. ввести в поле Worker name (.//input[@id='workers_workerName'])				Тест
+	9. ввести в поле Worker middle name (.//input[@id='workers_workerMiddleName'])	Тестович
+	10. ввести в поле Worker phone (.//input[@id='workers_workerPhone'])			+380505050505
+	11. нажать на кнопку Создать (.//button[@name='add'])
+
+	*Expeced result*
+	откроется страница - Сотрудники  - 	http://v2.qalight.com.ua/dictionary/workers
+						present elements	(.//small[text()=' Список'])
+											(.//td[text()='Тестовый Тест Тестович'])
+											(.//td[text()='380505050505'])
+
+3. Удалить сотрудника словари -> сотрудники
+	*Steps*
+	1. ввести в поле login (.//input[@name='_username']) логин - Student
+	2. ввести в поле password (.//input[@id='password']) пароль - 909090
+	3. нажать кнопку Вход (.//button[@type='submit'])
+	4. нажать кнопку Словари (.//li[@id='dictionary'])
+	5. нажать кнопку Сотрудники (.//li[@id='workers']/a)
+	6. нажать на поле содержащее имя сотрудника Тестовый Тест Тестович 	(.//td[text()='Тестовый Тест Тестович'])
+	7. нажать на кнопку Удалить (.//button[@name='delete'])
+	*Expeced result*
+	откроется страница - Сотрудники  - 	http://v2.qalight.com.ua/dictionary/workers
+						present elements		(.//small[text()=' Список'])
+						no elements presents	(.//td[text()='Тестовый Тест Тестович'])
+												(.//td[text()='380505050505'])
+
+
+
+4. Создать Сделку
+	*Steps*
+	1. ввести в поле login (.//input[@name='_username']) логин - Student
+	2. ввести в поле password (.//input[@id='password']) пароль - 909090
+	3. нажать кнопку Вход (.//button[@type='submit'])
+	4. нажать на кнопку Сделки (.//li[@id='deal'])
+	5. нажать кнопку + ADD (.//a[@href='http://v2.qalight.com.ua/deal/edit'])
+	6. выбрать дату и время  2016-10-25 12-05
+						год	(.//select[@id='deal_dealDate_date_year'])
+							(.//option[@value='2016'])
+						месяц (.//select[@id='deal_dealDate_date_month'])
+							(.//select[@id='deal_dealDate_date_month']/option[10])
+						день	(.//select[@id='deal_dealDate_date_day'])
+								(.//select[@id='deal_dealDate_date_day']/option[25])
+						час		(.//select[@id='deal_dealDate_time_hour'])
+								(.//select[@id='deal_dealDate_time_hour']/option[13])
+						минута	(.//select[@id='deal_dealDate_time_minute'])
+								(.//select[@id='deal_dealDate_time_minute']/option[6])
+	7. выбрать тип сделки - Test Deal (.//select[@id='deal_dealType'])
+								(.//option[text()='Test Deal'])
+	8. выбрать заказчика  - Customer (.//select[@id='deal_customer'])
+								(.//select[@id='deal_customer']/option[text()='Лукашин Олег Степанович'])
+	9. выбрать исполнителя - Provider (.//select[@id='deal_provider'])
+								(.//select[@id='deal_provider']/option[text()='Лукашин Олег Степанович'])
+	10. нажать на кнопку Создать (.//button[@name='add'])
+
+	*Expeced result*
+	откроется страница - Сделки  - 	http://v2.qalight.com.ua/deal
+						present elements		(.//h3[text()='Список сделок'])
+						elements presents	(.//td[text()='25.10.2016 12:05'])
+
+
+
+
+
+5. Удалить Сделку
+	*Steps*
+	1. ввести в поле login (.//input[@name='_username']) логин - Student
+	2. ввести в поле password (.//input[@id='password']) пароль - 909090
+	3. нажать кнопку Вход (.//button[@type='submit'])
+	4. нажать на кнопку Сделки (.//li[@id='deal'])
+	5. выбрать сдедку с датой 2016-10-25 12-05 (.//td[text()='25.10.2016 12:05'])
+	 .//tr[.//td[text(),'error'] and .//td[(text(),'Лукашин Олег Степанович')] and .//td[contains(text(),'01.01.2015 00:00')] and .//td[contains(text(),'Котейкин Геннадий Чебурахович')]]
+	6. нажать кнопку Удалить (.//button[@name='delete'])
+
+	*Expeced result*
+	откроется страница - Сделки  - 	http://v2.qalight.com.ua/deal
+						present elements		(.//h3[text()='Список сделок'])
+						no elements presents	(.//td[text()='25.10.2016 12:05'])
+
+
+
+    public void  enterWorkerSurname(){
+        try {
+            driver.findElement(By.xpath(".//input[@id='workers_workerSurname']")).clear();
+            driver.findElement(By.xpath(".//input[@id='workers_workerSurname']")).sendKeys(workerSername);
+            logger.info(workerSername + wasEntered);
+        }catch (Exception e){
+            logger.error(canNotFind + "Worker Sername Input Field");
+            Assert.fail(canNotFind + "Worker Sername Input Field");
+        }
+    }
+    public void enterWorkerName(){
+        try {
+            driver.findElement(By.xpath("//input[@id='workers_workerName']")).clear();
+            driver.findElement(By.xpath("//input[@id='workers_workerName']")).sendKeys(workerName);
+            logger.info(workerName +wasEntered);
+        }catch (Exception e){
+            logger.error(canNotFind + "Worker Name Input Field");
+            Assert.fail(canNotFind + "Worker Name Input Field");
+        }
