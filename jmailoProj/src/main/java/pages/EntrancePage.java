@@ -101,4 +101,11 @@ public class EntrancePage {
             Assert.fail("You are still on login page");
         }
     }
+
+    public  void logOn(String login, String pass){
+        openBrowserAndEntrancePage();
+        enterEmail(login);
+        enterPassword(pass);
+        clickOnButton();
+    }
 }

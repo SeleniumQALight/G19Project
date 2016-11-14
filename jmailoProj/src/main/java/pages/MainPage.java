@@ -5,11 +5,13 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
 public class MainPage {
 
     WebDriver driver;
     Logger logger;
+
 
     public MainPage(WebDriver externalDriver){
         this.driver=externalDriver;
@@ -49,7 +51,20 @@ public class MainPage {
      * Method closes main page and browser
      */
     public void closeMainPageAndBrowser(){
+        //waitSomeSec(2);
         driver.quit();
         logger.info("Main page and browser were closed");
+    }
+
+    /**
+     * Method adds some seconds in order to let browser make next step (Indian method)
+     * @param sec - seconds to be add
+     */
+    private void waitSomeSec(int sec){
+        try {
+            Thread.sleep(sec*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
