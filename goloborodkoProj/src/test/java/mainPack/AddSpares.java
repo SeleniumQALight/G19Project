@@ -1,7 +1,6 @@
 package mainPack;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +9,7 @@ import pages.ApparatusPage;
 import pages.LoginPage;
 import pages.MainPage;
 
-public class InvalidLogOn {
+public class AddSpares {
     WebDriver driver = new FirefoxDriver();
     LoginPage loginPage = new LoginPage(driver);
     MainPage mainPage = new MainPage(driver);
@@ -19,12 +18,16 @@ public class InvalidLogOn {
 
     @Test
     public void setUp() {
-        loginPage.logOn("Student", "906090");
-        loginPage.isFormLoginPresent();
+        loginPage.logOn("Student", "909090");
+        mainPage.checkAvatar();
+        mainPage.clickSlideButton("Dictionaries", ".//*[@id='dictionary']", ".//*[@id='service_apparat']");
+        mainPage.clickButton("Spares", ".//*[@href='/dictionary/spares']", ".//*[@href='http://v3.test.itpmgroup.com/dictionary/spares/edit']");
+
+
     }
 
-    @After
-    public void tearDown() {
-        loginPage.closeLoginPageAndBrowser();
-    }
+//    @After
+//    public void tearDown() {
+//        loginPage.closeLoginPageAndBrowser();
+//    }
 }

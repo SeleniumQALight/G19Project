@@ -18,7 +18,7 @@ public class ApparatusAddPage {
 
     public void initApparatusAddPage() {
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//            driver.get("http://v3.test.itpmgroup.com/dictionary/apparat/edit");
             logger.info("Apparatus add page was opened");
         } catch (Exception e) {
             logger.error("Can not work with Apparatus add page");
