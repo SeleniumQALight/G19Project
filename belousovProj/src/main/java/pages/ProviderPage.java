@@ -1,6 +1,7 @@
 package pages;
 
 import org.apache.log4j.Logger;
+import org.apache.xerces.impl.xpath.XPath;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +34,7 @@ public class ProviderPage {
 
     }
 
-    public boolean checProviderPage() {
+    public boolean checkProviderPage() {
         try {
             logger.info("If you dont see next message - Can't check the ProviderPage, that's meens All Ok");
             return checkProviderPageElement.isDisplayed();
@@ -43,6 +44,25 @@ public class ProviderPage {
      }
     }
 
+    public void findProvader(String proCustName){
+        try {
+            driver.findElement(By.xpath(".//td[contains(text(),'" + proCustName + "')]")).click();
+
+        }catch (Exception e){
+            logger.error(canNotFind + proCustName);
+            Assert.fail(canNotFind + proCustName);
+        }
+    }
+
+    public boolean checkProviderIsPresent (String proCustName){
+        try {
+            logger.info("If you dont see next message -" +  canNotFind + proCustName +  ", that's meens All Ok");
+            return driver.findElement(By.xpath(".//td[contains(text(),'" + proCustName + "')]")).isDisplayed();
+        }catch (Exception e){
+            logger.fatal(canNotFind  + proCustName);
+            return false;
+        }
+    }
     public void buttonAdd() {
         try {
             buttonAddPlus.click();

@@ -137,6 +137,7 @@ public boolean checkProviderEditPage () {
      */
     public void deleteButton(){
         try {
+            waitSomeSec(1);
             deleteButon.click();
             logger.info("Button Delete" + wasClicked);
         }catch (Exception e){

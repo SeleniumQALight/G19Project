@@ -36,13 +36,13 @@ public class ProviderCreate {
         loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSideofDealsOnMainPage();
-        Assert.assertTrue(providerPage.checProviderPage());
+        Assert.assertTrue(providerPage.checkProviderPage());
         providerPage.buttonAdd();
         Assert.assertTrue(providerEditPage.checkProviderEditPage());
         providerEditPage.enterValueInFields(proCustName,proCustAddress,proCustPhone);
         providerEditPage.checkBoxPrivatePerson();
         providerEditPage.createButton();
-        Assert.assertTrue(providerPage.checProviderPage());
+        Assert.assertTrue(providerPage.checkProviderPage());
 
 
 
