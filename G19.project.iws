@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="028c1730-e221-4a32-8ba6-03272d60a9d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderEditPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderPage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderDelete.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparCreate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparDelete.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ValidLogOnWithoutPageObjectOld.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerCreate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerDelete.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/G19.project.iws" afterPath="$PROJECT_DIR$/G19.project.iws" />
     </list>
     <ignored path="G19.project.iws" />
@@ -206,18 +218,28 @@
       <file leaf-file-name="DealDelete.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="250">
+              <caret line="37" column="61" selection-start-line="30" selection-start-column="38" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DealsEditPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DealsEditPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+            <state relative-caret-position="68">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValidLogOnWithoutPageObjectOld.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ValidLogOnWithoutPageObjectOld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -246,8 +268,8 @@
       <file leaf-file-name="ProviderEditPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderEditPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="119">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -263,11 +285,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DealEdit.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DealEdit.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="595">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -276,8 +298,8 @@
       <file leaf-file-name="DealCreate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="272">
+              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -311,6 +333,8 @@
         <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/CreateSpar.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/MainPage.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/LoginPage.java" />
+        <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java" />
+        <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderEditPage.java" />
       </list>
     </option>
   </component>
@@ -1093,10 +1117,10 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.DealDelete" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ProviderDelete" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ProviderCreate" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DealDelete.CreateDeal" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DealCreate" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DealCreate" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DealDelete.CreateDeal" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ProviderDelete" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProviderCreate" />
       </list>
     </recent_temporary>
   </component>
@@ -1139,7 +1163,7 @@
       <workItem from="1478020472339" duration="8873000" />
       <workItem from="1478034656134" duration="41000" />
       <workItem from="1479214897739" duration="277000" />
-      <workItem from="1479216789156" duration="1495000" />
+      <workItem from="1479216789156" duration="2106000" />
     </task>
     <task id="LOCAL-00001" summary="QA commit to main branch">
       <created>1479216839701</created>
@@ -1176,33 +1200,40 @@
       <option name="project" value="LOCAL" />
       <updated>1479219543340</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="QA commit to main branch">
+      <created>1479219620824</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1479219620824</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateWorker_CreateWorker - 2016.11.01 at 19h 57m 48s.xml">
-      <configuration name="CreateWorker.CreateWorker" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DealCreate - 2016.11.15 at 16h 07m 20s.xml">
+      <configuration name="DealCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealCreate - 2016.11.15 at 16h 26m 54s.xml">
+      <configuration name="DealCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealCreate - 2016.11.15 at 16h 28m 14s.xml">
       <configuration name="DealCreate" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DealDelete - 2016.11.15 at 16h 19m 19s.xml">
       <configuration name="DealDelete" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DealDelete - 2016.11.15 at 16h 27m 23s.xml">
+      <configuration name="DealDelete" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealDelete - 2016.11.15 at 16h 28m 52s.xml">
+      <configuration name="DealDelete" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="DealDelete_CreateDeal - 2016.11.15 at 16h 07m 55s.xml">
       <configuration name="DealDelete.CreateDeal" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DealEdit - 2016.11.15 at 16h 07m 07s.xml">
-      <configuration name="DealEdit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteWorker - 2016.11.01 at 19h 22m 29s.xml">
-      <configuration name="DeleteWorker" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteWorker - 2016.11.01 at 19h 23m 25s.xml">
-      <configuration name="DeleteWorker" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeleteWorker_CreateWorker - 2016.11.01 at 19h 59m 35s.xml">
-      <configuration name="DeleteWorker.CreateWorker" configurationId="JUnit" />
+    <history-entry file="DealDelete_CreateDeal - 2016.11.15 at 16h 24m 33s.xml">
+      <configuration name="DealDelete.CreateDeal" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ProviderCreate - 2016.11.15 at 16h 13m 04s.xml">
       <configuration name="ProviderCreate" configurationId="JUnit" />
@@ -1212,7 +1243,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10686000" />
+    <option name="totallyTimeSpent" value="11297000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1637,22 +1668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1669,10 +1684,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ValidLogOnWithoutPageObjectOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="37" column="61" selection-start-line="30" selection-start-column="38" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderEditPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1685,18 +1732,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+        <state relative-caret-position="595">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
