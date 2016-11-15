@@ -29,7 +29,6 @@ public class InvalidLogOnHomePageWithoutPageObject {
     Logger logger = Logger.getLogger(getClass());
     WebDriver driver = new ChromeDriver();
 
-
     @Test
     public void invalidLogOnHomePageWithoutPageObject() {
         driver.manage().window().maximize();

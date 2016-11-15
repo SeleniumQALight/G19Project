@@ -6,11 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-/**
- * Created by dariia on 10/30/16.
- */
 public class EditSparePage {
     WebDriver driver;
     Logger logger;
@@ -21,19 +19,23 @@ public class EditSparePage {
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
     final String wasEntered = " Was entered";
-    //final String spareName = "Рулетка";
+
 
     @FindBy(id = "spares_spareName")
     WebElement spareNameField;
     @FindBy (tagName = "select")
     WebElement ddTipeOfSoears;
+    @FindBy (xpath = ".//button[@name='add']")
+            WebElement createButton;
+    @FindBy (xpath = ".//button[@name='delete']")
+    WebElement deleteButon;
+
 
     public EditSparePage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        PageFactory.initElements(driver, this);
     }
-
-
 
     /**
      * Chek the page is EditSparePage
@@ -41,7 +43,7 @@ public class EditSparePage {
      */
     public boolean checkEditSparePage(){
         try {
-            Thread.sleep(1000);
+            waitSomeSec(1);
             logger.info("If you dont see next message - Cant check EditSparePage, that's meens All Ok");
             return spareNameField.isDisplayed();
         }catch (Exception e){
@@ -52,7 +54,7 @@ public class EditSparePage {
 
     public void enterSpareName(String spareName){
         try {
-            Thread.sleep(2000);
+            waitSomeSec(1);
             spareNameField.clear();
             spareNameField.sendKeys(spareName);
 
@@ -98,7 +100,7 @@ public class EditSparePage {
      */
     public void createButton() {
         try {
-            driver.findElement(By.xpath(".//button[@name='add']")).click();
+           createButton.click();
             logger.info("Button Add" + wasClicked);
         }catch (Exception e){
             logger.error(canNotWork + "Button Add");
@@ -110,12 +112,19 @@ public class EditSparePage {
      */
     public void deleteButton(){
         try {
-            //Thread.sleep(1000);
-            driver.findElement(By.xpath(".//button[@name='delete']")).click();
+          deleteButon.click();
             logger.info("Button Delete" + wasClicked);
         }catch (Exception e){
             logger.error(canNotFind + "button delete");
             Assert.fail(canNotWork + "button delete");
+        }
+    }
+    private  void waitSomeSec(int sec) {
+        try {
+            Thread.sleep(sec *1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+
         }
     }
 }

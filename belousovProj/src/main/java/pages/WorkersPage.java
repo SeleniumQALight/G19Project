@@ -5,6 +5,9 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by dariia on 10/30/16.
@@ -20,9 +23,15 @@ public class WorkersPage {
     final String wasClicked = " Was clicked";
     final String wasEntered = " Was entered";
 
+    @FindBy (xpath = ".//h3[contains(text(),'Список сотрудников')]")
+    WebElement chekWorkerPageElement;
+    @FindBy (xpath = ".//*[@class='fa fa-plus']")
+    WebElement buttonAddPlus;
+
     public WorkersPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        PageFactory.initElements(driver, this);
 
     }
 /**
@@ -31,7 +40,7 @@ public class WorkersPage {
     public boolean checkWorkersPage(){
         try {
             logger.info("If you dont see next message - Cant check WorkersPage, that's meens All Ok");
-            return driver.findElement(By.xpath(".//*[@class='box-body table-responsive no-padding']")).isDisplayed();
+            return  chekWorkerPageElement.isDisplayed();
 
         }catch (Exception e){
             logger.error("Cant check WorkersPage");
@@ -40,16 +49,16 @@ public class WorkersPage {
     }
 
     /**
-     * check the test worker was added
+     * check the test worker was created
      * @return
      */
-    public boolean checkWorkerIsPresent() {
+    public boolean checkWorkerIsPresent(String workerFullName) {
         try {
             logger.info("If you dont see next message - Sotrudnik ne sozdan, that's meens All Ok");
-            return driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).isDisplayed();
+            return driver.findElement(By.xpath(".//td[text()='" + workerFullName + "']")).isDisplayed();
 
         }catch (Exception e){
-            logger.error("Sotrudnik ne sozdan");
+            logger.error(workerFullName + " not created");
             return false;
         }
     }
@@ -65,27 +74,30 @@ public class WorkersPage {
     /**
      * click add worker button
      */
-    public void buttonAdd(){
+    public void buttonAdd() {
         try {
-            driver.findElement(By.xpath(".//*[@class='fa fa-plus']")).click();
-            logger.info("Plus" + wasClicked);
-        }catch (Exception e){
-            logger.error(canNotFind + "Plus");
-            Assert.fail(canNotFind + "Plus");
+            buttonAddPlus.click();
+            logger.info("Plus + " + wasClicked);
+        } catch (Exception e) {
+            logger.error(canNotFind + "Plus + ");
+            Assert.fail(canNotFind + "Plus + ");
         }
     }
-    /**
-     * Find test worker an click
-     */
-    public void findWorker(){
-        try {driver.findElement(By.xpath(".//td[text()='Тестовый Тест Тестович']")).click();
-            logger.info("Test user" + wasClicked);
 
-        }catch (Exception e) {
-        logger.error(canNotFind + "Worker");
-            Assert.fail(canNotFind + "Worker");
+        /**
+         * Find test worker an click
+         */
+
+    public void findWorker(String workerFullName) {
+        try {
+            driver.findElement(By.xpath(".//td[text()='" + workerFullName + "']")).click();
+            logger.info(workerFullName + wasClicked);
+
+        } catch (Exception e) {
+            logger.error(canNotFind + workerFullName);
+            Assert.fail(canNotFind + workerFullName);
         }
 
     }
+
 }
-

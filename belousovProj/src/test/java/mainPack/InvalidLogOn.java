@@ -16,7 +16,6 @@ public class InvalidLogOn {
     LoginPage loginPage = new LoginPage(driver);
 
 
-
     @Test
     public void setUp(){
         loginPage.openBrowserAndLoginPage();

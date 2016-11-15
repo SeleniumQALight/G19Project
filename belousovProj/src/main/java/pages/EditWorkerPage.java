@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by dariia on 10/30/16.
@@ -17,11 +20,21 @@ public class EditWorkerPage {
     final String canNotFind = "Can not find element ";
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
-    final String wasEntered = " Was entered";
+    final String wasEntered = " Was entered in ";
+
+    @FindBy (xpath = ".//input[@id='workers_workerSurname']")
+    WebElement workerSurnameField;
+    @FindBy (xpath = ".//input[@id='workers_workerName']")
+    WebElement workerNameField;
+    @FindBy (xpath = ".//input[@id='workers_workerMiddleName']")
+    WebElement workerMiddleNameField;
+    @FindBy (xpath = ".//input[@id='workers_workerPhone']")
+    WebElement workerPhoneField;
 
     public EditWorkerPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        PageFactory.initElements(driver, this);
     }
 
     /**
@@ -32,7 +45,7 @@ public class EditWorkerPage {
         try {
             //Thread.sleep(1000);
             logger.info("If you dont see next message - Cant check WorkerEditPage, that's meens All Ok");
-            return driver.findElement(By.xpath(".//input[@id='workers_workerSurname']")).isDisplayed();
+            return workerSurnameField.isDisplayed();
         }catch (Exception e){
             logger.error("Cant check WorkerEditPage");
             return false;
@@ -44,12 +57,13 @@ public class EditWorkerPage {
      */
     public void  enterWorkerSurname(String workerSurname){
         try {
-            driver.findElement(By.xpath(".//input[@id='workers_workerSurname']")).clear();
-            driver.findElement(By.xpath(".//input[@id='workers_workerSurname']")).sendKeys(workerSurname);
-            logger.info(workerSurname + wasEntered);
+
+            workerSurnameField.clear();
+            workerSurnameField.sendKeys(workerSurname);
+            logger.info(workerSurname + wasEntered + workerSurnameField);
         }catch (Exception e){
-            logger.error(canNotFind + "Worker Sername Input Field");
-            Assert.fail(canNotFind + "Worker Sername Input Field");
+            logger.error(canNotWork + workerSurnameField);
+            Assert.fail(canNotWork + workerSurnameField);
         }
     }
 
@@ -58,12 +72,12 @@ public class EditWorkerPage {
      */
     public void enterWorkerName(String workerName) {
         try {
-            driver.findElement(By.xpath("//input[@id='workers_workerName']")).clear();
-            driver.findElement(By.xpath("//input[@id='workers_workerName']")).sendKeys(workerName);
-            logger.info(workerName + wasEntered);
+            workerNameField.clear();
+            workerNameField.sendKeys(workerName);
+            logger.info(workerName + wasEntered + workerNameField);
         } catch (Exception e) {
-            logger.error(canNotFind + "Worker Name Input Field");
-            Assert.fail(canNotFind + "Worker Name Input Field");
+            logger.error(canNotWork + workerNameField);
+            Assert.fail(canNotWork + workerNameField);
         }
     }
 
@@ -72,12 +86,12 @@ public class EditWorkerPage {
      */
     public void enterWorkerMidleName(String workerMidleName){
         try {
-            driver.findElement(By.xpath(".//input[@id='workers_workerMiddleName']")).clear();
-            driver.findElement(By.xpath(".//input[@id='workers_workerMiddleName']")).sendKeys(workerMidleName);
-            logger.info(workerMidleName + wasEntered);
+            workerMiddleNameField.clear();
+            workerMiddleNameField.sendKeys(workerMidleName);
+            logger.info(workerMidleName + wasEntered + workerMiddleNameField);
         }catch (Exception e){
-            logger.error(canNotWork + "Worker Midle Name Input Field");
-            Assert.fail(canNotWork + "Worker Midle Name Input Field");
+            logger.error(canNotWork + workerMiddleNameField);
+            Assert.fail(canNotWork + workerMiddleNameField);
         }
     }
 
@@ -86,12 +100,12 @@ public class EditWorkerPage {
      */
     public void enterWorkerPhoneNumber(String workerPhoneNumber){
         try {
-            driver.findElement(By.xpath(".//input[@id='workers_workerPhone']")).clear();
-            driver.findElement(By.xpath(".//input[@id='workers_workerPhone']")).sendKeys(workerPhoneNumber);
+            workerPhoneField.clear();
+            workerPhoneField.sendKeys(workerPhoneNumber);
             logger.info(workerPhoneNumber + wasEntered);
         }catch (Exception e){
-            logger.error(canNotWork + "Worker PhoneNumber Input Field");
-            Assert.fail(canNotWork + "Worker PhoneNumber Input Field");
+            logger.error(canNotWork + workerPhoneField);
+            Assert.fail(canNotWork + workerPhoneField);
         }
     }
 
