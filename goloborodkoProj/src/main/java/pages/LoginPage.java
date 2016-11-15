@@ -137,4 +137,15 @@ public class LoginPage {
         enterPassword(password);
         clickButtonEnter();
     }
+
+    public MainPage clickButtonEnterWithNewPage() {
+        try {
+            buttonEnter.click();
+            logger.info("Button Enter was clicked");
+        } catch (Exception e) {
+            logger.error(Messages.genErrorMess() + "button 'Enter'");
+            Assert.fail(Messages.genErrorMess() + "button 'Enter'");
+        }
+        return new MainPage(driver);
+    }
 }
