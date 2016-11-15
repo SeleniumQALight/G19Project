@@ -7,12 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.elements.Messages;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
     WebDriver driver;
+    WebDriverWait webDriverWait;
     Logger logger;
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with button ";
@@ -31,6 +34,7 @@ public class LoginPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver, 30);
     }
 
     /**
@@ -108,6 +112,7 @@ public class LoginPage {
      */
     public boolean isFormLoginPresent() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("_username")));
             if (loginForm.isDisplayed()) {
                 logger.info("Invalid login or password");
             } else {
