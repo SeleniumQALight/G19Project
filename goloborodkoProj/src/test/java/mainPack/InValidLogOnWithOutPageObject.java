@@ -27,7 +27,7 @@ public class InValidLogOnWithOutPageObject {
 
         driver.findElement(By.name("_password")).clear();
         driver.findElement(By.name("_password")).sendKeys("906090");
-        logger.info("Wrong password \"906090\" was entered");
+        logger.info("Wrong password '906090' was entered");
 
         driver.findElement(By.tagName("button")).click();
         logger.info("Button was clicked");
