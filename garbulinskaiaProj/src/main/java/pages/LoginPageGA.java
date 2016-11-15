@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +19,7 @@ public class LoginPageGA {
     final String errorInput = "Can not work with input emailLogin ";
     final String errorButton = "Can not work with button ";
     final String errorForgotPass = "Can not work with Forgot password";
-    final String errorLogo = "Can not work with Logo";
-    final String errorRequestADemo= "Can not work with Request a demo";
+
 
     @FindBy(id = "emailLogin")
     WebElement inputEmailLogin;
@@ -41,6 +41,15 @@ public class LoginPageGA {
 
     @FindBy(xpath = ".//*[@href=\"../ready-for-a-personal-demo/\"]")
     WebElement requestADemo;
+
+    @FindBy(xpath = ".//*[@id='divforterms']/a")
+    WebElement termsOfServiceAgreement;
+
+    @FindBy(id = "menu-item-4")
+    WebElement product;
+
+    @FindBy(className = "menu-item-295")
+    WebElement brokersOwners;
 
 
     public LoginPageGA(WebDriver exterDriver) {
@@ -120,23 +129,26 @@ public class LoginPageGA {
     /**
      * Method click on button
      */
-    public void clickButtonVhod() {
+    public void clickButtonLogin() {
         try {
             button.click();
             logger.info("Button was clicked");
         } catch (Exception e) {
-            logger.error(errorButton + " Vhod");
-            Assert.fail(errorButton + " Vhod");
+            logger.error(errorButton + " Login");
+            Assert.fail(errorButton + " Login");
         }
     }
 
+    /**
+     * Method click on Logo
+     */
     public void clickOnLogo() {
         try {
             logo.click();
             logger.info("Logo was clicked");
         } catch (Exception e) {
-            logger.error(errorLogo+" Logo");
-            Assert.fail(errorLogo+" Logo");
+            logger.error("Can not work with Logo");
+            Assert.fail("Can not work with Logo");
         }
     }
 
@@ -156,7 +168,7 @@ public class LoginPageGA {
 
     /**
      * Method opens login page with Login and Pass
-     * and click button Vhod
+     * and click button Login
      *
      * @param emailLogin
      * @param pass
@@ -166,7 +178,7 @@ public class LoginPageGA {
         enterEmailLogin(emailLogin);
         enterPassWord(pass);
         clickCheckbox();
-        clickButtonVhod();
+        clickButtonLogin();
     }
 
     /**
@@ -186,15 +198,69 @@ public class LoginPageGA {
     /**
      * Method clicks Request a demo
      */
-    public void  clickRequestADemo(){
+    public void clickRequestADemo() {
         try {
             requestADemo.click();
             logger.info("Request a demo was clicked");
 
         } catch (Exception e) {
-            logger.error(errorRequestADemo + " Request a demo");
-            Assert.fail(errorRequestADemo + " Request a demo");
+            logger.error("Can not work with Request a demo");
+            Assert.fail("Can not work with Request a demo");
+        }
     }
-}
 
+    /**
+     * Method clicks Terms Of Service Agreement
+     */
+    public void clickTermsOfServiceAgreement() {
+        try {
+            termsOfServiceAgreement.click();
+            logger.info("Terms of service agreement was clicked");
+
+        } catch (Exception e) {
+            logger.error("Can not work with Terms Of Service Agreement");
+            Assert.fail("Can not work with Terms Of Service Agreement");
+        }
+    }
+
+    /**
+     * Method click Product
+     */
+
+    public void clickProduct() {
+        try {
+            product.click();
+            logger.info("Product was clicked");
+
+        } catch (Exception e) {
+            logger.error("Can not work with Product");
+            Assert.fail("Can not work with Product");
+        }
+
+    }
+
+    /**
+     * Method click Brokers & Owners
+     */
+
+    public void clickBrokersOwners() {
+        try {
+            waitSomeSec(5);
+            brokersOwners.click();
+            logger.info("Brokers & Owners was clicked");
+
+        } catch (Exception e) {
+            logger.error("Can not work with Brokers & Owners");
+            Assert.fail("Can not work with Brokers & Owners");
+        }
+
+    }
+
+    private void waitSomeSec(int sec) {
+        try {
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
