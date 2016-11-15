@@ -7,46 +7,71 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.elements.ButtonsMenus;
+import pages.elements.IsPresent;
+import pages.elements.Messages;
+import pages.elements.WaitSomeTime;
 
 import java.util.concurrent.TimeUnit;
 
 public class MainPage {
     WebDriver driver;
     Logger logger;
-    final String errorMess = "Can not work with ";
+    IsPresent isPresent;
+    ButtonsMenus buttonsMenus;
+    int location;
 
-    @FindBy(xpath = ".//*[@class=\"user-image\"]")
+    @FindBy(xpath = ".//*[@class='user-image']")
     WebElement avatar;
 
     public MainPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
-    }
-
-    /**
-     * Method, which opens Main page
-     */
-    public void openMainPage() {
-        try {
-            logger.info("Main page was opened");
-        } catch (Exception e) {
-            logger.error(errorMess + "MainPage");
-            Assert.fail(errorMess + "MainPage");
-        }
+        isPresent = new IsPresent(driver, getClass());
+        buttonsMenus = new ButtonsMenus(driver, getClass());
     }
 
     /**
      * Method, which checks an avatar
      */
     public void checkAvatar() {
-        try {
-            avatar.isDisplayed();
-            logger.info("Avatar is displayed");
-        } catch (Exception e) {
-            logger.error("Avatar is displayed");
-            Assert.fail("Avatar is displayed");
-        }
+        isPresent.elementbyXPath("User avatar", ".//*[@class='user-image']", true);
+    }
+
+    /**
+     * Method, which clicks button 'Dictionaries'
+     */
+    public void clickDictionaries() {
+        buttonsMenus.clickByXPath("Slide button", "Dictionaries", ".//*[@id='dictionary']");
+    }
+
+    /**
+     * Method, which clicks button 'Apparatus'
+     */
+    public void clickApparatus() {
+        buttonsMenus.clickByXPath("Button", "Apparatus", ".//*[@id='apparat']");
+    }
+
+    /**
+     * Method, which clicks button 'Workers'
+     */
+    public void clickWorkers() {
+        buttonsMenus.clickByXPath("Button", "Workers", ".//*[@id='workers']");
+    }
+
+    /**
+     * Method, which clicks button 'Spare types'
+     */
+    public void clickSpareTypes() {
+        buttonsMenus.clickByXPath("Button", "Spare types", ".//*[@id='spareType']");
+    }
+
+    /**
+     * Method, which clicks button 'Spares'
+     */
+    public void clickSpares() {
+        buttonsMenus.clickByXPath("Button", "Spares", ".//*[@id='spares']");
     }
 
     /**
@@ -54,70 +79,18 @@ public class MainPage {
      */
     public void slideBarOnOff() {
         try {
-            int state = driver.findElement(By.xpath(".//*[@id='dictionary']")).getLocation().x;
+            location = isPresent.getXLocationByXPath(".//*[@id='dictionary']");
             driver.findElement(By.xpath(".//*[@class='sidebar-toggle']")).click();
-            if (state == driver.findElement(By.xpath(".//*[@id='dictionary']")).getLocation().x) {
+            if (location == isPresent.getXLocationByXPath(".//*[@id='dictionary']")) {
                 logger.info("Slide bar was not toggled");
             } else {
                 logger.warn("Slide bar was toggled");
             }
         } catch (Exception e) {
-            logger.error(errorMess + "slide bar");
-            Assert.fail(errorMess + "slide bar");
+            logger.error(Messages.genErrorMess() + "slide bar");
+            Assert.fail(Messages.genErrorMess() + "slide bar");
         }
     }
 
-    /**
-     * Method, which clicks slide buttons
-     *
-     * @param btnName       Name of the slide button
-     * @param btnXPath      xPath of the slide button
-     * @param btnCheckXPath xPath of the check tag
-     */
-    public void clickSlideButton(String btnName, String btnXPath, String btnCheckXPath) {
-        try {
-            waitSomeSec(1);
-            int state = driver.findElement(By.xpath(btnCheckXPath)).getLocation().y;
-            driver.findElement(By.xpath(btnXPath)).click();
-            if (state == driver.findElement(By.xpath(btnCheckXPath)).getLocation().y) {
-                logger.info("Button " + btnName + " was not clicked");
-            } else {
-                logger.warn("Button " + btnName + " was clicked");
-            }
-        } catch (Exception e) {
-            logger.error(errorMess + "button " + btnName);
-            Assert.fail(errorMess + "button " + btnName);
-        }
-    }
-
-    /**
-     * Method, which clicks buttons
-     *
-     * @param btnName       Name of the button
-     * @param btnXPath      xPath of the button
-     * @param btnCheckXPath xPath of the check tag
-     */
-    public void clickButton(String btnName, String btnXPath, String btnCheckXPath) {
-        try {
-            waitSomeSec(1);
-            driver.findElement(By.xpath(btnXPath)).click();
-            if (driver.findElement(By.xpath(btnCheckXPath)).isDisplayed()) {
-                logger.info("Button " + btnName + " was clicked");
-            } else {
-                logger.warn("Button " + btnName + " was not clicked");
-            }
-        } catch (Exception e) {
-            logger.error(errorMess + "button " + btnName);
-            Assert.fail(errorMess + "button " + btnName);
-        }
-    }
-
-    private void waitSomeSec(int sec) {
-        try {
-            Thread.sleep(sec * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }
 

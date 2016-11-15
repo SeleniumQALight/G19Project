@@ -6,12 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class ButonsMenus {
+public class ButtonsMenus {
     WebDriver driver;
     Logger logger;
     Actions action;
 
-    public ButonsMenus(WebDriver exterDriver, Class exterClass) {
+    public ButtonsMenus(WebDriver exterDriver, Class exterClass) {
         this.driver = exterDriver;
         logger = Logger.getLogger(exterClass);
         action = new Actions(exterDriver);

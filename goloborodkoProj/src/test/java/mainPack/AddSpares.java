@@ -20,8 +20,8 @@ public class AddSpares {
     public void setUp() {
         loginPage.logOn("Student", "909090");
         mainPage.checkAvatar();
-        mainPage.clickSlideButton("Dictionaries", ".//*[@id='dictionary']", ".//*[@id='service_apparat']");
-        mainPage.clickButton("Spares", ".//*[@href='/dictionary/spares']", ".//*[@href='http://v3.test.itpmgroup.com/dictionary/spares/edit']");
+//        mainPage.clickSlideButton("Dictionaries", ".//*[@id='dictionary']", ".//*[@id='service_apparat']");
+//        mainPage.clickButton("Spares", ".//*[@href='/dictionary/spares']", ".//*[@href='http://v3.test.itpmgroup.com/dictionary/spares/edit']");
 
 
     }

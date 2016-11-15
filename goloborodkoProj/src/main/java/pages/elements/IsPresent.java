@@ -52,6 +52,9 @@ public class IsPresent {
         }
     }
 
+    public int getXLocationByXPath(String elementXPath) throws Exception {
+        return driver.findElement(By.xpath(elementXPath)).getLocation().x;
+    }
     public int getYLocationByXPath(String elementXPath) throws Exception {
         return driver.findElement(By.xpath(elementXPath)).getLocation().y;
     }
