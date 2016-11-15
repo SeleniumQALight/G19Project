@@ -203,11 +203,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DealDelete.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DealDelete.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+            <state relative-caret-position="374">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DealsEditPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -534,33 +544,7 @@
       <recent name="mainPack" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProviderDelete">
-    <configuration default="false" name="DealEdit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mainPack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="belousovProj" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mainPack" />
-      <option name="MAIN_CLASS_NAME" value="mainPack.DealEdit" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DealDelete">
     <configuration default="false" name="DealCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -651,6 +635,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="mainPack" />
       <option name="MAIN_CLASS_NAME" value="mainPack.ProviderDelete" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DealDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mainPack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="belousovProj" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mainPack" />
+      <option name="MAIN_CLASS_NAME" value="mainPack.DealDelete" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -1074,19 +1084,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DealEdit" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DealCreate" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DealDelete.CreateDeal" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ProviderCreate" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ProviderDelete" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DealCreate" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DealDelete.CreateDeal" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ProviderCreate" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ProviderDelete" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DealDelete" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ProviderDelete" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ProviderCreate" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DealDelete.CreateDeal" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DealCreate" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DealEdit" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DealDelete" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProviderDelete" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ProviderCreate" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DealDelete.CreateDeal" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DealCreate" />
       </list>
     </recent_temporary>
   </component>
@@ -1129,7 +1139,7 @@
       <workItem from="1478020472339" duration="8873000" />
       <workItem from="1478034656134" duration="41000" />
       <workItem from="1479214897739" duration="277000" />
-      <workItem from="1479216789156" duration="1420000" />
+      <workItem from="1479216789156" duration="1495000" />
     </task>
     <task id="LOCAL-00001" summary="QA commit to main branch">
       <created>1479216839701</created>
@@ -1159,18 +1169,25 @@
       <option name="project" value="LOCAL" />
       <updated>1479219538836</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="QA commit to main branch">
+      <created>1479219543340</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1479219543340</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateWorker - 2016.11.01 at 19h 22m 11s.xml">
-      <configuration name="CreateWorker" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CreateWorker_CreateWorker - 2016.11.01 at 19h 57m 48s.xml">
       <configuration name="CreateWorker.CreateWorker" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DealCreate - 2016.11.15 at 16h 07m 20s.xml">
       <configuration name="DealCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealDelete - 2016.11.15 at 16h 19m 19s.xml">
+      <configuration name="DealDelete" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DealDelete_CreateDeal - 2016.11.15 at 16h 07m 55s.xml">
       <configuration name="DealDelete.CreateDeal" configurationId="JUnit" />
@@ -1195,7 +1212,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10611000" />
+    <option name="totallyTimeSpent" value="10686000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1670,8 +1687,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+        <state relative-caret-position="374">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
           <folding />
         </state>
       </provider>
