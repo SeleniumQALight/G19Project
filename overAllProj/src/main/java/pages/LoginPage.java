@@ -5,18 +5,22 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with button ";
 
     public LoginPage(WebDriver exterDriver){
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        webDriverWait = new WebDriverWait(driver,30);
     }
 
     /**
@@ -85,8 +89,21 @@ public class LoginPage {
         }
     }
 
+    public MainPage clickButtonVhodWithNewPage(){
+        try{
+            driver.findElement(By.tagName("button")).click();
+            logger.info("Button vhod was clicked");
+        }catch (Exception e){
+            logger.error(errorButton + " 'Vhod'");
+            Assert.fail(errorButton + " 'Vhod'");
+        }
+        return new MainPage(driver);
+    }
+
     public boolean isFormLoginPresent(){
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("login-box-body")));
+//            webDriverWait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfAllElements()));
             return driver.findElement(By.className("login-box-body")).isDisplayed();
         }catch ( Exception e){
             return  false;
