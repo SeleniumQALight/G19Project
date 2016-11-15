@@ -1,28 +1,30 @@
 package mainPack;
 
-import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.LoginPage;
-import pages.MainPage;
+import pages.AllPages;
 
+@RunWith(value = Parameterized.class)
 public class ValidLogOn {
     WebDriver driver = new ChromeDriver();
-    Logger logger = Logger.getLogger(getClass());
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
+    AllPages allPages = new AllPages(driver);
+
+    String login, pass;
+
 
     @Test
     public void setUp() {
-        loginPage.logOn("Student", "909090");
-        mainPage.checkAvatar();
+        allPages.loginPage.logOn("Student", "909090");
+        allPages.mainPage.checkAvatar();
     }
 
     @After
     public void tearDown() {
-        loginPage.closeLoginPageAndBrowser();
+        allPages.loginPage.closeLoginPageAndBrowser();
     }
 
 }
