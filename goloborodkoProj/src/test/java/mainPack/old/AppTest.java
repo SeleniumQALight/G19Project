@@ -1,4 +1,4 @@
-package mainPack;
+package mainPack.old;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
