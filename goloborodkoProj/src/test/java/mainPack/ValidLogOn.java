@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.AllPages;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 @RunWith(value = Parameterized.class)
 public class ValidLogOn {
     WebDriver driver = new ChromeDriver();
@@ -15,10 +18,21 @@ public class ValidLogOn {
 
     String login, pass;
 
+    public ValidLogOn(String login, String pass) {
+        this.login = login;
+        this.pass = pass;
+    }
+
+    @Parameterized.Parameters
+    public static Collection testData(){
+        return Arrays.asList(new Object[][]{
+            {"Student", "909090"},{"Student", "909090"}
+        });
+    }
 
     @Test
     public void setUp() {
-        allPages.loginPage.logOn("Student", "909090");
+        allPages.loginPage.logOn(login, pass);
         allPages.mainPage.checkAvatar();
     }
 
