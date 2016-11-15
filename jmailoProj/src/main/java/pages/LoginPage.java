@@ -8,12 +8,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with button ";
 
@@ -33,6 +36,7 @@ public class LoginPage {
         this.driver=externalDriver;
         logger=Logger.getLogger(getClass());
         PageFactory.initElements(driver,this);
+        webDriverWait = new WebDriverWait(driver,30);
     }
 
     /**
@@ -104,8 +108,26 @@ public class LoginPage {
         }
     }
 
+    /**
+     * После клика на кнопку ожидаем главную сраницу (PageObject)
+     * @return
+     */
+    public MainPage clickButtonVhodWithNewPage(){
+        try{
+            button.click();
+            //driver.findElement(By.tagName("button")).click();
+            logger.info("Button Vhod was clicked");
+        }catch (Exception e) {
+            logger.error(errorButton + "Vhod");
+            Assert.fail(errorButton + "Vhod");
+        }
+        return new MainPage(driver);
+    }
+
     public boolean isFormLoginPresent(){
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("login-box-body")));
+            //webDriverWait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfAllElements()));
             return loginForm.isDisplayed();
             //return driver.findElement(By.className("login-box-body")).isDisplayed();
         }catch (Exception e){

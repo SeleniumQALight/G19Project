@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class ServiceEditorPage {
@@ -43,6 +44,7 @@ public class ServiceEditorPage {
     public ServiceEditorPage(WebDriver externalDriver){
         this.driver = externalDriver;
         logger=Logger.getLogger(getClass());
+        PageFactory.initElements(driver,this);
     }
 
     /**
@@ -94,8 +96,8 @@ public class ServiceEditorPage {
      */
     public void selectServiceDateDayInDd(String day){
         try {
-            //Select select = new Select(ddServiceDateDay);
-            Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_date_day")));
+            Select select = new Select(ddServiceDateDay);
+            //Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_date_day")));
             select.selectByValue(day);
             logger.info(day + okSelect);
 
@@ -111,8 +113,8 @@ public class ServiceEditorPage {
      */
     public void selectServiceDateMonthInDd(String month){
         try{
-            //Select select = new Select(ddServiceDateMonth);
-            Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_date_month")));
+            Select select = new Select(ddServiceDateMonth);
+            //Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_date_month")));
             select.selectByValue(month);
             logger.info(month + okSelect);
         }catch (Exception e){
@@ -127,8 +129,8 @@ public class ServiceEditorPage {
      */
     public void selectServiceDateYearInDd(String year){
         try {
-            //Select select = new Select(ddServiceDateYear);
-            Select select =     new Select(driver.findElement(By.id("service_apparat_serviceDate_date_year")));
+            Select select = new Select(ddServiceDateYear);
+            //Select select =     new Select(driver.findElement(By.id("service_apparat_serviceDate_date_year")));
             select.selectByValue(year);
             logger.info(year + okSelect);
         }catch (Exception e){
@@ -143,8 +145,8 @@ public class ServiceEditorPage {
      */
     public void selectServiceDateHourInDd(String hour){
         try {
-            //Select select = new Select(ddServiceDateHour);
-            Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_time_hour")));
+            Select select = new Select(ddServiceDateHour);
+            //Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_time_hour")));
             select.selectByValue(hour);
             logger.info(hour + okSelect);
         }catch (Exception e){
@@ -159,8 +161,8 @@ public class ServiceEditorPage {
      */
     public void selectServiceDateMinuteInDd(String minute){
         try {
-            //Select select = new Select(ddServiceDateMinute);
-            Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_time_minute")));
+            Select select = new Select(ddServiceDateMinute);
+            //Select select = new Select(driver.findElement(By.id("service_apparat_serviceDate_time_minute")));
             select.selectByValue(minute);
             logger.info(minute + okSelect);
         }catch (Exception e){
@@ -175,8 +177,8 @@ public class ServiceEditorPage {
      */
     public void selectApparatInDd(String apparat){
         try {
-            //Select select = new Select(ddApparat);
-            Select select =new Select(driver.findElement(By.id("service_apparat_apparat")));
+            Select select = new Select(ddApparat);
+            //Select select =new Select(driver.findElement(By.id("service_apparat_apparat")));
             select.selectByVisibleText(apparat);
             logger.info(apparat + okSelect);
         }catch (Exception e){
@@ -191,8 +193,8 @@ public class ServiceEditorPage {
      */
     public void selectWorkerInDd(String worker){
         try {
-            //Select select = new Select(ddWorker);
-            Select select = new Select(driver.findElement(By.id("service_apparat_worker")));
+            Select select = new Select(ddWorker);
+            //Select select = new Select(driver.findElement(By.id("service_apparat_worker")));
             select.selectByVisibleText(worker);
             logger.info(worker + okSelect);
         }catch (Exception e){

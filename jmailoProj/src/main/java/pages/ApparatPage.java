@@ -50,6 +50,7 @@ public class ApparatPage {
      */
     public  void checkRecord(String apparatRecord){
         try {
+            Thread.sleep(3000);
             driver.findElement(By.xpath(".//td[text()="+apparatRecord+"]"));
             //driver.findElement(By.partialLinkText(record));
             logger.info(okInput + apparatRecord);
