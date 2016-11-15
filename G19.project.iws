@@ -203,7 +203,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DealDelete.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DealDelete.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
@@ -243,7 +243,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProviderPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProviderPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-34">
@@ -1129,7 +1129,7 @@
       <workItem from="1478020472339" duration="8873000" />
       <workItem from="1478034656134" duration="41000" />
       <workItem from="1479214897739" duration="277000" />
-      <workItem from="1479216789156" duration="1392000" />
+      <workItem from="1479216789156" duration="1411000" />
     </task>
     <task id="LOCAL-00001" summary="QA commit to main branch">
       <created>1479216839701</created>
@@ -1138,7 +1138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479216839701</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="QA commit to main branch">
+      <created>1479219517013</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1479219517013</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1174,7 +1181,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10583000" />
+    <option name="totallyTimeSpent" value="10602000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1615,14 +1622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1651,6 +1650,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
           <folding />
         </state>
       </provider>
