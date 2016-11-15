@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +19,7 @@ public class LoginPage {
 
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with button ";
 
@@ -36,6 +39,7 @@ public class LoginPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver,this);
+        webDriverWait = new WebDriverWait(driver, 30);
     }
 
     /**
@@ -126,6 +130,7 @@ public class LoginPage {
      */
     public boolean isFormLoginInPresent() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("login-box-body")));
             //return driver.findElement(By.className("login-box-body")).isDisplayed();
             return  loginForm.isDisplayed();
         } catch (Exception e) {
@@ -145,4 +150,19 @@ public class LoginPage {
         enterPassword(pass);
         clickButtonVhod();
     }
+    /**
+    public void  clickButton(){
+        try {
+            //driver.findElement(By.tagName("button")).click();
+            button.click();
+            logger.info("Button Vhod was click ");
+
+        } catch (Exception e) {
+            logger.error(errorButton + " 'Vhod'");
+            Assert.fail(errorButton + "'Vhod' ");
+        }
+        return new HomePage(driver);
+
+    }
+    */
 }
