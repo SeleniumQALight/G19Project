@@ -1,7 +1,5 @@
 package mainPack;
 
-//import org.apache.xpath.operations.String;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.*;
 
 
-public class DealCreate {
+public class DealDelete {
     WebDriver driver = new FirefoxDriver();
     LoginPage loginPage = new LoginPage(driver);
     MainPage mainPage = new MainPage(driver);
@@ -40,21 +38,18 @@ public class DealCreate {
     String valueDDCustomerOfDeal = "Лукашин Олег Степанович";
     String valueDDProviderOfDeal = "ЧП \"Рога и Копыта\"";
 
-
     @Test
     public void CreateDeal() {
         loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSdelkiOnMainPage();
         Assert.assertTrue(dealsPage.checkDealsPage());
-        dealsPage.buttonAdd();
-        Assert.assertTrue(dealsEditPage.checkDealsEditPage());
-        dealsEditPage.DDDateOfDeal(valueDDDayOfDeal, valueDDMonthOfDeal, valueDDYearOfDeal, valueDDHourOfDeal, valueDDMinuteOfDeal);
-        dealsEditPage.DDParametersOfDeal(valueDDTypeOfdeal, valueDDCustomerOfDeal, valueDDProviderOfDeal);
-        dealsEditPage.createButton();
-        Assert.assertTrue(dealsPage.checkDealsPage());
         Assert.assertTrue(dealsPage.checkDealIsPresent(dealFulldate));
-
+        dealsPage.clickDeal(dealFulldate);
+        Assert.assertTrue(dealsEditPage.checkDealsEditPage());
+        dealsEditPage.deleteButton();
+        Assert.assertTrue(dealsPage.checkDealsPage());
+        Assert.assertFalse(dealsPage.checkDealIsPresent(dealFulldate));
     }
 
     @After
