@@ -23,9 +23,9 @@ public class WorkersPage {
     final String wasClicked = " Was clicked";
     final String wasEntered = " Was entered";
 
-    @FindBy (xpath = ".//h3[contains(text(),'Список сотрудников')]")
+    @FindBy(xpath = ".//h3[contains(text(),'Список сотрудников')]")
     WebElement chekWorkerPageElement;
-    @FindBy (xpath = ".//*[@class='fa fa-plus']")
+    @FindBy(xpath = ".//*[@class='fa fa-plus']")
     WebElement buttonAddPlus;
 
     public WorkersPage(WebDriver exterDriver) {
@@ -34,15 +34,16 @@ public class WorkersPage {
         PageFactory.initElements(driver, this);
 
     }
-/**
- * check the page is WorkersPage
- */
-    public boolean checkWorkersPage(){
+
+    /**
+     * check the page is WorkersPage
+     */
+    public boolean checkWorkersPage() {
         try {
             logger.info("If you dont see next message - Cant check WorkersPage, that's meens All Ok");
-            return  chekWorkerPageElement.isDisplayed();
+            return chekWorkerPageElement.isDisplayed();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Cant check WorkersPage");
             return false;
         }
@@ -50,6 +51,7 @@ public class WorkersPage {
 
     /**
      * check the test worker was created
+     *
      * @return
      */
     public boolean checkWorkerIsPresent(String workerFullName) {
@@ -57,15 +59,16 @@ public class WorkersPage {
             logger.info("If you dont see next message - Sotrudnik ne sozdan, that's meens All Ok");
             return driver.findElement(By.xpath(".//td[text()='" + workerFullName + "']")).isDisplayed();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(workerFullName + " not created");
             return false;
         }
     }
+
     /**
      * Clousing page and browser
      */
-    public void clouseWorkerPageAndBrowser(){
+    public void clouseWorkerPageAndBrowser() {
         driver.quit();
         logger.info("Worker page and browser was cloused");
     }
@@ -84,9 +87,9 @@ public class WorkersPage {
         }
     }
 
-        /**
-         * Find test worker an click
-         */
+    /**
+     * Find test worker an click
+     */
 
     public void findWorker(String workerFullName) {
         try {

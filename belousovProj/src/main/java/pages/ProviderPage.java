@@ -22,9 +22,9 @@ public class ProviderPage {
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
 
-    @FindBy (xpath = ".//h1[contains(text(),'Стороны сделок')]")
+    @FindBy(xpath = ".//h1[contains(text(),'Стороны сделок')]")
     WebElement checkProviderPageElement;
-    @FindBy (xpath = ".//*[@class='fa fa-plus']")
+    @FindBy(xpath = ".//*[@class='fa fa-plus']")
     WebElement buttonAddPlus;
 
     public ProviderPage(WebDriver exterDraiver) {
@@ -38,44 +38,46 @@ public class ProviderPage {
         try {
             logger.info("If you dont see next message - Can't check the ProviderPage, that's meens All Ok");
             return checkProviderPageElement.isDisplayed();
-         }catch (Exception e){
+        } catch (Exception e) {
             logger.fatal("Can't check ProviderPage");
             return false;
-     }
+        }
     }
 
-    public void findProvader(String proCustName){
+    public void findProvader(String proCustName) {
         try {
             driver.findElement(By.xpath(".//td[contains(text(),'" + proCustName + "')]")).click();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotFind + proCustName);
             Assert.fail(canNotFind + proCustName);
         }
     }
 
-    public boolean checkProviderIsPresent (String proCustName){
+    public boolean checkProviderIsPresent(String proCustName) {
         try {
-            logger.info("If you dont see next message -" +  canNotFind + proCustName +  ", that's meens All Ok");
+            logger.info("If you dont see next message -" + canNotFind + proCustName + ", that's meens All Ok");
             return driver.findElement(By.xpath(".//td[contains(text(),'" + proCustName + "')]")).isDisplayed();
-        }catch (Exception e){
-            logger.fatal(canNotFind  + proCustName);
+        } catch (Exception e) {
+            logger.fatal(canNotFind + proCustName);
             return false;
         }
     }
+
     public void buttonAdd() {
         try {
             buttonAddPlus.click();
             logger.info("Plus + " + wasClicked);
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error(canNotFind + "Plus + ");
             Assert.fail(canNotFind + "Plus + ");
+        }
     }
-}
+
     /**
      * Clousing page and browser
      */
-    public void clouseProviderPageAndBrowser(){
+    public void clouseProviderPageAndBrowser() {
         driver.quit();
         logger.info("DealsPage and browser was cloused");
     }

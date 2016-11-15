@@ -1,6 +1,7 @@
 package mainPack;
 
 //import org.apache.xpath.operations.String;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
@@ -30,31 +31,34 @@ public class DealCreate {
     String valueDDYearOfDeal = "2012";
     String valueDDHourOfDeal = "11";
     String valueDDMinuteOfDeal = "58";
-    String dealFulldate = valueDDDayOfDeal+"."+"0"+valueDDMonthOfDeal+"."+valueDDYearOfDeal+" "+valueDDHourOfDeal+":"+valueDDMinuteOfDeal;
+    String dealFulldate = valueDDDayOfDeal + "." + "0" + valueDDMonthOfDeal + "." + valueDDYearOfDeal + " " + valueDDHourOfDeal + ":" + valueDDMinuteOfDeal;
 
     /**
      * Value for DD ParametersOfDeal
-      */
+     */
     String valueDDTypeOfdeal = "Бонус";
     String valueDDCustomerOfDeal = "Лукашин Олег Степанович";
     String valueDDProviderOfDeal = "ЧП \"Рога и Копыта\"";
 
 
     @Test
-    public void CreateDeal(){
+    public void CreateDeal() {
         loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSdelkiOnMainPage();
         Assert.assertTrue(dealsPage.checkDealsPage());
         dealsPage.buttonAdd();
         Assert.assertTrue(dealsEditPage.checkDealsEditPage());
-        dealsEditPage.DDDateOfDeal(valueDDDayOfDeal, valueDDMonthOfDeal,valueDDYearOfDeal, valueDDHourOfDeal, valueDDMinuteOfDeal);
+        dealsEditPage.DDDateOfDeal(valueDDDayOfDeal, valueDDMonthOfDeal, valueDDYearOfDeal, valueDDHourOfDeal, valueDDMinuteOfDeal);
         dealsEditPage.DDParametersOfDeal(valueDDTypeOfdeal, valueDDCustomerOfDeal, valueDDProviderOfDeal);
         dealsEditPage.createButton();
         Assert.assertTrue(dealsPage.checkDealsPage());
         Assert.assertTrue(dealsPage.checkDealIsPresent(dealFulldate));
 
     }
+
     @After
-    public void tearDown() {dealsPage.clouseDealsPageAndBrowser();}
+    public void tearDown() {
+        dealsPage.clouseDealsPageAndBrowser();
+    }
 }

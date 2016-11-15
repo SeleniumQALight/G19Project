@@ -29,7 +29,7 @@ public class DealDelete {
     String valueDDYearOfDeal = "2012";
     String valueDDHourOfDeal = "11";
     String valueDDMinuteOfDeal = "58";
-    String dealFulldate = valueDDDayOfDeal+"."+"0"+valueDDMonthOfDeal+"."+valueDDYearOfDeal+" "+valueDDHourOfDeal+":"+valueDDMinuteOfDeal;
+    String dealFulldate = valueDDDayOfDeal + "." + "0" + valueDDMonthOfDeal + "." + valueDDYearOfDeal + " " + valueDDHourOfDeal + ":" + valueDDMinuteOfDeal;
 
     /**
      * Value for DD ParametersOfDeal
@@ -39,8 +39,8 @@ public class DealDelete {
     String valueDDProviderOfDeal = "ЧП \"Рога и Копыта\"";
 
     @Test
-    public void CreateDeal(){
-    loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+    public void CreateDeal() {
+        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSdelkiOnMainPage();
         Assert.assertTrue(dealsPage.checkDealsPage());
@@ -51,6 +51,9 @@ public class DealDelete {
         Assert.assertTrue(dealsPage.checkDealsPage());
         Assert.assertFalse(dealsPage.checkDealIsPresent(dealFulldate));
     }
+
     @After
-    public void tearDown() {dealsPage.clouseDealsPageAndBrowser();}
+    public void tearDown() {
+        dealsPage.clouseDealsPageAndBrowser();
+    }
 }

@@ -17,7 +17,7 @@ public class InvalidLogOn {
 
 
     @Test
-    public void setUp(){
+    public void setUp() {
         loginPage.openBrowserAndLoginPage();
         loginPage.enterUserName("Student");
         loginPage.enterUserPassword("906090");
@@ -25,8 +25,9 @@ public class InvalidLogOn {
         Assert.assertTrue(loginPage.isFormLoginPresent());
 
     }
+
     @After
-    public  void tearDown(){
+    public void tearDown() {
         loginPage.clouseLoginPageAndBrowser();
     }
 }

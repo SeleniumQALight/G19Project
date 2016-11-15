@@ -24,30 +24,30 @@ public class ProviderEditPage {
     final String wasEntered = " Was entered";
     final String inField = "In field ";
 
-    @FindBy (xpath = ".//input[@id='prov_cus_proCustIsFl']")
+    @FindBy(xpath = ".//input[@id='prov_cus_proCustIsFl']")
     WebElement checkProviderEditPageElement;
     /**
      * Fields parameters
      */
-    @FindBy (xpath = ".//input[@id='prov_cus_proCustName']")
+    @FindBy(xpath = ".//input[@id='prov_cus_proCustName']")
     WebElement fieldProCustNameOnPEP;
-    @FindBy (xpath = ".//input[@id='prov_cus_proCustAddress']")
+    @FindBy(xpath = ".//input[@id='prov_cus_proCustAddress']")
     WebElement fieldProCustAddressOnPEP;
-    @FindBy (xpath = ".//input[@id='prov_cus_proCustPhone']")
+    @FindBy(xpath = ".//input[@id='prov_cus_proCustPhone']")
     WebElement fieldProCustPhoneOnPEP;
     /**
      * Checkbox parameters
      */
-    @FindBy (xpath = ".//input[@id='prov_cus_proCustIsFl']")
+    @FindBy(xpath = ".//input[@id='prov_cus_proCustIsFl']")
     WebElement checkBoxPrivatePersonOnPEP;
-    @FindBy (xpath = ".//input[@id='prov_cus_isOurFirm']")
+    @FindBy(xpath = ".//input[@id='prov_cus_isOurFirm']")
     WebElement checkBoxIsOurFirmOnPEP;
     /**
-     *Buttons
+     * Buttons
      */
-    @FindBy (xpath = ".//button[@name='add']")
+    @FindBy(xpath = ".//button[@name='add']")
     WebElement createButton;
-    @FindBy (xpath = ".//button[@name='delete']")
+    @FindBy(xpath = ".//button[@name='delete']")
     WebElement deleteButon;
 
     public ProviderEditPage(WebDriver exterDriver) {
@@ -55,25 +55,27 @@ public class ProviderEditPage {
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
     }
-/**
- * Check the page is ProviderEditPage
- */
 
-public boolean checkProviderEditPage () {
-    try {
-        logger.info("If you dont see next message - Cant check ProviderEditPage, that's meens All Ok");
-        return checkProviderEditPageElement.isDisplayed();
-    }catch (Exception e){
-        logger.error("Cant check ProviderEditPage");
-        return false;
-    }
+    /**
+     * Check the page is ProviderEditPage
+     */
+
+    public boolean checkProviderEditPage() {
+        try {
+            logger.info("If you dont see next message - Cant check ProviderEditPage, that's meens All Ok");
+            return checkProviderEditPageElement.isDisplayed();
+        } catch (Exception e) {
+            logger.error("Cant check ProviderEditPage");
+            return false;
+        }
     }
 
     /**
      * nter value in field fieldProCustName
+     *
      * @param proCustName
      */
-    public void fieldProCustName (String proCustName) {
+    public void fieldProCustName(String proCustName) {
         try {
             fieldProCustNameOnPEP.sendKeys(proCustName);
             logger.info(inField + fieldProCustNameOnPEP + wasEntered + proCustName);
@@ -85,14 +87,15 @@ public boolean checkProviderEditPage () {
 
     /**
      * Enter value in fieldroCustAddress
+     *
      * @param proCustAddress
      */
-    public void fieldroCustAddresss (String proCustAddress) {
+    public void fieldroCustAddresss(String proCustAddress) {
         try {
             fieldProCustAddressOnPEP.sendKeys(proCustAddress);
             logger.info(inField + fieldProCustAddressOnPEP + wasEntered + proCustAddress);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotWork + fieldProCustAddressOnPEP);
             Assert.fail(canNotWork + fieldProCustAddressOnPEP);
         }
@@ -100,63 +103,84 @@ public boolean checkProviderEditPage () {
 
     /**
      * Enter value in fieldProCustPhone
+     *
      * @param proCustPhone
      */
-    public void fieldProCustPhone (String proCustPhone){
+    public void fieldProCustPhone(String proCustPhone) {
         try {
             fieldProCustPhoneOnPEP.sendKeys(proCustPhone);
             logger.info(inField + fieldProCustPhoneOnPEP + wasEntered + proCustPhone);
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error(canNotWork + fieldProCustPhoneOnPEP);
             Assert.fail(canNotWork + fieldProCustPhoneOnPEP);
         }
 
     }
 
-    public void checkBoxPrivatePerson (){
+    /**
+     * CheckBox
+     */
+    public void checkBoxPrivatePerson() {
         try {
             checkBoxPrivatePersonOnPEP.click();
             logger.info(checkBoxPrivatePersonOnPEP + wasClicked);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotWork + checkBoxPrivatePersonOnPEP);
             Assert.fail(canNotWork + checkBoxPrivatePersonOnPEP);
         }
     }
+
+    /**
+     * click create button
+     */
     public void createButton() {
         try {
             createButton.click();
             logger.info("Button Add" + wasClicked);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotWork + "Button Add");
             Assert.fail(canNotWork + "Button Add");
         }
     }
+
     /**
      * click Delete button
      */
-    public void deleteButton(){
+    public void deleteButton() {
         try {
             waitSomeSec(1);
             deleteButon.click();
             logger.info("Button Delete" + wasClicked);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotFind + "button delete");
             Assert.fail(canNotWork + "button delete");
         }
     }
-    public void enterValueInFields (String proCustName, String proCustAddress, String proCustPhone)
-    {
+
+    /**
+     * Enter value in fields fo Provider
+     *
+     * @param proCustName
+     * @param proCustAddress
+     * @param proCustPhone
+     */
+    public void enterValueInFields(String proCustName, String proCustAddress, String proCustPhone) {
         fieldProCustName(proCustName);
         fieldroCustAddresss(proCustAddress);
         fieldProCustPhone(proCustPhone);
 
     }
 
-    private  void waitSomeSec(int sec) {
+    /**
+     * pause for some seconds
+     *
+     * @param sec
+     */
+    private void waitSomeSec(int sec) {
         try {
-            Thread.sleep(sec *1000);
-        }catch (InterruptedException e){
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
 
         }

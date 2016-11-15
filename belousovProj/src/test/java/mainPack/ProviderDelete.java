@@ -28,11 +28,9 @@ public class ProviderDelete {
     String proCustPhone = "Customer's Phone For Test";
 
 
-
-
     @Test
-    public void providerDelete(){
-    loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+    public void providerDelete() {
+        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSideofDealsOnMainPage();
         Assert.assertTrue(providerPage.checkProviderPage());

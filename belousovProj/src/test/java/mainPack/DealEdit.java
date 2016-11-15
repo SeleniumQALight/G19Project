@@ -24,7 +24,7 @@ public class DealEdit {
     String workerPhoneNumber = "+380505050505";
 
     @Test
-    public void CreateDeal(){
+    public void CreateDeal() {
         loginPage.openBrowserAndLoginPage();
         loginPage.enterUserName(loginNameForLoginPage);
         loginPage.enterUserPassword(passwordForLoginPage);
@@ -35,6 +35,8 @@ public class DealEdit {
         dealsPage.buttonAdd();
 
     }
+
     @After
-    public void tearDown() {}
+    public void tearDown() {
+    }
 }

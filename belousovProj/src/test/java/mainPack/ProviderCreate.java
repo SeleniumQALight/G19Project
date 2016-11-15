@@ -29,24 +29,24 @@ public class ProviderCreate {
     String proCustPhone = "Customer's Phone For Test";
 
 
-
-
     @Test
-    public void CreateDeal(){
+    public void CreateDeal() {
         loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSideofDealsOnMainPage();
         Assert.assertTrue(providerPage.checkProviderPage());
         providerPage.buttonAdd();
         Assert.assertTrue(providerEditPage.checkProviderEditPage());
-        providerEditPage.enterValueInFields(proCustName,proCustAddress,proCustPhone);
+        providerEditPage.enterValueInFields(proCustName, proCustAddress, proCustPhone);
         providerEditPage.checkBoxPrivatePerson();
         providerEditPage.createButton();
         Assert.assertTrue(providerPage.checkProviderPage());
 
 
-
     }
+
     @After
-    public void tearDown() {providerPage.clouseProviderPageAndBrowser();}
+    public void tearDown() {
+        providerPage.clouseProviderPageAndBrowser();
+    }
 }
