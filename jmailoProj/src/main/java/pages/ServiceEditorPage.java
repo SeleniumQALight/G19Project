@@ -31,7 +31,7 @@ public class ServiceEditorPage {
     @FindBy(id ="service_apparat_serviceDate_time_hour")
     WebElement ddServiceDateHour;
 
-    @FindBy(id ="'service_apparat_serviceDate_time_minute")
+    @FindBy(id ="service_apparat_serviceDate_time_minute")
     WebElement ddServiceDateMinute;
 
     @FindBy(id ="service_apparat_apparat")

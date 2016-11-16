@@ -29,13 +29,13 @@ public class TestAddWorker {
         workerPage.isWorkerPagePresent();
         workerPage.clickOnPlusButton();
         workerEditorPage.isWorkerEditorPagePresent();
-        workerEditorPage.enterWorkerSurname("Ivanov");
-        workerEditorPage.enterWorkerName("Ivan");
-        workerEditorPage.enterWorkerMiddleName("Ivanovych");
+        workerEditorPage.enterWorkerSurname("Petrenko");
+        workerEditorPage.enterWorkerName("Petro");
+        workerEditorPage.enterWorkerMiddleName("Petrovych");
         workerEditorPage.enterWorkerPhoneNumber("+380501000001");
         workerEditorPage.clickOnButtonAdd();
         workerPage.isWorkerPagePresent();
-        workerPage.checkRecord("Ivanov");
+        workerPage.checkRecord("Petrenko");
         //workerPage.checkRecord("+380501000001");
     }
 
