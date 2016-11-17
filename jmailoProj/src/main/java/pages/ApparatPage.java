@@ -51,8 +51,8 @@ public class ApparatPage {
     public  void checkRecord(String apparatRecord){
         try {
             //Thread.sleep(3000);
-            //driver.findElement(By.xpath(".//td[text()="+apparatRecord+"]")).isDisplayed();
-            driver.findElement(By.xpath(".//td[contains(text(),"+apparatRecord+")]")).isDisplayed();
+            driver.findElement(By.xpath(".//td[text()='"+apparatRecord+"']")).isDisplayed();
+            //driver.findElement(By.xpath(".//td[contains(text(),"+apparatRecord+")]")).isDisplayed();
             logger.info(okInput + apparatRecord);
         }catch (Exception e){
             logger.error("Can't find record: " + apparatRecord);

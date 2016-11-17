@@ -7,12 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput="Can't work with input ";
     final String errorButton="Can't work with button ";
     final String inputText=" was entered";
@@ -33,6 +37,7 @@ public class LoginPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver,30);
     }
 
     /**
@@ -102,6 +107,17 @@ public class LoginPage {
         }
 
     }
+//возвращаем новую страницу после клика на кнопку 'Vhod'
+    public MainPage clickButtonVhodWithNewPage(){
+        try{
+            button.click();
+            logger.info("Button 'Vhod' was clicked");
+        }catch (Exception e){
+            logger.error(errorButton + "Vhod");
+            Assert.fail(errorButton + "Vhod");
+        }
+        return new MainPage(driver);
+    }
 
     /**
      *
@@ -109,6 +125,11 @@ public class LoginPage {
      */
     public boolean isFormLoginPresent(){
         try{
+            //подождать пока будет отображена форма, если показана, то все ок
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("login-box-body")));
+            webDriverWait.until(ExpectedConditions.visibilityOf(loginForm)); //если есть пейджобжект
+            //подождать пока НЕ будет отображена форма, если форма не отображжена, то все ок
+            //webDriverWait.until(ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated(By.className("login-box-body"))));
           return loginForm.isDisplayed();
         }catch (Exception e){
           return false;
