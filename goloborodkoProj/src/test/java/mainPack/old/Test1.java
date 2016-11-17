@@ -1,4 +1,4 @@
-package mainPack;
+package mainPack.old;
 
 import org.junit.Test;
 
