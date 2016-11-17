@@ -35,8 +35,8 @@ public class TestAddWorker {
         workerEditorPage.enterWorkerPhoneNumber("+380501000001");
         workerEditorPage.clickOnButtonAdd();
         workerPage.isWorkerPagePresent();
-        workerPage.checkRecord("Petrenko");
-        //workerPage.checkRecord("+380501000001");
+        workerPage.checkRecord("Petrenko Petro Petrovych");
+        workerPage.checkRecord("+380501000001");
     }
 
     @After

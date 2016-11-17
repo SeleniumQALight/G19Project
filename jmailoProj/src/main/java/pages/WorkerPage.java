@@ -50,7 +50,7 @@ public class WorkerPage {
     public  void checkRecord(String workerRecord){
         try {
             //driver.findElement(By.xpath(".//td[text()="+workerRecord+"]")).isDisplayed();
-            driver.findElement(By.xpath(".//td[contains(text(),"+workerRecord+")]")).isDisplayed();
+            driver.findElement(By.xpath(".//td[text()='"+workerRecord+"']")).isDisplayed();
             logger.info(okInput + workerRecord);
         }catch (Exception e){
             logger.error("Can't find record " + workerRecord);

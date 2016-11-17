@@ -1,6 +1,7 @@
 package pages;
 
 
+import libs.ConfigData;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -46,7 +47,8 @@ public class LoginPage {
         try{
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            driver.get("http://v3.test.itpmgroup.com/login");
+            //driver.get("http://v3.test.itpmgroup.com/login");
+            driver.get(ConfigData.getCfgValue("BASE_URL") +"/login");
             logger.info("Page Login was opened");
         } catch (Exception e) {
             logger.error("Can not work with browser");
@@ -83,6 +85,7 @@ public class LoginPage {
      */
     public void enterPassword(String pass){
         try{
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_password")));
             inputPassword.clear();
             inputPassword.sendKeys(pass);
             logger.info(pass + " was entered");
