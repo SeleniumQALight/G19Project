@@ -32,6 +32,7 @@ public class TestAddSparePart {
         sparesEditorPage.clickONButtonAdd();
         sparesPage.isSparesPageOpened();
         sparesPage.checkRecord("Turbocharger");
+        sparesPage.checkRecord("Механика");
     }
 
     @After

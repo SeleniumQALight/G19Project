@@ -89,6 +89,7 @@ public class SparesEditorPage {
             Assert.fail(errorButton + "Create");
         }
     }
+
     public void clickOnDd(){
         try {
             driver.findElement(By.id("spares_spareType")).click();
