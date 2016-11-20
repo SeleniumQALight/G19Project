@@ -21,12 +21,12 @@ public class DealsPage {
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
 
-    @FindBy (xpath = ".//h3[contains(text(),'Список сделок')]")
+    @FindBy(xpath = ".//h3[contains(text(),'Список сделок')]")
     WebElement checkDealsPageElement;
-    @FindBy (xpath = ".//*[@class='fa fa-plus']")
+    @FindBy(xpath = ".//*[@class='fa fa-plus']")
     WebElement buttonAddPlus;
 
-    public DealsPage (WebDriver exterDraiver) {
+    public DealsPage(WebDriver exterDraiver) {
         this.driver = exterDraiver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
@@ -37,44 +37,48 @@ public class DealsPage {
         try {
             logger.info("If you dont see next message - Can't check the DealsPage, that's meens All Ok");
             return checkDealsPageElement.isDisplayed();
-         }catch (Exception e){
+        } catch (Exception e) {
             logger.fatal("Can't check DealsPage");
             return false;
-     }
+        }
     }
-    public boolean checkDealIsPresent(String dealFulldate){
+
+    public boolean checkDealIsPresent(String dealFulldate) {
         try {
             logger.info("If you dont see next message - " + "Deal with date " + dealFulldate + " not present" + ", that's meens All Ok");
             return driver.findElement(By.xpath(".//td[text()='" + dealFulldate + "']")).isDisplayed();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Deal with date " + dealFulldate + " not present");
             return false;
         }
 
     }
-    public void clickDeal(String dealFuldate){
+
+    public void clickDeal(String dealFuldate) {
         try {
             driver.findElement(By.xpath(".//td[text()='" + dealFuldate + "']")).click();
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotFind + " Deal wit date " + dealFuldate);
             Assert.fail(canNotFind + " Deal wit date " + dealFuldate);
         }
 
     }
+
     public void buttonAdd() {
         try {
             buttonAddPlus.click();
             logger.info("Plus + " + wasClicked);
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error(canNotFind + "Plus + ");
             Assert.fail(canNotFind + "Plus + ");
+        }
     }
-}
+
     /**
      * Clousing page and browser
      */
-    public void clouseDealsPageAndBrowser(){
+    public void clouseDealsPageAndBrowser() {
         driver.quit();
         logger.info("DealsPage and browser was cloused");
     }

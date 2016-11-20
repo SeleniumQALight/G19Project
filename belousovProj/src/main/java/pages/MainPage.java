@@ -24,17 +24,17 @@ public class MainPage {
     final String wasClicked = " Was clicked";
 
 
-    @FindBy (xpath = ".//li[@id='dictionary']//a//*[text()='Словари']")
+    @FindBy(xpath = ".//li[@id='dictionary']//a//*[text()='Словари']")
     WebElement slovary;
-    @FindBy (xpath = ".//li[@id='workers']")
+    @FindBy(xpath = ".//li[@id='workers']")
     WebElement workers;
-    @FindBy (xpath = ".//li[@id='spares']")
+    @FindBy(xpath = ".//li[@id='spares']")
     WebElement spares;
-    @FindBy (xpath = ".//li[text()='Главная']")
+    @FindBy(xpath = ".//li[text()='Главная']")
     WebElement mainPage;
-    @FindBy (xpath = ".//*[@id='deal']")
+    @FindBy(xpath = ".//*[@id='deal']")
     WebElement sdelki;
-    @FindBy (xpath = ".//*[@id='prov_cus']")
+    @FindBy(xpath = ".//*[@id='prov_cus']")
     WebElement sideofDeals;
 
     public MainPage(WebDriver exterDriver) {
@@ -101,27 +101,28 @@ public class MainPage {
     /**
      * Open Spare page
      */
-    public void openSpareOnMainPge(){
+    public void openSpareOnMainPge() {
         try {
             waitSomeSec(1);
             spares.click();
             logger.info("Zapchasti" + wasClicked);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotWork + "Zapchasti");
             Assert.fail(canNotWork + "Zapchasti");
         }
 
 
     }
+
     /**
      * Openning Sdelki page
      */
-    public void openSdelkiOnMainPage (){
+    public void openSdelkiOnMainPage() {
         try {
             sdelki.click();
             logger.info("Sdelki" + wasClicked);
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(canNotFind + "Sdelki");
             Assert.fail(canNotFind + "Sdelki");
         }
@@ -130,25 +131,23 @@ public class MainPage {
     /**
      * Openning SideofDeals page
      */
-    public void openSideofDealsOnMainPage () {
+    public void openSideofDealsOnMainPage() {
         try {
             openSlovariOnMainPage();
             waitSomeSec(1);
             sideofDeals.click();
             logger.info("SideofDeals" + wasClicked);
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error(canNotFind + "SideofDeals");
             Assert.fail(canNotFind + "SideofDeals");
         }
     }
 
 
-
-
-    private  void waitSomeSec(int sec) {
+    private void waitSomeSec(int sec) {
         try {
-            Thread.sleep(sec *1000);
-        }catch (InterruptedException e){
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
 
         }

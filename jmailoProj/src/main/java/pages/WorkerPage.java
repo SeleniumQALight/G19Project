@@ -49,8 +49,8 @@ public class WorkerPage {
      */
     public  void checkRecord(String workerRecord){
         try {
-            driver.findElement(By.xpath(".//td[text()='Petrenko Petro Petrovych']"));
-            //driver.findElement(By.partialLinkText(record));
+            //driver.findElement(By.xpath(".//td[text()="+workerRecord+"]")).isDisplayed();
+            driver.findElement(By.xpath(".//td[text()='"+workerRecord+"']")).isDisplayed();
             logger.info(okInput + workerRecord);
         }catch (Exception e){
             logger.error("Can't find record " + workerRecord);

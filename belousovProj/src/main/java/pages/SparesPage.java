@@ -57,9 +57,6 @@ public class SparesPage {
     }
 
 
-
-
-
     /**
      * click add spare button
      */
@@ -84,34 +81,37 @@ public class SparesPage {
 
     /**
      * Check testSpare is present
+     *
      * @param spareName
      * @return
      */
-    public boolean checkTestSpare(String spareName){
+    public boolean checkTestSpare(String spareName) {
         try {
             logger.info("If you dont see next message - testSpare ne sozdan, that's meens All Ok");
-            return driver.findElement(By.xpath(".//td[text()='"+ spareName + "']")).isDisplayed();
+            return driver.findElement(By.xpath(".//td[text()='" + spareName + "']")).isDisplayed();
             //logger.info("Test spare" + wasClicked);
 
-        }catch (Exception e) {
-        logger.error("testSpare was not created");
-        return false;
+        } catch (Exception e) {
+            logger.error("testSpare was not created");
+            return false;
         }
 
     }
 
     /**
      * Click TestSpare
+     *
      * @param spareName
      */
-    public void clickTestSpare(String spareName){
+    public void clickTestSpare(String spareName) {
         try {
             driver.findElement(By.xpath(".//td[text()='" + spareName + "']")).click();
             logger.info("TestSpare" + spareName + wasClicked);
-        }catch (Exception e) {
-            logger.error(canNotFind +  "TestSpare" + spareName);
+        } catch (Exception e) {
+            logger.error(canNotFind + "TestSpare" + spareName);
         }
     }
+
     /**
      * wait method
      *

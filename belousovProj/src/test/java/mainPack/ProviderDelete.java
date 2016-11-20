@@ -20,24 +20,28 @@ public class ProviderDelete {
      */
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
-
-
+    /**
+     * value for provider
+     */
+    String proCustName = "New Customer For Test";
+    String proCustAddress = "Customer's address For Test";
+    String proCustPhone = "Customer's Phone For Test";
 
 
     @Test
-    public void CreateDeal(){
-    loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+    public void providerDelete() {
+        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSdelkiOnMainPage();
-        Assert.assertTrue(providerPage.checProviderPage());
-//
-//        Assert.assertTrue(dealsPage.checkDealIsPresent(dealFulldate));
-//        dealsPage.clickDeal(dealFulldate);
-//        Assert.assertTrue(dealsEditPage.checkDealsEditPage());
-//        dealsEditPage.deleteButton();
-//        Assert.assertTrue(dealsPage.checkDealsPage());
-//        Assert.assertFalse(dealsPage.checkDealIsPresent(dealFulldate));
+        mainPage.openSideofDealsOnMainPage();
+        Assert.assertTrue(providerPage.checkProviderPage());
+        providerPage.findProvader(proCustName);
+        Assert.assertTrue(providerEditPage.checkProviderEditPage());
+        providerEditPage.deleteButton();
+        Assert.assertTrue(providerPage.checkProviderPage());
+        Assert.assertFalse(providerPage.checkProviderIsPresent(proCustName));
+
+
     }
-    @After
-    public void tearDown() {providerPage.clouseProviderPageAndBrowser();}
+//    @After
+//    public void tearDown() {providerPage.clouseProviderPageAndBrowser();}
 }

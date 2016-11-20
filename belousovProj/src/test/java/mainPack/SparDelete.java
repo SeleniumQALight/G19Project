@@ -15,7 +15,8 @@ public class SparDelete {
     WebDriver driver = new FirefoxDriver();
     LoginPage loginPage = new LoginPage(driver);
     MainPage mainPage = new MainPage(driver);
-    EditSparePage editSparePage = new EditSparePage(driver);;
+    EditSparePage editSparePage = new EditSparePage(driver);
+    ;
     SparesPage sparesPage = new SparesPage(driver);
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
@@ -23,9 +24,9 @@ public class SparDelete {
 
 
     @Test
-    public void CreateWorker(){
+    public void CreateWorker() {
 
-        loginPage.logOn(loginNameForLoginPage,passwordForLoginPage);
+        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(mainPage.checkMainPage());
         mainPage.openSlovariOnMainPage();
         mainPage.openSpareOnMainPge();
@@ -37,6 +38,9 @@ public class SparDelete {
         Assert.assertTrue(sparesPage.checkSparesPage());
         Assert.assertFalse(sparesPage.checkTestSpare(spareName));
     }
+
     @After
-    public void tearDown() {sparesPage.clouseSparePageAndBrowser();}
+    public void tearDown() {
+        sparesPage.clouseSparePageAndBrowser();
+    }
 }

@@ -4,7 +4,10 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,9 +15,13 @@ public class DictWorkersPage {
     WebDriver driver;
     Logger logger;
 
+    @FindBy(className = "box-tools")
+    WebElement btnWithPlus;
+
     public DictWorkersPage(WebDriver exterDriver){
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
+        PageFactory.initElements(driver,this);
     }
 
     /**
@@ -42,7 +49,7 @@ public class DictWorkersPage {
      */
     public void addWorkersButtonClick(){
         try{
-            driver.findElement(By.className("box-tools")).click();
+            btnWithPlus.click();
             logger.info("Button '+' was clicked");
         }catch (Exception e){
             logger.error("Can't find button '+'");
