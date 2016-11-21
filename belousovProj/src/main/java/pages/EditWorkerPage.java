@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by dariia on 10/30/16.
@@ -14,6 +16,8 @@ import org.openqa.selenium.support.PageFactory;
 public class EditWorkerPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -35,6 +39,7 @@ public class EditWorkerPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver,30);
     }
 
     /**
@@ -45,6 +50,7 @@ public class EditWorkerPage {
     public boolean checkWorkerEditPage() {
         try {
             //Thread.sleep(1000);
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//input[@id='workers_workerSurname']")));
             logger.info("If you dont see next message - Cant check WorkerEditPage, that's meens All Ok");
             return workerSurnameField.isDisplayed();
         } catch (Exception e) {

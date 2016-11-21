@@ -6,10 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.EditWorkerPage;
-import pages.LoginPage;
-import pages.MainPage;
-import pages.WorkersPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,10 +15,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class WorkerCreate {
     WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    WorkersPage workersPage = new WorkersPage(driver);
-    EditWorkerPage editWorkerPage = new EditWorkerPage(driver);
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    WorkersPage workersPage = new WorkersPage(driver);
+//    EditWorkerPage editWorkerPage = new EditWorkerPage(driver);
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
     String workerSurname = "Тестовый";
@@ -33,25 +31,25 @@ public class WorkerCreate {
     @Test
     public void CreateWorker() {
 
-        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSlovariOnMainPage();
-        mainPage.openSotrudnikiOnMainPage();
-        workersPage.buttonAdd();
-        Assert.assertTrue(editWorkerPage.checkWorkerEditPage());
-        editWorkerPage.enterWorkerSurname(workerSurname);
-        editWorkerPage.enterWorkerName(workerName);
-        editWorkerPage.enterWorkerMidleName(workerMidleName);
-        editWorkerPage.enterWorkerPhoneNumber(workerPhoneNumber);
-        editWorkerPage.createButton();
-        Assert.assertTrue(workersPage.checkWorkersPage());
-        Assert.assertTrue(workersPage.checkWorkerIsPresent(workerFullName));
+        allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSlovariOnMainPage();
+        allPages.mainPage.openSotrudnikiOnMainPage();
+        allPages.workersPage.buttonAdd();
+        Assert.assertTrue(allPages.editWorkerPage.checkWorkerEditPage());
+        allPages.editWorkerPage.enterWorkerSurname(workerSurname);
+        allPages.editWorkerPage.enterWorkerName(workerName);
+        allPages.editWorkerPage.enterWorkerMidleName(workerMidleName);
+        allPages.editWorkerPage.enterWorkerPhoneNumber(workerPhoneNumber);
+        allPages.editWorkerPage.createButton();
+        Assert.assertTrue(allPages.workersPage.checkWorkersPage());
+        Assert.assertTrue(allPages.workersPage.checkWorkerIsPresent(workerFullName));
 
 
     }
 
     @After
     public void tearDown() {
-        workersPage.clouseWorkerPageAndBrowser();
+        allPages.workersPage.clouseWorkerPageAndBrowser();
     }
 }

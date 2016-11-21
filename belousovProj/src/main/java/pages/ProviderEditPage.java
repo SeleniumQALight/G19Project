@@ -3,11 +3,14 @@ package pages;
 import org.apache.log4j.Logger;
 //import org.apache.xpath.operations.String;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 //import org.apache.xpath.operations.String;
 
@@ -15,6 +18,8 @@ import org.openqa.selenium.support.ui.Select;
 public class ProviderEditPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -54,6 +59,8 @@ public class ProviderEditPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver,30);
+
     }
 
     /**
@@ -62,6 +69,7 @@ public class ProviderEditPage {
 
     public boolean checkProviderEditPage() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//input[@id='prov_cus_proCustIsFl']")));
             logger.info("If you dont see next message - Cant check ProviderEditPage, that's meens All Ok");
             return checkProviderEditPageElement.isDisplayed();
         } catch (Exception e) {
