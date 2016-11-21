@@ -11,4 +11,6 @@ target/test-classes
 target/site
 
 *.log
+*.iml
+*.iws
 
