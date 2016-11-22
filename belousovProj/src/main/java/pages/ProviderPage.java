@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by user on 31-Oct-16.
@@ -15,6 +17,8 @@ import org.openqa.selenium.support.PageFactory;
 public class ProviderPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -31,11 +35,14 @@ public class ProviderPage {
         this.driver = exterDraiver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver,30);
+
 
     }
 
     public boolean checkProviderPage() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//h1[contains(text(),'Стороны сделок')]")));
             logger.info("If you dont see next message - Can't check the ProviderPage, that's meens All Ok");
             return checkProviderPageElement.isDisplayed();
         } catch (Exception e) {
