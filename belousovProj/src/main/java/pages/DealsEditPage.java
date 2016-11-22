@@ -1,18 +1,23 @@
 package pages;
 
+import junit.framework.Assert;
 import org.apache.log4j.Logger;
-//import org.apache.xpath.operations.String;
-import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 public class DealsEditPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -36,7 +41,7 @@ public class DealsEditPage {
     WebElement ddHourOfDeal;
     @FindBy(id = "deal_dealDate_time_minute")
     WebElement ddMinuteOfDeal;
-    @FindBy(id = "deal_dealType")
+    @FindBy (xpath = ".//select[@id='deal_dealType']")
     WebElement ddTypeOfdeal;
     @FindBy(id = "deal_customer")
     WebElement ddCustomerOfDeal;
@@ -55,6 +60,7 @@ public class DealsEditPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver,30);
     }
 
     /**
@@ -63,6 +69,7 @@ public class DealsEditPage {
 
     public boolean checkDealsEditPage() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//label[contains(text(),'Deal date')]")));
             logger.info("If you dont see next message - Can't check the DealsPage, that's meens All Ok");
             return checkDealsEditPageElement.isDisplayed();
         } catch (Exception e) {

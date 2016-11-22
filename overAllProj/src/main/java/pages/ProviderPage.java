@@ -1,23 +1,20 @@
 package pages;
 
 import org.apache.log4j.Logger;
+import org.apache.xerces.impl.xpath.XPath;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by user on 31-Oct-16.
  */
-public class DealsPage {
+public class ProviderPage {
     WebDriver driver;
     Logger logger;
-    WebDriverWait webDriverWait;
-
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -25,50 +22,46 @@ public class DealsPage {
     final String wasOpened = " Was opened";
     final String wasClicked = " Was clicked";
 
-    @FindBy(xpath = ".//h3[contains(text(),'Список сделок')]")
-    WebElement checkDealsPageElement;
+    @FindBy(xpath = ".//h1[contains(text(),'Стороны сделок')]")
+    WebElement checkProviderPageElement;
     @FindBy(xpath = ".//*[@class='fa fa-plus']")
     WebElement buttonAddPlus;
 
-    public DealsPage(WebDriver exterDraiver) {
+    public ProviderPage(WebDriver exterDraiver) {
         this.driver = exterDraiver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
-        webDriverWait = new WebDriverWait(driver,30);
 
     }
 
-    public boolean checkDealsPage() {
+    public boolean checkProviderPage() {
         try {
-            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//h3[contains(text(),'Список сделок')]")));
-            logger.info("If you dont see next message - Can't check the DealsPage, that's meens All Ok");
-            return checkDealsPageElement.isDisplayed();
+            logger.info("If you dont see next message - Can't check the ProviderPage, that's meens All Ok");
+            return checkProviderPageElement.isDisplayed();
         } catch (Exception e) {
-            logger.fatal("Can't check DealsPage");
+            logger.fatal("Can't check ProviderPage");
             return false;
         }
     }
 
-    public boolean checkDealIsPresent(String dealFulldate) {
+    public void findProvader(String proCustName) {
         try {
-            logger.info("If you dont see next message - " + "Deal with date " + dealFulldate + " not present" + ", that's meens All Ok");
-            return driver.findElement(By.xpath(".//td[text()='" + dealFulldate + "']")).isDisplayed();
+            driver.findElement(By.xpath(".//td[contains(text(),'" + proCustName + "')]")).click();
 
         } catch (Exception e) {
-            logger.error("Deal with date " + dealFulldate + " not present");
-            return false;
+            logger.error(canNotFind + proCustName);
+            Assert.fail(canNotFind + proCustName);
         }
-
     }
 
-    public void clickDeal(String dealFuldate) {
+    public boolean checkProviderIsPresent(String proCustName) {
         try {
-            driver.findElement(By.xpath(".//td[text()='" + dealFuldate + "']")).click();
+            logger.info("If you dont see next message -" + canNotFind + proCustName + ", that's meens All Ok");
+            return driver.findElement(By.xpath(".//td[contains(text(),'" + proCustName + "')]")).isDisplayed();
         } catch (Exception e) {
-            logger.error(canNotFind + " Deal wit date " + dealFuldate);
-            Assert.fail(canNotFind + " Deal wit date " + dealFuldate);
+            logger.fatal(canNotFind + proCustName);
+            return false;
         }
-
     }
 
     public void buttonAdd() {
@@ -84,7 +77,7 @@ public class DealsPage {
     /**
      * Clousing page and browser
      */
-    public void clouseDealsPageAndBrowser() {
+    public void clouseProviderPageAndBrowser() {
         driver.quit();
         logger.info("DealsPage and browser was cloused");
     }

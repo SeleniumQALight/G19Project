@@ -12,10 +12,11 @@ import pages.*;
 
 public class ProviderCreate {
     WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    ProviderPage providerPage = new ProviderPage(driver);
-    ProviderEditPage providerEditPage = new ProviderEditPage(driver);
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    ProviderPage providerPage = new ProviderPage(driver);
+//    ProviderEditPage providerEditPage = new ProviderEditPage(driver);
 
 
     /**
@@ -31,22 +32,22 @@ public class ProviderCreate {
 
     @Test
     public void CreateDeal() {
-        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSideofDealsOnMainPage();
-        Assert.assertTrue(providerPage.checkProviderPage());
-        providerPage.buttonAdd();
-        Assert.assertTrue(providerEditPage.checkProviderEditPage());
-        providerEditPage.enterValueInFields(proCustName, proCustAddress, proCustPhone);
-        providerEditPage.checkBoxPrivatePerson();
-        providerEditPage.createButton();
-        Assert.assertTrue(providerPage.checkProviderPage());
+        allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSideofDealsOnMainPage();
+        Assert.assertTrue(allPages.providerPage.checkProviderPage());
+        allPages.providerPage.buttonAdd();
+        Assert.assertTrue(allPages.providerEditPage.checkProviderEditPage());
+        allPages.providerEditPage.enterValueInFields(proCustName, proCustAddress, proCustPhone);
+        allPages.providerEditPage.checkBoxPrivatePerson();
+        allPages.providerEditPage.createButton();
+        Assert.assertTrue(allPages.providerPage.checkProviderPage());
 
 
     }
 
     @After
     public void tearDown() {
-        providerPage.clouseProviderPageAndBrowser();
+        allPages.providerPage.clouseProviderPageAndBrowser();
     }
 }
