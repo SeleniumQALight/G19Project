@@ -10,12 +10,13 @@ import pages.*;
 
 public class DealEdit {
     WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    WorkersPage workersPage = new WorkersPage(driver);
-    DealsPage dealsPage = new DealsPage(driver);
-    DealsEditPage dealsEditPage = new DealsEditPage(driver);
-    EditWorkerPage editWorkerPage = new EditWorkerPage(driver);
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    WorkersPage workersPage = new WorkersPage(driver);
+//    DealsPage dealsPage = new DealsPage(driver);
+//    DealsEditPage dealsEditPage = new DealsEditPage(driver);
+//    EditWorkerPage editWorkerPage = new EditWorkerPage(driver);
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
     String workerSurname = "Тестовый";
@@ -25,14 +26,14 @@ public class DealEdit {
 
     @Test
     public void CreateDeal() {
-        loginPage.openBrowserAndLoginPage();
-        loginPage.enterUserName(loginNameForLoginPage);
-        loginPage.enterUserPassword(passwordForLoginPage);
-        loginPage.clickButtonVhod();
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSdelkiOnMainPage();
-        Assert.assertTrue(dealsPage.checkDealsPage());
-        dealsPage.buttonAdd();
+        allPages.loginPage.openBrowserAndLoginPage();
+        allPages.loginPage.enterUserName(loginNameForLoginPage);
+        allPages.loginPage.enterUserPassword(passwordForLoginPage);
+        allPages.loginPage.clickButtonVhod();
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSdelkiOnMainPage();
+        Assert.assertTrue(allPages.dealsPage.checkDealsPage());
+        allPages.dealsPage.buttonAdd();
 
     }
 

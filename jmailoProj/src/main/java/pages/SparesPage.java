@@ -49,7 +49,7 @@ public class SparesPage {
     public void checkRecord(String sparePartRecord){
         try{
             //driver.findElement(By.xpath(".//td[text()="+sparePartRecord+"]")).isDisplayed();
-            driver.findElement(By.xpath(".//td[contains(text(),"+sparePartRecord+")]")).isDisplayed();
+            driver.findElement(By.xpath(".//td[text()='"+sparePartRecord+"']")).isDisplayed();
             logger.info("Record was added: " + sparePartRecord);
         }catch (Exception e){
             logger.error("Can't find record: " + sparePartRecord);

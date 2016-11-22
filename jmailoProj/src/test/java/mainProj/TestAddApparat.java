@@ -29,12 +29,12 @@ public class TestAddApparat {
         apparatPage.isApparatPagePresent();
         apparatPage.clickOnPlusButton();
         apparatEditorPage.isApparatEditorPagePresent();
-        apparatEditorPage.enterApparatNumber("887");
-        apparatEditorPage.enterApparatComment("Apparat description3");
+        apparatEditorPage.enterApparatNumber("999");
+        apparatEditorPage.enterApparatComment("Apparat description");
         apparatEditorPage.clickOnButtonAdd();
         apparatPage.isApparatPagePresent();
-        apparatPage.checkRecord("887");
-        apparatPage.checkRecord("Apparat description3");
+        apparatPage.checkRecord("999");
+        apparatPage.checkRecord("Apparat description");
     }
 
     @After
