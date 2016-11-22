@@ -11,11 +11,12 @@ import pages.*;
 
 public class SparCreate {
     WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    EditSparePage editSparePage = new EditSparePage(driver);
-    ;
-    SparesPage sparesPage = new SparesPage(driver);
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    EditSparePage editSparePage = new EditSparePage(driver);
+
+//    SparesPage sparesPage = new SparesPage(driver);
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
     String spareName = "Рулетка 2";
@@ -24,23 +25,23 @@ public class SparCreate {
     @Test
     public void CreateWorker() {
 
-        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSlovariOnMainPage();
-        mainPage.openSpareOnMainPge();
-        Assert.assertTrue(sparesPage.checkSparesPage());
-        sparesPage.buttonAdd();
-        Assert.assertTrue(editSparePage.checkEditSparePage());
-        editSparePage.enterSpareName(spareName);
-        editSparePage.selectValueInDDTypeOfSpears(textInDD);
-        editSparePage.createButton();
-        Assert.assertTrue(sparesPage.checkSparesPage());
-        Assert.assertTrue(sparesPage.checkTestSpare(spareName));
+        allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSlovariOnMainPage();
+        allPages.mainPage.openSpareOnMainPge();
+        Assert.assertTrue(allPages.sparesPage.checkSparesPage());
+        allPages.sparesPage.buttonAdd();
+        Assert.assertTrue(allPages.editSparePage.checkEditSparePage());
+        allPages.editSparePage.enterSpareName(spareName);
+        allPages.editSparePage.selectValueInDDTypeOfSpears(textInDD);
+        allPages.editSparePage.createButton();
+        Assert.assertTrue(allPages.sparesPage.checkSparesPage());
+        Assert.assertTrue(allPages.sparesPage.checkTestSpare(spareName));
 
     }
 
     @After
     public void tearDown() {
-        sparesPage.clouseSparePageAndBrowser();
+        allPages.sparesPage.clouseSparePageAndBrowser();
     }
 }

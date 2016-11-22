@@ -10,10 +10,11 @@ import pages.*;
 
 public class ProviderDelete {
     WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    ProviderPage providerPage = new ProviderPage(driver);
-    ProviderEditPage providerEditPage = new ProviderEditPage(driver);
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    ProviderPage providerPage = new ProviderPage(driver);
+//    ProviderEditPage providerEditPage = new ProviderEditPage(driver);
 
     /**
      * value for login
@@ -30,18 +31,18 @@ public class ProviderDelete {
 
     @Test
     public void providerDelete() {
-        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSideofDealsOnMainPage();
-        Assert.assertTrue(providerPage.checkProviderPage());
-        providerPage.findProvader(proCustName);
-        Assert.assertTrue(providerEditPage.checkProviderEditPage());
-        providerEditPage.deleteButton();
-        Assert.assertTrue(providerPage.checkProviderPage());
-        Assert.assertFalse(providerPage.checkProviderIsPresent(proCustName));
+        allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSideofDealsOnMainPage();
+        Assert.assertTrue(allPages.providerPage.checkProviderPage());
+        allPages.providerPage.findProvader(proCustName);
+        Assert.assertTrue(allPages.providerEditPage.checkProviderEditPage());
+        allPages.providerEditPage.deleteButton();
+        Assert.assertTrue(allPages.providerPage.checkProviderPage());
+        Assert.assertFalse(allPages.providerPage.checkProviderIsPresent(proCustName));
 
 
     }
-//    @After
-//    public void tearDown() {providerPage.clouseProviderPageAndBrowser();}
+    @After
+    public void tearDown() {allPages.providerPage.clouseProviderPageAndBrowser();}
 }
