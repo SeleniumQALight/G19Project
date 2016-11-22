@@ -1,4 +1,4 @@
-package lib;
+package libs;
 
 import java.io.IOException;
 import java.sql.*;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import static lib.ConfigData.getCfgValue;
+import static libs.ConfigData.getCfgValue;
 //import static lib.TimeDate.getCurrentTimeDB;
 //import static lib.TimeDate.getCurrentTimeUI;
 //import static lib.TimeDate.printCalendarDB;

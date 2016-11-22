@@ -85,7 +85,7 @@ public class SpreadsheetData {
             cellValue = getNumericCellValue(cell);
         } else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
             cellValue = cell.getBooleanCellValue();
-        } else if (cell.getCellType()  ==Cell.CELL_TYPE_FORMULA) {
+        } else if (cell.getCellType() == Cell.CELL_TYPE_FORMULA) {
             cellValue = evaluateCellFormula(workbook, cell);
         }
 

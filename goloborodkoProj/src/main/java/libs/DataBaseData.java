@@ -1,4 +1,4 @@
-package lib;
+package libs;
 
 import java.io.IOException;
 import java.sql.SQLException;

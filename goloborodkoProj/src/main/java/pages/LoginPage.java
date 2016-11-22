@@ -28,7 +28,7 @@ public class LoginPage {
     WebElement inputUserPassword;
     @FindBy(tagName = "button")
     WebElement buttonEnter;
-    @FindBy(className = "_username")
+    @FindBy(name = "_username")
     WebElement loginForm;
 
     public LoginPage(WebDriver exterDriver) {
@@ -113,7 +113,7 @@ public class LoginPage {
      */
     public boolean isFormLoginPresent() {
         try {
-            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("_username")));
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_username")));
             if (loginForm.isDisplayed()) {
                 logger.info("Invalid login or password");
             } else {
