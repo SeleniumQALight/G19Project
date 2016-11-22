@@ -24,9 +24,9 @@ public class InvalidLogOn {
     }
 
     @Parameterized.Parameters
-    public static Collection testData(){
+    public static Collection testData() {
         return Arrays.asList(new Object[][]{
-                {"Student", "906090"},{"Students", "909090"},{"A student", "909090"}
+                {"Student", "906090"}, {"Students", "909090"}, {"A student", "909090"}
         });
     }
 
