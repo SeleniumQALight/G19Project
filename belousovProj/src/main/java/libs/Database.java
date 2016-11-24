@@ -27,18 +27,18 @@ public class Database {
      */
     public Database(String db, String driver) throws IOException, ClassNotFoundException, SQLException {
         url=getCfgValue(db);
-        log.info("Данные считаны url database: " + url);
+        log.info("Value for DataBase" + url);
 
         // Load driver for JDBC class
         Class.forName(getCfgValue(driver));
-        log.info("Считали SQL драйвер ");
+        log.info("Download SQL driver ");
         
         // Create a connection to the database
         String user_name=getCfgValue((db + "_USER"));
         String user_pass=getCfgValue((db + "_PASSWORD"));
         log.info(" user - " + user_name + " pass " + user_pass);
-        connection= DriverManager.getConnection(url,getCfgValue((db + "_USER")),getCfgValue((db + "_PASSWORD")));
-        log.info("дальше опять" + connection);
+        connection= DriverManager.getConnection(url,user_name,user_pass);
+        log.info("one more " + connection);
     }
 
 
@@ -188,6 +188,20 @@ public class Database {
         return resultTable;
     }
 
+
+    /**
+     *  Method execut INSERT, UPDATE, DELETE
+     * @param query
+     * @return
+     * @throws SQLException
+     */
+    public int changeDataInDataBase(String query) throws SQLException {
+        Statement stm = connection.createStatement();
+        int numberOfRows = stm.executeUpdate(query);
+
+        stm.close();
+        return numberOfRows;
+    }
 
     /*
      *  That method gets SQL [Select count(*) from TABLE_NAME where ...] query as parameter and returns number of rows as Integer
