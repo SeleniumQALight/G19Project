@@ -1,6 +1,7 @@
 package pages;
 
 
+import libs.ConfigData;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +18,7 @@ public class LoginPage {
 
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
     final String errorInput = "Can not work with input UserName ";
     final String errorButton = "Can not work with button ";
     final String errorLink= "Can not work with link";
@@ -36,6 +40,7 @@ public class LoginPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait= new WebDriverWait(driver,30);
     }
 
     /**
@@ -45,7 +50,7 @@ public class LoginPage {
         try {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-            driver.get("http://v3.test.itpmgroup.com/login");
+            driver.get(ConfigData.getCfgValue("BASE_URL")+"/login");
             logger.info("Page Login was opened");
         } catch (Exception e) {
             logger.error("Can not work with browser");
@@ -84,6 +89,7 @@ public class LoginPage {
      */
     public void enterPassWord(String pass) {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_password")));
             inputPassWord.clear();
             inputPassWord.sendKeys(pass);
             logger.info(pass + " was entered");
@@ -119,7 +125,17 @@ public class LoginPage {
             Assert.fail(errorLink+ " RegisterLink");
         }
     }
+    public HomePage clickButtonVhodWithNewPage(){
 
+        try {
+            button.click();
+            logger.info("Button was clicked");
+        } catch (Exception e) {
+            logger.error(errorButton + " Vhod");
+            Assert.fail(errorButton + " Vhod");
+        }
+        return new HomePage(driver);
+    }
 
     /**
      * Method check if login form present
@@ -127,6 +143,8 @@ public class LoginPage {
      */
     public boolean isFormLoginPresent(){
         try{
+          //  webDriverWait.until(ExpectedConditions.visibilityOf());
+            // webDriverWait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfAllElements()));
            return loginForm.isDisplayed();
         }catch (Exception e){
             return false;
@@ -145,4 +163,5 @@ public class LoginPage {
         enterPassWord(pass);
         clickButtonVhod();
     }
+
 }
