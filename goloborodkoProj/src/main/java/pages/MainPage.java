@@ -10,9 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import pages.elements.ButtonsMenus;
 import pages.elements.IsPresent;
 import pages.elements.Messages;
-import pages.elements.WaitSomeTime;
-
-import java.util.concurrent.TimeUnit;
 
 public class MainPage {
     WebDriver driver;
