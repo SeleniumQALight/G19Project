@@ -42,7 +42,7 @@ public class SparesPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
-        webDriverWait = new WebDriverWait(driver,30);
+        webDriverWait = new WebDriverWait(driver, 30);
 
     }
 
@@ -95,10 +95,8 @@ public class SparesPage {
         try {
             logger.info("If you dont see next message - testSpare ne sozdan, that's meens All Ok");
             return driver.findElement(By.xpath(".//td[text()='" + spareName + "']")).isDisplayed();
-            //logger.info("Test spare" + wasClicked);
-
         } catch (Exception e) {
-            logger.error("testSpare was not created");
+            logger.error(spareName + " was not created");
             return false;
         }
 

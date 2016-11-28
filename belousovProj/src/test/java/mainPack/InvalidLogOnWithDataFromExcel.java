@@ -43,13 +43,6 @@ public class InvalidLogOnWithDataFromExcel {
     }
 
 
-//    @Parameterized.Parameters
-//    public static Collection testData(){
-//        return Arrays.asList(new Object[][]{
-//                {"Student", "906090"},
-//                {"tudent", "909090"}
-//        });
-//    }
 
     @Test
     public void setUp() {
