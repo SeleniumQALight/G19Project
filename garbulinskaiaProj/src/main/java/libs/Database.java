@@ -187,7 +187,19 @@ public class Database {
         //System.out.println(query);
         return resultTable;
     }
+    /**
+     *  Method execut INSERT, UPDATE, DELETE
+     * @param query
+     * @return
+     * @throws SQLException
+     */
+    public int changeDataInDataBase(String query) throws SQLException {
+        Statement stm = connection.createStatement();
+        int numberOfRows = stm.executeUpdate(query);
 
+        stm.close();
+        return numberOfRows;
+    }
 
     /*
      *  That method gets SQL [Select count(*) from TABLE_NAME where ...] query as parameter and returns number of rows as Integer

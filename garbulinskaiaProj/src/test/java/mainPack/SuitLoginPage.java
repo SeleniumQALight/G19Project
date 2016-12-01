@@ -7,7 +7,15 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses(
         {
                 InvalidLogOn.class,
-                ValidLogOn.class
+                ValidLogOn.class,
+                AddSpares.class,
+                ValidLogOnWithOutPageObject.class,
+                Registration.class,
+                InvalidLogOnWithDataFromExcel.class,
+                InvalidLogOnWithOutPageObject.class,
+                Test1.class,
+                WorkWithDB.class
+
         }
 )
 
