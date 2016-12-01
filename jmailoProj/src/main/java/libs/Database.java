@@ -37,7 +37,7 @@ public class Database {
         String user_name=getCfgValue((db + "_USER"));
         String user_pass=getCfgValue((db + "_PASSWORD"));
         log.info(" user - " + user_name + " pass " + user_pass);
-        connection= DriverManager.getConnection(url,getCfgValue((db + "_USER")),getCfgValue((db + "_PASSWORD")));
+        connection= DriverManager.getConnection(url,user_name,user_pass);
         log.info("дальше опять" + connection);
     }
 
@@ -188,6 +188,19 @@ public class Database {
         return resultTable;
     }
 
+    /**
+     *  Method execut INSERT, UPDATE, DELETE
+     * @param query
+     * @return
+     * @throws SQLException
+     */
+    public int changeDataInDataBase(String query) throws SQLException {
+        Statement stm = connection.createStatement();
+        int numberOfRows = stm.executeUpdate(query);
+
+        stm.close();
+        return numberOfRows;
+    }
 
     /*
      *  That method gets SQL [Select count(*) from TABLE_NAME where ...] query as parameter and returns number of rows as Integer
