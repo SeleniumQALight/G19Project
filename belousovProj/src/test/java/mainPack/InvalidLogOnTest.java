@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AllPages;
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,14 +16,14 @@ import java.util.Collection;
 @RunWith(value = Parameterized.class)
 
 
-public class InvalidLogOn {
+public class InvalidLogOnTest {
     WebDriver driver = new ChromeDriver();
     AllPages allPages = new AllPages(driver);
 
 
     String login,pass;
 
-    public InvalidLogOn (String login,String pass) {
+    public InvalidLogOnTest(String login, String pass) {
         this.login = login;
         this.pass = pass;
 

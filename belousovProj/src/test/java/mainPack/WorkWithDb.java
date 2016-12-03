@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class TestWorkWithDb {
+public class WorkWithDb {
     Logger logger = Logger.getLogger(getClass());
 
     Database db;
