@@ -12,13 +12,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DataBaseData {
 	static Logger log = Logger.getLogger(DataBaseData.class);
-	static  WebDriver driver;
+
 	static Database dB;
 	
 	public void dataBaseData (WebDriver driver) throws ClassNotFoundException, IOException, SQLException {
-		this.driver = driver;
+
 		
 	}
+
+	public static String getPassForLogin(String login) throws SQLException, IOException, ClassNotFoundException {
+		dB= new Database("MySQL_PADB_DB", "MySQL");
+		String pass= dB.selectValue("select pass from table_selenium where login= '"+login+"'");
+		dB.quit();
+		return pass;
+	}
+
+
+
+
+
+
 	
 	public String getSomeValue(String someData) throws SQLException, ClassNotFoundException, IOException{
 		//log.info("Данные будут выбраны");

@@ -4,12 +4,12 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Test1 {
+public class Test2 {
     @Test
     public void test1(){
         System.out.println("test 221");
 
-        Assert.fail("Fail test");
+      //  Assert.fail("Fail test");
     }
 
 
