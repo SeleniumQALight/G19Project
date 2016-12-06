@@ -9,12 +9,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class InvalideLogOnWithOutPageObject {
     Logger logger = Logger.getLogger(getClass());
-    WebDriver driver = new ChromeDriver();
+//    WebDriver driver = new ChromeDriver();
+    RemoteWebDriver driver;
+
+    public InvalideLogOnWithOutPageObject() throws MalformedURLException {
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+            DesiredCapabilities.firefox());
+    }
 
     @Test
     public void invalideLogOnWithOutPageObject(){

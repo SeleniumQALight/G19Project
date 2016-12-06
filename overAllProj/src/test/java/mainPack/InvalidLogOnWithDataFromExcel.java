@@ -33,7 +33,7 @@ public class InvalidLogOnWithDataFromExcel {
    @Parameterized.Parameters
    public static Collection testData() throws IOException {
        InputStream spreadsheet = new FileInputStream(ConfigData.getCfgValue("DATA_FILE_PATH")+ "testData.xls");
-       return new SpreadsheetData(spreadsheet,"InvalidLogOn").getData();
+       return new SpreadsheetData(spreadsheet,"InvalidLogOnTest").getData();
    }
 
 
