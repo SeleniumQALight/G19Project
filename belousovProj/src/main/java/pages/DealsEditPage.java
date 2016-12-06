@@ -65,6 +65,7 @@ public class DealsEditPage {
 
     /**
      * Check the page is DealsEditPage
+     * @return
      */
 
     public boolean checkDealsEditPage() {
