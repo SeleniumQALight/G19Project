@@ -6,12 +6,13 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.*;
 
 
 public class DealCreate {
-    WebDriver driver = new FirefoxDriver();
+    WebDriver driver = new ChromeDriver();
     AllPages allPages = new AllPages(driver);
 //    LoginPage loginPage = new LoginPage(driver);
 //    MainPage mainPage = new MainPage(driver);

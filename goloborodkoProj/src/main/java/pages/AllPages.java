@@ -9,5 +9,6 @@ public class AllPages {
     public AllPages(WebDriver exterDriver) {
         loginPage = new LoginPage(exterDriver);
         mainPage = new MainPage(exterDriver);
+
     }
 }

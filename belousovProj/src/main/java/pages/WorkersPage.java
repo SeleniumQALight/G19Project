@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 /**
  * Created by dariia on 10/30/16.
  */
@@ -38,7 +37,7 @@ public class WorkersPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
-        webDriverWait = new WebDriverWait(driver,30);
+        webDriverWait = new WebDriverWait(driver, 30);
 
     }
 
@@ -65,6 +64,7 @@ public class WorkersPage {
     public boolean checkWorkerIsPresent(String workerFullName) {
         try {
             logger.info("If you dont see next message - Sotrudnik ne sozdan, that's meens All Ok");
+           // logger.info(".//td[text()='" + workerFullName + "']");
             return driver.findElement(By.xpath(".//td[text()='" + workerFullName + "']")).isDisplayed();
 
         } catch (Exception e) {
