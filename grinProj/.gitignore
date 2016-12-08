@@ -3,6 +3,7 @@
 .idea/libraries
 .idea/.name
 .idea/workspace.xml
+.iml
 /.idea/workspace.xml
 target/
 target/generated-sources/
