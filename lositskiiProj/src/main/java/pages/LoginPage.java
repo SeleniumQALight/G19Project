@@ -1,6 +1,7 @@
 package pages;
 
 
+import libs.ConfigData;
 import org.apache.bcel.verifier.exc.AssertionViolatedException;
 import org.apache.bcel.verifier.exc.StructuralCodeConstraintException;
 import org.apache.log4j.Logger;
@@ -10,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +20,7 @@ public class LoginPage {
 
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with button ";
 
@@ -36,6 +40,7 @@ public class LoginPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver,this);
+        webDriverWait = new WebDriverWait(driver, 30);
     }
 
     /**
@@ -46,7 +51,7 @@ public class LoginPage {
         try {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            driver.get("http://v3.test.itpmgroup.com/login");
+            driver.get(ConfigData.getCfgValue("BASE_URL")+"/login");
             logger.info("Page login was opened");
 
 
@@ -92,6 +97,7 @@ public class LoginPage {
      */
     public void enterPassword(String passName) {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_password")));
             //driver.findElement(By.name("_password")).clear();
             inputPass.clear();
             //driver.findElement(By.name("_password")).sendKeys(passName);
@@ -126,6 +132,7 @@ public class LoginPage {
      */
     public boolean isFormLoginInPresent() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.className("login-box-body")));
             //return driver.findElement(By.className("login-box-body")).isDisplayed();
             return  loginForm.isDisplayed();
         } catch (Exception e) {
@@ -145,4 +152,19 @@ public class LoginPage {
         enterPassword(pass);
         clickButtonVhod();
     }
+    /**
+    public void  clickButton(){
+        try {
+            //driver.findElement(By.tagName("button")).click();
+            button.click();
+            logger.info("Button Vhod was click ");
+
+        } catch (Exception e) {
+            logger.error(errorButton + " 'Vhod'");
+            Assert.fail(errorButton + "'Vhod' ");
+        }
+        return new HomePage(driver);
+
+    }
+    */
 }

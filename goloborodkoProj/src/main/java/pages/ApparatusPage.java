@@ -5,8 +5,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class ApparatusPage {
     WebDriver driver;
     Logger logger;
@@ -18,7 +16,7 @@ public class ApparatusPage {
 
     public void initApparatusPage(){
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.get("http://v3.test.itpmgroup.com/dictionary/apparat");
             logger.info("Apparatus page was opened");
         } catch (Exception e) {
             logger.error("Can not work with Apparatus Page");
@@ -32,7 +30,7 @@ public class ApparatusPage {
     public void clickBtnAdd() {
         try {
             driver.findElement(By.xpath(".//*[@class='fa fa-plus']")).click();
-            logger.info("Button was clicked");
+            logger.info("Button 'Add' was clicked");
         } catch (Exception e) {
             logger.error("Can not work with the button");
             Assert.fail("Can not work with the button");

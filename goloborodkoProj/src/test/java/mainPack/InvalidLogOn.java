@@ -1,43 +1,44 @@
 package mainPack;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.ApparatusAddPage;
-import pages.ApparatusPage;
-import pages.LoginPage;
-import pages.MainPage;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.AllPages;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+@RunWith(value = Parameterized.class)
 public class InvalidLogOn {
-    WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    ApparatusPage apparatusPage = new ApparatusPage(driver);
-    ApparatusAddPage apparatusAddPage = new ApparatusAddPage(driver);
+    WebDriver driver = new ChromeDriver();
+    AllPages allPages = new AllPages(driver);
+
+    String login, pass;
+
+    public InvalidLogOn(String login, String pass) {
+        this.login = login;
+        this.pass = pass;
+    }
+
+    @Parameterized.Parameters
+    public static Collection testData() {
+        return Arrays.asList(new Object[][]{
+                {"Student", "906090"}, {"Students", "909090"}, {"A student", "909090"}
+        });
+    }
 
     @Test
     public void setUp() {
-        loginPage.openBrowserAndLoginPage();
-        loginPage.enterUserName("Student");
-        loginPage.enterPassword("909090");
-        loginPage.clickButtonEnter();
-        loginPage.isFormLoginPresent();
-        mainPage.openMainPage();
-        mainPage.clickSlideButton("Dictionaries", ".//*[@id='dictionary']", ".//*[@id='service_apparat']");
-        mainPage.clickButton("Apparatuses", "//*[@id='apparat']", ".//*[@href='http://v3.test.itpmgroup.com/dictionary/apparat/edit']");
-        apparatusPage.initApparatusPage();
-        apparatusPage.clickBtnAdd();
-        //apparatusAddPage.initApparatusAddPage();
-        apparatusAddPage.setInputData("Apparat number", ".//*[@id='apparat_apparatNumber']", "8328");
-        //apparatusAddPage.setInputData("Apparat comment", ".//*[@id='apparat_apparatComment']", "XPEHb");
-        apparatusAddPage.clickBtnAdd();
-
+        allPages.loginPage.logOn(login, pass);
+        allPages.loginPage.isFormLoginPresent();
     }
 
-//    @After
-//    public void tearDown() {
-//        loginPage.closeLoginPageAndBrowser();
-//    }
+    @After
+    public void tearDown() {
+        allPages.loginPage.closeLoginPageAndBrowser();
+    }
+
 }

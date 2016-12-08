@@ -6,16 +6,18 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.*;
 
 
 public class DealCreate {
-    WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    DealsPage dealsPage = new DealsPage(driver);
-    DealsEditPage dealsEditPage = new DealsEditPage(driver);
+    WebDriver driver = new ChromeDriver();
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    DealsPage dealsPage = new DealsPage(driver);
+//    DealsEditPage dealsEditPage = new DealsEditPage(driver);
 
 
     /**
@@ -43,22 +45,22 @@ public class DealCreate {
 
     @Test
     public void CreateDeal() {
-        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSdelkiOnMainPage();
-        Assert.assertTrue(dealsPage.checkDealsPage());
-        dealsPage.buttonAdd();
-        Assert.assertTrue(dealsEditPage.checkDealsEditPage());
-        dealsEditPage.DDDateOfDeal(valueDDDayOfDeal, valueDDMonthOfDeal, valueDDYearOfDeal, valueDDHourOfDeal, valueDDMinuteOfDeal);
-        dealsEditPage.DDParametersOfDeal(valueDDTypeOfdeal, valueDDCustomerOfDeal, valueDDProviderOfDeal);
-        dealsEditPage.createButton();
-        Assert.assertTrue(dealsPage.checkDealsPage());
-        Assert.assertTrue(dealsPage.checkDealIsPresent(dealFulldate));
+        allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSdelkiOnMainPage();
+        Assert.assertTrue(allPages.dealsPage.checkDealsPage());
+        allPages.dealsPage.buttonAdd();
+        Assert.assertTrue(allPages.dealsEditPage.checkDealsEditPage());
+        allPages.dealsEditPage.DDDateOfDeal(valueDDDayOfDeal, valueDDMonthOfDeal, valueDDYearOfDeal, valueDDHourOfDeal, valueDDMinuteOfDeal);
+        allPages.dealsEditPage.DDParametersOfDeal(valueDDTypeOfdeal, valueDDCustomerOfDeal, valueDDProviderOfDeal);
+        allPages.dealsEditPage.createButton();
+        Assert.assertTrue(allPages.dealsPage.checkDealsPage());
+        Assert.assertTrue(allPages.dealsPage.checkDealIsPresent(dealFulldate));
 
     }
 
     @After
     public void tearDown() {
-        dealsPage.clouseDealsPageAndBrowser();
+        allPages.dealsPage.clouseDealsPageAndBrowser();
     }
 }
