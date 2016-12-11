@@ -21,7 +21,7 @@ import java.util.Collection;
 @RunWith(value = Parameterized.class)
 
 public class DealCreateWithExcellData {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
     AllPages allPages = new AllPages(driver);
 
 

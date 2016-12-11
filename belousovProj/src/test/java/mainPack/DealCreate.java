@@ -12,7 +12,7 @@ import pages.*;
 
 
 public class DealCreate {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
     AllPages allPages = new AllPages(driver);
 //    LoginPage loginPage = new LoginPage(driver);
 //    MainPage mainPage = new MainPage(driver);

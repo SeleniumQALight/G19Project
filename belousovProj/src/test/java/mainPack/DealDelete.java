@@ -10,7 +10,7 @@ import pages.*;
 
 
 public class DealDelete {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = new FirefoxDriver();
     AllPages allPages = new AllPages(driver);
 //    LoginPage loginPage = new LoginPage(driver);
 //    MainPage mainPage = new MainPage(driver);

@@ -2,52 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="028c1730-e221-4a32-8ba6-03272d60a9d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/testData.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreateWithExcellData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreateWithExcellData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderDeleteWithExcellData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparCreateWithExcellData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparDeleteWithExcellData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SuitInvalidLogOn.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkWithDb.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerCreateWithExcellData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerDeleteWithExcellData.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOn.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/libs/ConfigData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/libs/DataBaseData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/libs/Database.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/libs/ExcelDriver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/libs/SpreadsheetData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/AllPages.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/G19.project.iws" afterPath="$PROJECT_DIR$/G19.project.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/.gitignore" afterPath="$PROJECT_DIR$/belousovProj/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/belousovProj.iml" afterPath="$PROJECT_DIR$/belousovProj/belousovProj.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/belousovProj.ipr" afterPath="$PROJECT_DIR$/belousovProj/belousovProj.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/belousovProj.iws" afterPath="$PROJECT_DIR$/belousovProj/belousovProj.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/pom.xml" afterPath="$PROJECT_DIR$/belousovProj/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/log4j.properties" afterPath="$PROJECT_DIR$/belousovProj/src/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsEditPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/DealsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/EditSparePage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/EditSparePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/EditWorkerPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/EditWorkerPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/LoginPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/LoginPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/MainPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/MainPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderEditPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderEditPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/SparesPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/SparesPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/TestcasesForV2QALight" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/TestcasesForV2QALight" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/main/java/pages/WorkersPage.java" afterPath="$PROJECT_DIR$/belousovProj/src/main/java/pages/WorkersPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/config.properties" afterPath="$PROJECT_DIR$/belousovProj/src/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreateWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreateWithExcellData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnHomePageWithoutPageObject.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnHomePageWithoutPageObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreate.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderDelete.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderDelete.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparCreate.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparCreate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparDelete.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparDelete.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/TEst2.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/TEst2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/Test1.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/Test1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/Test11_Test.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/Test11_Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ValidLogOnWithoutPageObjectOld.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ValidLogOnWithoutPageObjectOld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerCreate.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerCreate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerDelete.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerDelete.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnTest.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreateWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreateWithExcellData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderDeleteWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderDeleteWithExcellData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparCreateWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparCreateWithExcellData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparDeleteWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SparDeleteWithExcellData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SuitInvalidLogOn.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/SuitInvalidLogOn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkWithDb.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkWithDb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerCreateWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerCreateWithExcellData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerDeleteWithExcellData.java" afterPath="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/WorkerDeleteWithExcellData.java" />
     </list>
     <ignored path="G19.project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -239,21 +216,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/src/main/java/pages/LoginPage.java">
+      <file leaf-file-name="DealCreate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2124">
-              <caret line="129" column="40" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
+            <state relative-caret-position="126">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="InvalidLogOnWithDataFromExcel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java">
+        <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/log/tests.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/belousovProj/log/tests.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DealDelete.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DealCreateWithExcellData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreateWithExcellData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/belousovProj/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-270">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -264,47 +291,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpreadsheetData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/src/main/java/libs/SpreadsheetData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/src/main/java/libs/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3258">
-              <caret line="191" column="21" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/src/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -315,7 +304,8 @@
             <state relative-caret-position="234">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#284#285#0" expanded="false" />
+                <element signature="e#337#338#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -326,17 +316,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vasilievaProj/src/main/java/libs/ConfigData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1233#1234#0" expanded="false" />
+                <element signature="e#1294#1295#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -382,8 +366,6 @@
         <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/ProviderPage.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/SparesPage.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/main/java/pages/WorkersPage.java" />
-        <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java" />
-        <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOn.java" />
         <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/ProviderCreate.java" />
@@ -408,6 +390,12 @@
         <option value="$PROJECT_DIR$/vasilievaProj/src/test/java/mainPack/Test1.java" />
         <option value="$PROJECT_DIR$/vasilievaProj/pom.xml" />
         <option value="$PROJECT_DIR$/vasilievaProj/src/main/java/libs/ConfigData.java" />
+        <option value="$PROJECT_DIR$/belousovProj/pom.xml" />
+        <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java" />
+        <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java" />
+        <option value="$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreateWithExcellData.java" />
+        <option value="$PROJECT_DIR$/belousovProj/log/tests.log" />
+        <option value="$PROJECT_DIR$/belousovProj/belousovProj/log/tests.log" />
       </list>
     </option>
   </component>
@@ -552,25 +540,13 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19.project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19.project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19Project">
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -584,11 +560,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19.project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19Project">
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -606,11 +578,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19.project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="G19Project">
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -622,7 +590,73 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="test/java/mainPack">
+            <PATH_ELEMENT USER_OBJECT="main/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="pages">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="main/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="libs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="log">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="belousovProj/log">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -671,58 +705,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.clean">
-    <configuration default="false" name="StringParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mainPack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="vasilievaProj" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mainPack" />
-      <option name="MAIN_CLASS_NAME" value="mainPack.StringParser" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="InvalidLogOnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mainPack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="vasilievaProj" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mainPack" />
-      <option name="MAIN_CLASS_NAME" value="mainPack.InvalidLogOnTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="WorkWithDB.testWithDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -749,32 +731,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="WorkWithDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="mainPack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="vasilievaProj" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="mainPack" />
-      <option name="MAIN_CLASS_NAME" value="mainPack.WorkWithDB" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="InvalidLogOnTest.setUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -789,6 +745,84 @@
       <option name="MAIN_CLASS_NAME" value="mainPack.InvalidLogOnTest" />
       <option name="METHOD_NAME" value="setUp" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DealCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mainPack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="belousovProj" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mainPack" />
+      <option name="MAIN_CLASS_NAME" value="mainPack.DealCreate" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DealDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mainPack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="belousovProj" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mainPack" />
+      <option name="MAIN_CLASS_NAME" value="mainPack.DealDelete" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DealCreateWithExcellData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="mainPack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="belousovProj" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="mainPack" />
+      <option name="MAIN_CLASS_NAME" value="mainPack.DealCreateWithExcellData" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1265,7 +1299,9 @@
               <list>
                 <option value="clean" />
                 <option value="test" />
-                <option value="-Dtest=InvalidLogOnTest" />
+                <option value="-Dtest=DealCreate" />
+                <option value="site:site" />
+                <option value="-DfailIfNoTests=false" />
               </list>
             </option>
             <option name="profilesMap">
@@ -1281,19 +1317,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Maven.Run all tests" />
       <item index="1" class="java.lang.String" itemvalue="Maven.clean" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.StringParser" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.InvalidLogOnTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.WorkWithDB.testWithDB" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.WorkWithDB" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.InvalidLogOnTest.setUp" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.WorkWithDB.testWithDB" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.InvalidLogOnTest.setUp" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DealCreate" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.DealDelete" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.DealCreateWithExcellData" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.InvalidLogOnTest.setUp" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.WorkWithDB.testWithDB" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.WorkWithDB" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.InvalidLogOnTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.StringParser" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DealCreateWithExcellData" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DealDelete" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DealCreate" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.InvalidLogOnTest.setUp" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.WorkWithDB.testWithDB" />
       </list>
     </recent_temporary>
   </component>
@@ -1333,7 +1369,7 @@
       <workItem from="1479214897739" duration="277000" />
       <workItem from="1479216789156" duration="5478000" />
       <workItem from="1481453471085" duration="297000" />
-      <workItem from="1481453835426" duration="51000" />
+      <workItem from="1481453835426" duration="1339000" />
     </task>
     <task id="LOCAL-00001" summary="QA commit to main branch">
       <created>1479216839701</created>
@@ -1391,24 +1427,31 @@
       <option name="project" value="LOCAL" />
       <updated>1479223164341</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2016-12-11">
+      <created>1481453974553</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1481453974553</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="InvalidLogOn - 2016.11.24 at 19h 42m 17s.xml">
-      <configuration name="InvalidLogOn" configurationId="JUnit" />
+    <history-entry file="DealCreate - 2016.12.11 at 13h 04m 32s.xml">
+      <configuration name="DealCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvalidLogOn_setUp - 2016.11.26 at 21h 45m 19s.xml">
-      <configuration name="InvalidLogOn.setUp" configurationId="JUnit" />
+    <history-entry file="DealCreateWithExcellData - 2016.12.11 at 13h 11m 49s.xml">
+      <configuration name="DealCreateWithExcellData" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestWorkWithDB - 2016.11.24 at 21h 09m 40s.xml">
-      <configuration name="TestWorkWithDB" configurationId="JUnit" />
+    <history-entry file="DealCreateWithExcellData - 2016.12.11 at 13h 12m 36s.xml">
+      <configuration name="DealCreateWithExcellData" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestWorkWithDB_testWithDB - 2016.11.24 at 20h 43m 15s.xml">
-      <configuration name="TestWorkWithDB.testWithDB" configurationId="JUnit" />
+    <history-entry file="DealDelete - 2016.12.11 at 13h 05m 05s.xml">
+      <configuration name="DealDelete" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestWorkWithDB_testWithDB - 2016.11.24 at 20h 59m 44s.xml">
-      <configuration name="TestWorkWithDB.testWithDB" configurationId="JUnit" />
+    <history-entry file="DealDelete - 2016.12.11 at 13h 06m 00s.xml">
+      <configuration name="DealDelete" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestWorkWithDB_testWithDB - 2016.11.24 at 21h 00m 00s.xml">
       <configuration name="TestWorkWithDB.testWithDB" configurationId="JUnit" />
@@ -1427,7 +1470,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15017000" />
+    <option name="totallyTimeSpent" value="16305000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1447,16 +1490,17 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27723378" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29977876" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26666668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.078947365" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6050885" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26659292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44186047" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3011016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2056928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1468,7 +1512,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32768363" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1512,7 +1555,8 @@
     <MESSAGE value="QA commit to main branch" />
     <MESSAGE value="QA Total" />
     <MESSAGE value="QA ProviderDelete" />
-    <option name="LAST_COMMIT_MESSAGE" value="QA ProviderDelete" />
+    <MESSAGE value="2016-12-11" />
+    <option name="LAST_COMMIT_MESSAGE" value="2016-12-11" />
   </component>
   <component name="VssConfiguration">
     <CheckoutOptions>
@@ -1577,55 +1621,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/EditWorkerPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/SparesPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/main/java/pages/WorkersPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealEdit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1751,6 +1746,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1758,6 +1754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-21">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1765,6 +1762,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1772,6 +1770,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1842,6 +1841,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1849,6 +1849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1856,7 +1857,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2124">
           <caret line="129" column="40" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1864,7 +1867,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#608#609#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1872,7 +1879,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1888,7 +1897,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3258">
           <caret line="191" column="21" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1905,7 +1916,8 @@
         <state relative-caret-position="234">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#284#285#0" expanded="false" />
+            <element signature="e#337#338#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1914,7 +1926,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1922,14 +1936,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1233#1234#0" expanded="false" />
+            <element signature="e#1294#1295#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vasilievaProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="241">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreateWithExcellData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/log/tests.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/belousovProj/log/tests.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/DealCreate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/belousovProj/src/test/java/mainPack/InvalidLogOnWithDataFromExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
