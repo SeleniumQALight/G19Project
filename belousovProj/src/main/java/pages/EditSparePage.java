@@ -7,11 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EditSparePage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -35,6 +39,7 @@ public class EditSparePage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver,30);
     }
 
     /**
@@ -44,7 +49,8 @@ public class EditSparePage {
      */
     public boolean checkEditSparePage() {
         try {
-            waitSomeSec(1);
+            //waitSomeSec(1);
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.id("spares_spareName")));
             logger.info("If you dont see next message - Cant check EditSparePage, that's meens All Ok");
             return spareNameField.isDisplayed();
         } catch (Exception e) {

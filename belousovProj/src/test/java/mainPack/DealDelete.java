@@ -4,16 +4,18 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.*;
 
 
 public class DealDelete {
-    WebDriver driver = new FirefoxDriver();
-    LoginPage loginPage = new LoginPage(driver);
-    MainPage mainPage = new MainPage(driver);
-    DealsPage dealsPage = new DealsPage(driver);
-    DealsEditPage dealsEditPage = new DealsEditPage(driver);
+    WebDriver driver = new ChromeDriver();
+    AllPages allPages = new AllPages(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+//    MainPage mainPage = new MainPage(driver);
+//    DealsPage dealsPage = new DealsPage(driver);
+//    DealsEditPage dealsEditPage = new DealsEditPage(driver);
 
 
     /**
@@ -40,20 +42,20 @@ public class DealDelete {
 
     @Test
     public void CreateDeal() {
-        loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
-        Assert.assertTrue(mainPage.checkMainPage());
-        mainPage.openSdelkiOnMainPage();
-        Assert.assertTrue(dealsPage.checkDealsPage());
-        Assert.assertTrue(dealsPage.checkDealIsPresent(dealFulldate));
-        dealsPage.clickDeal(dealFulldate);
-        Assert.assertTrue(dealsEditPage.checkDealsEditPage());
-        dealsEditPage.deleteButton();
-        Assert.assertTrue(dealsPage.checkDealsPage());
-        Assert.assertFalse(dealsPage.checkDealIsPresent(dealFulldate));
+        allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
+        Assert.assertTrue(allPages.mainPage.checkMainPage());
+        allPages.mainPage.openSdelkiOnMainPage();
+        Assert.assertTrue(allPages.dealsPage.checkDealsPage());
+        Assert.assertTrue(allPages.dealsPage.checkDealIsPresent(dealFulldate));
+        allPages.dealsPage.clickDeal(dealFulldate);
+        Assert.assertTrue(allPages.dealsEditPage.checkDealsEditPage());
+        allPages.dealsEditPage.deleteButton();
+        Assert.assertTrue(allPages.dealsPage.checkDealsPage());
+        Assert.assertFalse(allPages.dealsPage.checkDealIsPresent(dealFulldate));
     }
 
     @After
     public void tearDown() {
-        dealsPage.clouseDealsPageAndBrowser();
+        allPages.dealsPage.clouseDealsPageAndBrowser();
     }
 }

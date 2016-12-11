@@ -1,6 +1,6 @@
 package pages;
 
-import org.apache.bcel.classfile.AccessFlags;
+
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 /**
  * Created by dariia on 10/30/16.
@@ -15,6 +18,8 @@ import org.openqa.selenium.support.PageFactory;
 public class WorkersPage {
     WebDriver driver;
     Logger logger;
+    WebDriverWait webDriverWait;
+
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with Button ";
     final String canNotWork = "Can not work with element ";
@@ -32,6 +37,7 @@ public class WorkersPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
+        webDriverWait = new WebDriverWait(driver, 30);
 
     }
 
@@ -40,6 +46,7 @@ public class WorkersPage {
      */
     public boolean checkWorkersPage() {
         try {
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//h3[contains(text(),'Список сотрудников')]")));
             logger.info("If you dont see next message - Cant check WorkersPage, that's meens All Ok");
             return chekWorkerPageElement.isDisplayed();
 
@@ -57,6 +64,7 @@ public class WorkersPage {
     public boolean checkWorkerIsPresent(String workerFullName) {
         try {
             logger.info("If you dont see next message - Sotrudnik ne sozdan, that's meens All Ok");
+           // logger.info(".//td[text()='" + workerFullName + "']");
             return driver.findElement(By.xpath(".//td[text()='" + workerFullName + "']")).isDisplayed();
 
         } catch (Exception e) {

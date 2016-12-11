@@ -1,36 +1,55 @@
 package mainPack;
 
+import libs.ConfigData;
+import libs.SpreadsheetData;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.*;
+import pages.AllPages;
 
-import java.util.concurrent.TimeUnit;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collection;
 
-/**
- * Created by dariia on 10/30/16.
- */
-public class WorkerCreate {
-    WebDriver driver = new FirefoxDriver();
+@RunWith(value = Parameterized.class)
+
+
+public class WorkerCreateWithExcellData {
+    WebDriver driver = new ChromeDriver();
     AllPages allPages = new AllPages(driver);
-//    LoginPage loginPage = new LoginPage(driver);
-//    MainPage mainPage = new MainPage(driver);
-//    WorkersPage workersPage = new WorkersPage(driver);
-//    EditWorkerPage editWorkerPage = new EditWorkerPage(driver);
+
+    String workerSurname, workerName, workerMidleName, workerPhoneNumber;
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
-    String workerSurname = "Тестовый";
-    String workerName = "Тест";
-    String workerMidleName = "Тестович";
-    String workerFullName = workerSurname + " " + workerName + " " + workerMidleName;
-    String workerPhoneNumber = "+380505050505";
+
+
+    public WorkerCreateWithExcellData(String workerSurname, String workerName, String workerMidleName, String workerPhoneNumber) {
+        this.workerName = workerName;
+        this.workerSurname = workerSurname;
+        this.workerMidleName = workerMidleName;
+        this.workerPhoneNumber = workerPhoneNumber;
+
+    }
+
+
+    @Parameterized.Parameters
+    public static Collection testData() throws IOException {
+        InputStream spreadsheet = new FileInputStream(ConfigData.getCfgValue("DATA_FILE_PATH") + "testData.xls");
+        return new SpreadsheetData(spreadsheet, "WorkerCreate").getData();
+    }
+
+
 
     @Test
     public void CreateWorker() {
 
+        String workerFullName = workerSurname + " " + workerName + " " + workerMidleName;
         allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(allPages.mainPage.checkMainPage());
         allPages.mainPage.openSlovariOnMainPage();
