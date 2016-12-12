@@ -17,17 +17,17 @@ import java.net.URL;
 
 
 public class DealCreate {
-    //WebDriver driver = new FirefoxDriver();
-    //AllPages allPages = new AllPages(driver);
-
-    RemoteWebDriver driver;
-
-    public  DealCreate() throws MalformedURLException {
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                DesiredCapabilities.chrome());
-    }
-
+   WebDriver driver = new FirefoxDriver();
     AllPages allPages = new AllPages(driver);
+
+//    RemoteWebDriver driver;
+//
+//    public  DealCreate() throws MalformedURLException {
+//        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+//                DesiredCapabilities.firefox());
+//    }
+//
+//    AllPages allPages = new AllPages(driver);
 
 
 
