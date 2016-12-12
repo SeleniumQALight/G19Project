@@ -8,14 +8,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by SBeast on 10/27/2016.
- */
 
 
 public class InvalidLogOnHomePageWithoutPageObject {
@@ -27,7 +29,17 @@ public class InvalidLogOnHomePageWithoutPageObject {
     WebElement buttonVhod;
 
     Logger logger = Logger.getLogger(getClass());
-    WebDriver driver = new ChromeDriver();
+
+
+    WebDriver driver = new FirefoxDriver();
+//    RemoteWebDriver driver;
+//
+//    public  InvalidLogOnHomePageWithoutPageObject() throws  MalformedURLException {
+//        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+//            DesiredCapabilities.firefox());
+
+
+
 
     @Test
     public void invalidLogOnHomePageWithoutPageObject() {

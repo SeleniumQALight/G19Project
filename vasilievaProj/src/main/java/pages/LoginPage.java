@@ -1,5 +1,6 @@
 package pages;
 
+import libs.ConfigData;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -46,8 +47,9 @@ public class LoginPage {
     public void openBrowserLoginPage(){
         try{
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            driver.get("http://v3.test.itpmgroup.com/login");
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.get(ConfigData.getCfgValue("BASE_URL")+"/login" );
+            //используем проперти файл и статич. метод для получения урл и др. данных
             logger.info("Page Login was opened");
 
         } catch (Exception e){
@@ -85,6 +87,8 @@ public class LoginPage {
      */
     public void enterPassWord(String pass){
         try{
+            //ожидание появления элемента
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_password")));
             inputUserPassWord.clear();
             inputUserPassWord.sendKeys(pass);
             logger.info(pass + inputText);

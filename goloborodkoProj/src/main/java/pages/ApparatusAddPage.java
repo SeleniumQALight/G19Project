@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class ApparatusAddPage {
     WebDriver driver;
     Logger logger;

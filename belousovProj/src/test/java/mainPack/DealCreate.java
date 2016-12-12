@@ -8,16 +8,27 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.*;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class DealCreate {
-    WebDriver driver = new ChromeDriver();
+    //WebDriver driver = new FirefoxDriver();
+    //AllPages allPages = new AllPages(driver);
+
+    RemoteWebDriver driver;
+
+    public  DealCreate() throws MalformedURLException {
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+                DesiredCapabilities.chrome());
+    }
+
     AllPages allPages = new AllPages(driver);
-//    LoginPage loginPage = new LoginPage(driver);
-//    MainPage mainPage = new MainPage(driver);
-//    DealsPage dealsPage = new DealsPage(driver);
-//    DealsEditPage dealsEditPage = new DealsEditPage(driver);
+
 
 
     /**

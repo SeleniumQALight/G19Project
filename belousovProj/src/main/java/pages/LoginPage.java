@@ -37,7 +37,7 @@ public class LoginPage {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
-        webDriverWait = new WebDriverWait(driver, 30);
+        webDriverWait = new WebDriverWait(driver, 5);
     }
 
     /**
@@ -46,7 +46,7 @@ public class LoginPage {
     public void openBrowserAndLoginPage() {
         try {
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //            driver.get("http://v3.test.itpmgroup.com/login");
             driver.get(ConfigData.getCfgValue("BASE_URL") + "/login");
             logger.info("Page login was opened");
