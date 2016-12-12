@@ -12,3 +12,5 @@ target/site
 *.log
 *.iml
 *.ipr
+belousovProj/
+log/
