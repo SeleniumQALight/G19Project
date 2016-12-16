@@ -10,38 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by kateryna.Gryn on 27.10.2016. МОЙ ПЕРВЫЙ АВТОТЕСТ
- */
-public class ValidLogOnWithOutPageObject {
 
-//WebDriver driver=new FirefoxDriver();
-//    Logger logger = Logger.getLogger(getClass());
-//    @Test
-//    public void ValidLogOnWithOutPageObject(){
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        driver.get("http://10.10.11.6:556/barsroot/account/login/");
-//        logger.info("Page was opened");
-//        driver.findElement(By.id("txtUserName")).clear();
-//        driver.findElement(By.id("txtUserName")).sendKeys("absadm01");
-//        logger.info("Login was entered");
-//        driver.findElement(By.id("txtPassword")).sendKeys("qwerty");
-//        logger.info("Pass was entered");
-//        driver.findElement(By.id("btLogIn")).click();
-//        logger.info("Button Log in was clicked");
-//        driver.findElement(By.id("btChangDate")).click();
-//        logger.info("Button Changedate was clicked");
-//
-//        Assert.assertTrue("Not homepage", driver.findElement(By.id("btnProfile")).isDisplayed());
-//
-//    }
-//@After
-//    public void tearDown(){
-//    driver.quit();
-//    }
-//
-//}
+public class ValidLogOnWithOutPageObject {
 
     WebDriver driver = new FirefoxDriver();
     Logger logger = Logger.getLogger(getClass());
@@ -61,7 +31,9 @@ public class ValidLogOnWithOutPageObject {
         driver.findElement(By.xpath(".//button")).click();
         logger.info("Button was clicked");
 
-        Assert.assertTrue("Not homepage", driver.findElement(By.className("user-image")).isDisplayed());
+        Assert.assertTrue("Not homepage", driver.findElement(By.xpath(".//*[@class='user-image']")).isDisplayed());
+        logger.info("Avatar apepared successfully");
+
     }
 
     @After
@@ -69,4 +41,3 @@ public class ValidLogOnWithOutPageObject {
         driver.quit();
     }
 }
-

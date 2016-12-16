@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AllPages;
 
@@ -19,7 +20,7 @@ import java.util.Collection;
 @RunWith(value = Parameterized.class)
 
 public class SparDeleteWithExcellData {
-    WebDriver driver = new FirefoxDriver();
+    WebDriver driver = new ChromeDriver();
     AllPages allPages = new AllPages(driver);
 
     String loginNameForLoginPage = "Student";

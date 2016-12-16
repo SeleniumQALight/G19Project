@@ -49,7 +49,7 @@ public class CustomersPage {
      */
     public void checkRecord(String serviceRecord){
         try {
-            driver.findElement(By.xpath(".//td[text()='"+serviceRecord+"']")).isDisplayed();
+            driver.findElement(By.xpath(".//*[contains(text()="+serviceRecord+")]")).isDisplayed();
             //driver.findElement(By.xpath(".//td[contains(text()='Maintenance')]")).isDisplayed();
             //driver.findElement(By.xpath(".//*[@id='device_list']/tbody/tr/td[text()="+serviceRecord+"]")).isDisplayed();
             logger.info(okInput+serviceRecord);

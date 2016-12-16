@@ -1,7 +1,6 @@
 package pages;
 
 
-import libs.ConfigData;
 import org.apache.bcel.verifier.exc.AssertionViolatedException;
 import org.apache.bcel.verifier.exc.StructuralCodeConstraintException;
 import org.apache.log4j.Logger;
@@ -51,7 +50,7 @@ public class LoginPage {
         try {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            driver.get(ConfigData.getCfgValue("BASE_URL")+"/login");
+            driver.get("http://v3.test.itpmgroup.com/login");
             logger.info("Page login was opened");
 
 
@@ -97,7 +96,6 @@ public class LoginPage {
      */
     public void enterPassword(String passName) {
         try {
-            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_password")));
             //driver.findElement(By.name("_password")).clear();
             inputPass.clear();
             //driver.findElement(By.name("_password")).sendKeys(passName);

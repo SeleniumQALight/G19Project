@@ -1,6 +1,5 @@
 package pages;
 
-import libs.ConfigData;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -8,15 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.elements.Messages;
 
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
     WebDriver driver;
-    WebDriverWait webDriverWait;
     Logger logger;
     final String errorInput = "Can not work with input ";
     final String errorButton = "Can not work with button ";
@@ -28,14 +24,13 @@ public class LoginPage {
     WebElement inputUserPassword;
     @FindBy(tagName = "button")
     WebElement buttonEnter;
-    @FindBy(name = "_username")
+    @FindBy(className = "_username")
     WebElement loginForm;
 
     public LoginPage(WebDriver exterDriver) {
         this.driver = exterDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(driver, this);
-        webDriverWait = new WebDriverWait(driver, 30);
     }
 
     /**
@@ -44,8 +39,8 @@ public class LoginPage {
     public void openBrowserAndLoginPage() {
         try {
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            driver.get(ConfigData.getCfgValue("BASE_URL")+"/login");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.get("http://v3.test.itpmgroup.com/login");
             logger.info("Page Login was opened");
         } catch (Exception e) {
             logger.error(Messages.genErrorMess() + "Browser");
@@ -113,7 +108,6 @@ public class LoginPage {
      */
     public boolean isFormLoginPresent() {
         try {
-            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("_username")));
             if (loginForm.isDisplayed()) {
                 logger.info("Invalid login or password");
             } else {
@@ -137,16 +131,5 @@ public class LoginPage {
         enterUserName(login);
         enterPassword(password);
         clickButtonEnter();
-    }
-
-    public MainPage clickButtonEnterWithNewPage() {
-        try {
-            buttonEnter.click();
-            logger.info("Button Enter was clicked");
-        } catch (Exception e) {
-            logger.error(Messages.genErrorMess() + "button 'Enter'");
-            Assert.fail(Messages.genErrorMess() + "button 'Enter'");
-        }
-        return new MainPage(driver);
     }
 }
