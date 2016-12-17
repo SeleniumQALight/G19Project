@@ -10,25 +10,30 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.AllPages;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collection;
 
 @RunWith(value = Parameterized.class)
 
 public class SparDeleteWithExcellData {
-    WebDriver driver = new ChromeDriver();
-    AllPages allPages = new AllPages(driver);
-
+    //WebDriver driver = new ChromeDriver();
+    AllPages allPages;
+    RemoteWebDriver driver;
     String loginNameForLoginPage = "Student";
     String passwordForLoginPage = "909090";
     // String spareName = "Рулетка 2";
     String spareName, textInDD;
 
-    public SparDeleteWithExcellData(String spareName, String textInDD) {
+    public SparDeleteWithExcellData(String spareName, String textInDD)throws MalformedURLException {
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
         this.spareName = spareName;
         this.textInDD = textInDD;
     }
@@ -42,7 +47,7 @@ public class SparDeleteWithExcellData {
 
     @Test
     public void DeleteSpar() {
-
+        allPages = new AllPages(driver);
         allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(allPages.mainPage.checkMainPage());
         allPages.mainPage.openSlovariOnMainPage();
@@ -58,6 +63,7 @@ public class SparDeleteWithExcellData {
 
     @After
     public void tearDown() {
+        allPages = new AllPages(driver);
         allPages.sparesPage.clouseSparePageAndBrowser();
     }
 }

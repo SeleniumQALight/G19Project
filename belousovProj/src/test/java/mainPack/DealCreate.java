@@ -17,17 +17,16 @@ import java.net.URL;
 
 
 public class DealCreate {
-   WebDriver driver = new FirefoxDriver();
-    AllPages allPages = new AllPages(driver);
+   //WebDriver driver = new FirefoxDriver();
+    AllPages allPages;
 
-//    RemoteWebDriver driver;
-//
-//    public  DealCreate() throws MalformedURLException {
-//        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-//                DesiredCapabilities.firefox());
-//    }
-//
-//    AllPages allPages = new AllPages(driver);
+    RemoteWebDriver driver;
+
+    public  DealCreate() throws MalformedURLException {
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+                DesiredCapabilities.chrome());
+    }
+
 
 
 
@@ -56,6 +55,7 @@ public class DealCreate {
 
     @Test
     public void CreateDeal() {
+        allPages = new AllPages(driver);
         allPages.loginPage.logOn(loginNameForLoginPage, passwordForLoginPage);
         Assert.assertTrue(allPages.mainPage.checkMainPage());
         allPages.mainPage.openSdelkiOnMainPage();
@@ -72,6 +72,8 @@ public class DealCreate {
 
     @After
     public void tearDown() {
+
+        allPages = new AllPages(driver);
         allPages.dealsPage.clouseDealsPageAndBrowser();
     }
 }
