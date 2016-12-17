@@ -5,11 +5,13 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public class EntrancePage {
     WebDriver driver;
+    //RemoteWebDriver driver;
     Logger logger;
     final String errorInput = "Can't work with input ";
     final String errorButton = "Can't work with button ";
@@ -18,6 +20,7 @@ public class EntrancePage {
 
     public EntrancePage (WebDriver externalDriver){
         this.driver=externalDriver;
+        //this.driver=RemoteWebDriver;
         logger=Logger.getLogger(getClass());
     }
 
