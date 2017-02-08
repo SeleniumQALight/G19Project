@@ -15,7 +15,7 @@ public class InvalidLogOn {
     @Test
     public void setUp(){
         loginPage.openBrowserAndLoginPage();
-        loginPage.enterUserName("Student");
+        loginPage.enterUserName("Student1");
         loginPage.enterPassWord("906090");
         loginPage.clickButtonVhod();
         Assert.assertTrue(loginPage.isFormLoginPresent());
