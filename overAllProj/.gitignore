@@ -12,4 +12,6 @@ target/site
 *.log
 *.iml
 *.ipr
+*.iws
+
 
